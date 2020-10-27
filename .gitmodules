@@ -1,0 +1,4 @@
+[submodule "bin-search-proj-js-W8-D1"]
+	path = bin-search-proj-js-W8-D1
+	url = https://github.com/bgoonz/bin-search-proj-js-W8-D1.git
+*node_modules/
