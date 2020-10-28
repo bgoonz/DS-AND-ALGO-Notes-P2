@@ -1,95 +1,61 @@
-# Computer Science in JavaScript
+# Computer Science in JavaScript (ES5 and ES6)
 
-by [Nicholas C. Zakas](https://humanwhocodes.com)
+This repository contains code about various series of posts that I made [on my blog](http://blog.benoitvallon.com) about computer science (mostly data structures and sorting algorithms) reimplemented in JavaScript.
 
-If you find this useful, please consider supporting my work with a [donation](https://humanwhocodes.com/donate).
+## What's in this repository?
 
-## Description
+As of now, it contains 2 main sections:
 
-Collection of classic computer science paradigms, algorithms, and approaches written in JavaScript. This is the source code for the series of blog posts on my website.
+- [Data structures in JavaScript (ES5 and ES6)](https://github.com/benoitvallon/computer-science-in-javascript/tree/master/data-structures-in-javascript)
+- [Sorting algorithms in JavaScript (ES5 and ES6)](https://github.com/benoitvallon/computer-science-in-javascript/tree/master/sorting-algorithms-in-javascript)
 
-## Folder Structure
+## The #data-structures series
 
-The most recent packages are found in these directories:
+The [#data-structures series](http://blog.benoitvallon.com/category/data-structures-in-javascript) is a collection of posts about reimplemented data structures in JavaScript.
 
-* `src` - the implementation source code
-* `tests` - tests for the implementation source code
+If you are not familiar with data structures, a quick introduction and the full list of reimplemented data structures can be found in the [introduction post of the series on data structures in JavaScript](http://blog.benoitvallon.com/data-structures-in-javascript/data-structures-in-javascript).
 
-These directories contain **old** implementations that will be replaced eventually, they are just here to avoid confusing people who find this repo through the old blog posts:
+If you feel comfortable with the concept of each data structure and only want to see the code, have a look at the summary post of the series. It removes all explanations and contains only the [JavaScript code for all data structures](http://blog.benoitvallon.com/data-structures-in-javascript/data-structures-in-javascript-all-the-code) discussed in the series.
 
-* `data-structures` - data structure implementations that have not been updated yet
-* `encodings` - encoding implementations that have not been updated yet
-* `algorithms` - miscellanous algorithm implementations that have not been updated yet
+### The data structures in the series
 
-As I update these, implementations will move from these folders into `src`.
+- [x] Array
+- [x] Hash Table
+- [x] Set
+- [x] Singly Linked List
+- [x] Doubly Linked List
+- [x] Stack
+- [x] Queue
+- [x] Tree
+- [x] Binary Search Tree
+- [x] Trie
+- [x] Graph
 
-## Branches
+## The #sorting-algorithms series
 
-* **2009** - the branch containing all of the original implementations as reflected in my 2009 blog post series.
-* **master** - the branch where I'm updating the original implementations to use ECMAScript 2018 and later features.
+The [#sorting-algorithms series](http://blog.benoitvallon.com/category/sorting-algorithms-in-javascript) is a collection of posts about reimplemented sorting algorithms in JavaScript.
 
-## Installing
+If you are not familiar with sorting algorithms, a quick introduction and the full list of reimplemented sorting algorithms can be found in the [introduction post of the series on sorting algorithms in JavaScript](http://blog.benoitvallon.com/sorting-algorithms-in-javascript/sorting-algorithms-in-javascript).
 
-You must be using Node.js v8 or later.
+If you feel comfortable with the concept of each sorting algorithms and only want to see the code, have a look at the summary post of the series. It removes all explanations and contains only the [JavaScript code for all sorting algorithms](http://blog.benoitvallon.com/sorting-algorithms-in-javascript/sorting-algorithms-in-javascript-all-the-code) discussed in the series.
 
-First, clone the repo:
+### The sorting algorithms in the series
 
-```
-$ git clone git://github.com/humanwhocodes/computer-science-in-javascript.git
-$ cd computer-science-in-javascript
-```
+- [x] Bubble sort
+- [x] Selection sort
+- [x] Insertion sort
+- [x] Shellsort
+- [x] Merge sort
+- [x] Quicksort
 
-Then install the dependencies:
+### A good way to compare all of them
 
-```
-$ npm install
-```
+Unlike the [data structures](http://blog.benoitvallon.com/data-structures-in-javascript/data-structures-in-javascript/), all [sorting algorithms](http://blog.benoitvallon.com/sorting-algorithms-in-javascript/sorting-algorithms-in-javascript) have the same goal and they can all take the same input data. So, for every sorting algorithms of the series, we are going sort an `array` of 10 numbers from 1 to 10.
 
-You can then run tests like this:
+By doing so we will be able to compare the different sorting algorithms more easily. Sorting algorithms are very sensitive to the input data so we will also try different input data to see how they affect the performances.
 
-```
-$ npm test
-```
+## Why this repository?
 
-## Updated Blog Posts (2019)
+At the beginning I started those series with 2 different repositories, one for the data structures and another one for the sorting algorithms. It was nice to keep things separately at first but grouping them into the same repository makes more sense to me now.
 
-These are the most recent blog posts covering the most recent version of the code.
-
-### Data Structures
-
-* [Linked List](https://humanwhocodes.com/blog/2019/01/computer-science-in-javascript-linked-list/)
-* [Doubly-Linked List](https://humanwhocodes.com/blog/2019/02/computer-science-in-javascript-doubly-linked-lists/)
-* [Circular Doubly-Linked List](https://humanwhocodes.com/blog/2019/03/computer-science-in-javascript-circular-doubly-linked-lists/)
-
-## Original Blog Posts
-
-At some point I will update these blog posts for the new implementations. For now, they still refer only to the 2009 version of this code.
-
-### Data Structures
-
-* Binary Search Tree: [Part 1](https://humanwhocodes.com/blog/2009/06/09/computer-science-in-javascript-binary-search-tree-part-1/), [Part 2](https://humanwhocodes.com/blog/2009/06/16/computer-science-in-javascript-binary-search-tree-part-2/)
-* [Doubly Linked List](https://humanwhocodes.com/blog/2009/04/21/computer-science-in-javascript-doubly-linked-lists/)
-* [Linked List](https://humanwhocodes.com/blog/2009/04/13/computer-science-in-javascript-linked-list/)
-
-### Sorting Algorithms
-
-* [Bubble Sort](https://humanwhocodes.com/blog/2009/05/26/computer-science-in-javascript-bubble-sort/)
-* [Selection Sort](https://humanwhocodes.com/blog/2009/09/08/computer-science-in-javascript-selection-sort/)
-
-### Other Algorithms
-
-* [Base64 Encoding](https://humanwhocodes.com/blog/2009/12/08/computer-science-in-javascript-base64-encoding/)
-* [Binary Search](https://humanwhocodes.com/blog/2009/09/01/computer-science-in-javascript-binary-search/)
-* [Credit Card Number Validation](https://humanwhocodes.com/blog/2009/08/04/computer-science-in-javascript-credit-card-number-validation/)
-
-## Note on Code Style
-
-You may find the code style of this module to be overly verbose with a lot of comments. That is intentional, as the primary use of this module is intended to be for educational purposes. There are frequently more concise ways of implementing the details of this class, but the more concise ways are difficult for newcomers who are unfamiliar with linked lists as a concept or JavaScript as a whole.
-
-## Issues and Pull Requests
-
-As this is part of series of tutorials I'm writing, only bug fixes will be accepted. No new functionality will be added to this module.
-
-## License
-
-MIT
+All computer science concepts are located at the same place and it will allow me to add even more things in the future. Moreover, it won’t be mandatory that those things will be about data structures or sorting algorithms. There are other important things to know too.
