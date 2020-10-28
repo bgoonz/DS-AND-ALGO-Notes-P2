@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="">
+
+
+
+
+
+
+
+
+<!-- Mirrored from www.interviewcake.com/question/javascript/largest-stack by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 28 Oct 2020 03:21:31 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+	<link rel="preload" href="../../static/fonts/glyphiconshalflings-regular.woff" as="font" type="font/woff" crossorigin />
+
+	
+        <script src="../../static/CACHE/js/output.2316c2cadf27.js" defer></script>
+    
+
+
+
+    <script type="text/javascript">
+        
+        window.IC = window.IC || {};
+        window.IC.currentUser = JSON.parse('{\u0022id\u0022:18512104,\u0022username\u0022:\u00222020\u002D10\u002D28_03:18:08_01xsdv\u0022,\u0022email\u0022:null,\u0022date_joined\u0022:\u00222020\u002D10\u002D28T03:18:08.927123+00:00\u0022,\u0022first_name\u0022:\u0022\u0022,\u0022last_name\u0022:\u0022\u0022,\u0022full_name\u0022:\u0022\u0022,\u0022short_name\u0022:\u0022friend\u0022,\u0022is_anonymous\u0022:true,\u0022is_on_last_question\u0022:false,\u0022percent_done\u0022:0,\u0022num_questions_done\u0022:0,\u0022num_questions_remaining\u0022:46,\u0022is_full_access\u0022:false,\u0022is_student\u0022:false,\u0022first_payment_date\u0022:null,\u0022last_payment_date\u0022:null,\u0022num_free_questions_left\u0022:3,\u0022terms_has_agreed_to_latest\u0022:false,\u0022preferred_content_language\u0022:\u0022javascript\u0022,\u0022preferred_editor_language\u0022:\u0022\u0022,\u0022is_staff\u0022:false,\u0022auth_providers_human_readable_list\u0022:\u0022\u0022,\u0022num_auth_providers\u0022:0,\u0022auth_email\u0022:\u0022\u0022}');
+        
+    </script>
+
+    
+        
+    
+
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge"/><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"9e57878e2e",applicationID:"7328113"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"9e57878e2e","applicationID":"7328113","transactionName":"ZVwAbEQCDUQCAUwKDFwWJE1YABdeDAwXDhpBUBZdGA4CXg0DSBNNRFAHT0VZMkIGEUwKDFxvC11BTQRSFw==","queueTime":4,"applicationTime":52,"agent":""}</script>
+        <link rel="shortcut icon" type="image/x-icon" href="../../images/favicond51e.ico?bust=209" />
+        <link rel="canonical" href="../java/largest-stack.html" />
+        <meta name="description" content="You&#x27;ve implemented a Stack class, but you want to access the largest element in your stack from time to time. Write an augmented LargestStack class."/>
+
+        <meta property="og:title" content="Largest Stack (Practice Interview Question) | Interview Cake" />
+        <meta property="og:description" content="You&#x27;ve implemented a Stack class, but you want to access the largest element in your stack from time to time. Write an augmented LargestStack class." />
+        <meta property="og:image" content="https://www.interviewcake.com/static/images/cake_white_on_blue_600_600_unrounded.png?bust=209" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="Interview Cake: Programming Interview Questions and Tips" />
+        <meta property="fb:app_id" content="149278655279066"/>
+        <meta property="fb:admins" content="514407734"/>
+        <meta property="og:url" content="https://www.interviewcake.com/question/java/largest-stack"/>
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@interviewcake" />
+        <meta name="twitter:title" content="Largest Stack (Practice Interview Question) | Interview Cake" />
+        <meta name="twitter:description" content="You&#x27;ve implemented a Stack class, but you want to access the largest element in your stack from time to time. Write an augmented LargestStack class." />
+        <meta name="twitter:creator" content="@interviewcake" />
+        <meta name="twitter:image:src" content="https://www.interviewcake.com/static/images/cake_white_on_blue_600_600_unrounded.png?bust=209" />
+        <meta name="twitter:domain" content="interviewcake.com" />
+        <meta name="format-detection" content="telephone=no">
+        <meta name="google-site-verification" content="r7D0sJ5yY_0tZHJ3uXk2pPriygDLCPtz7Ihqq5NTpf8" />
+
+        <title>Largest Stack (Practice Interview Question) | Interview Cake</title>
+    
+
+
+    
+
+    
+
+    
+
+    
+
+
+        <style type="text/css" media="all">.article .section-wrapper.heading,.article.home .section-wrapper.heading,.article .section-wrapper.heading.slim-bottom,.article.home .section-wrapper.heading.slim-bottom{padding:30px 0}.article .section-wrapper.heading.taller,.article.home .section-wrapper.heading.taller,.article .section-wrapper.heading.slim-bottom.taller,.article.home .section-wrapper.heading.slim-bottom.taller{padding:100px 0}@media (max-width:480px){.article .section-wrapper.heading.taller,.article.home .section-wrapper.heading.taller,.article .section-wrapper.heading.slim-bottom.taller,.article.home .section-wrapper.heading.slim-bottom.taller{padding-top:30px}}.article .section-wrapper.heading.slim-bottom,.article.home .section-wrapper.heading.slim-bottom,.article .section-wrapper.heading.slim-bottom.slim-bottom,.article.home .section-wrapper.heading.slim-bottom.slim-bottom{padding-bottom:25px}.article .section-wrapper.heading h1,.article.home .section-wrapper.heading h1,.article .section-wrapper.heading.slim-bottom h1,.article.home .section-wrapper.heading.slim-bottom h1{margin:0;padding:0 0 5px}@media (max-width:320px){.article .section-wrapper.heading h1,.article.home .section-wrapper.heading h1,.article .section-wrapper.heading.slim-bottom h1,.article.home .section-wrapper.heading.slim-bottom h1{padding-bottom:6px}}.article .section-wrapper.heading h2,.article.home .section-wrapper.heading h2,.article .section-wrapper.heading.slim-bottom h2,.article.home .section-wrapper.heading.slim-bottom h2{margin:0;padding:0;font-size:22px;line-height:30px}@media (max-width:320px){.article .section-wrapper.heading h2,.article.home .section-wrapper.heading h2,.article .section-wrapper.heading.slim-bottom h2,.article.home .section-wrapper.heading.slim-bottom h2{font-size:19px;line-height:27px}}.article .section-wrapper.heading p:first-of-type,.article.home .section-wrapper.heading p:first-of-type,.article .section-wrapper.heading.slim-bottom p:first-of-type,.article.home .section-wrapper.heading.slim-bottom p:first-of-type{margin:0;padding:10px 0 0}.article .section-wrapper.heading a.btn.get-started,.article.home .section-wrapper.heading a.btn.get-started,.article .section-wrapper.heading.slim-bottom a.btn.get-started,.article.home .section-wrapper.heading.slim-bottom a.btn.get-started{margin:30px 0 0}html{font-family:open sans,"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}h1,.glyphicon,.navbar-brand{visibility:hidden}div[code-block]{font-family:'Inconsolata','Droid Mono',Courier New;padding:10px 18px;border:0px solid #5bc0de;border-left-width:5px;font-size:14px;line-height:1.75;white-space:pre!important}body{margin:0}section{display:block}[hidden]{display:none}a{background-color:transparent}strong{font-weight:700}h1{margin:0.67em 0;font-size:2em}small{font-size:80%}img{border:0}button,input,select{margin:0;font:inherit;color:inherit}button{overflow:visible}button,select{text-transform:none}button,input[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px}body{font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}button,input,select{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}img{vertical-align:middle}.carousel-inner>.item>img{display:block;max-width:100%;height:auto}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.h2,h1,h2,h3,h4,h5{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}.h2,h1,h2,h3{margin-top:20px;margin-bottom:10px}h4,h5{margin-top:10px;margin-bottom:10px}h1{font-size:36px}.h2,h2{font-size:30px}h3{font-size:24px}h4{font-size:18px}h5{font-size:14px}p{margin:0 0 10px}small{font-size:85%}.text-center{text-align:center}ol,ul{margin-top:0;margin-bottom:10px}ul ul{margin-bottom:0}address{margin-bottom:20px;font-style:normal;line-height:1.42857143}.container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{margin-right:-15px;margin-left:-15px}.col-sm-6{position:relative;min-height:1px;padding-right:15px;padding-left:15px}@media (min-width:768px){.col-sm-6{float:left}.col-sm-6{width:50%}}.form-control::-moz-placeholder{color:#999;opacity:1}.form-control:-ms-input-placeholder{color:#999}.form-control::-webkit-input-placeholder{color:#999}.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;background-image:none;border:1px solid transparent;border-radius:4px}.btn-default{color:#333;background-color:#fff;border-color:#ccc}.btn-lg{padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}.fade{opacity:0}.collapse{display:none;visibility:hidden}.caret{display:inline-block;width:0;height:0;margin-left:2px;vertical-align:middle;border-top:4px solid;border-right:4px solid transparent;border-left:4px solid transparent}.dropdown{position:relative}.dropdown-menu{position:absolute;top:100%;left:0;z-index:1000;display:none;float:left;min-width:160px;padding:5px 0;margin:2px 0 0;font-size:14px;text-align:left;list-style:none;background-color:#fff;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #ccc;border:1px solid rgba(0,0,0,0.15);border-radius:4px;-webkit-box-shadow:0 6px 12px rgba(0,0,0,0.175);box-shadow:0 6px 12px rgba(0,0,0,0.175)}.dropdown-menu .divider{height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}.dropdown-menu>li>a{display:block;padding:3px 20px;clear:both;font-weight:400;line-height:1.42857143;color:#333;white-space:nowrap}@media (min-width:768px){.navbar-right .dropdown-menu{right:0;left:auto}}.nav{padding-left:0;margin-bottom:0;list-style:none}.nav>li{position:relative;display:block}.nav>li>a{position:relative;display:block;padding:10px 15px}.navbar{position:relative;min-height:50px;margin-bottom:20px;border:1px solid transparent}@media (min-width:768px){.navbar{border-radius:4px}}@media (min-width:768px){.navbar-header{float:left}}.navbar-collapse{padding-right:15px;padding-left:15px;overflow-x:visible;-webkit-overflow-scrolling:touch;border-top:1px solid transparent;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,0.1);box-shadow:inset 0 1px 0 rgba(255,255,255,0.1)}@media (min-width:768px){.navbar-collapse{width:auto;border-top:0;-webkit-box-shadow:none;box-shadow:none}.navbar-collapse.collapse{display:block!important;height:auto!important;padding-bottom:0;overflow:visible!important;visibility:visible!important}}.navbar-brand{float:left;height:50px;padding:15px 15px;font-size:18px;line-height:20px}.navbar-toggle{position:relative;float:right;padding:9px 10px;margin-top:8px;margin-right:15px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}.navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}.navbar-toggle .icon-bar + .icon-bar{margin-top:4px}@media (min-width:768px){.navbar-toggle{display:none}}.navbar-nav{margin:7.5px -15px}.navbar-nav>li>a{padding-top:10px;padding-bottom:10px;line-height:20px}@media (min-width:768px){.navbar-nav{float:left;margin:0}.navbar-nav>li{float:left}.navbar-nav>li>a{padding-top:15px;padding-bottom:15px}}.navbar-nav>li>.dropdown-menu{margin-top:0;border-top-left-radius:0;border-top-right-radius:0}.navbar-text{margin-top:15px;margin-bottom:15px}@media (min-width:768px){.navbar-text{float:left;margin-right:15px;margin-left:15px}}@media (min-width:768px){.navbar-left{float:left!important}.navbar-right{float:right!important;margin-right:-15px}}.navbar-inverse{background-color:#222;border-color:#080808}.navbar-inverse .navbar-brand{color:#9d9d9d}.navbar-inverse .navbar-text{color:#9d9d9d}.navbar-inverse .navbar-nav>li>a{color:#9d9d9d}.navbar-inverse .navbar-toggle{border-color:#333}.navbar-inverse .navbar-toggle .icon-bar{background-color:#fff}.navbar-inverse .navbar-collapse{border-color:#101010}.carousel{position:relative}.carousel-inner{position:relative;width:100%;overflow:hidden}.carousel-inner>.item{position:relative;display:none}.carousel-inner>.item>img{line-height:1}@media all and (transform-3d),(-webkit-transform-3d){.carousel-inner>.item{-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-perspective:1000;perspective:1000}.carousel-inner>.item.active{left:0;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}.carousel-inner>.active{display:block}.carousel-inner>.active{left:0}.carousel-indicators{position:absolute;bottom:10px;left:50%;z-index:15;width:60%;padding-left:0;margin-left:-30%;text-align:center;list-style:none}.carousel-indicators li{display:inline-block;width:10px;height:10px;margin:1px;text-indent:-999px;background-color:#000 \9;background-color:rgba(0,0,0,0);border:1px solid #fff;border-radius:10px}.carousel-indicators .active{width:12px;height:12px;margin:0;background-color:#fff}@media screen and (min-width:768px){.carousel-indicators{bottom:20px}}.clearfix:after,.clearfix:before,.container-fluid:after,.container-fluid:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before,.row:after,.row:before{display:table;content:" "}.clearfix:after,.container-fluid:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after,.row:after{clear:both}.center-block{display:block;margin-right:auto;margin-left:auto}.hidden{display:none!important;visibility:hidden!important}@-ms-viewport{width:device-width}html,body{overflow:hidden}.panel-wrapper{white-space:nowrap}.panel-wrapper>div{white-space:normal}.left-panel{width:100%;height:100vh;float:left;overflow:auto;-webkit-overflow-scrolling:touch;position:relative;-webkit-box-shadow:0 15px 10px 5px #0f0f0f;-moz-box-shadow:0 15px 10px 5px #0f0f0f;box-shadow:0 15px 10px 5px #0f0f0f;z-index:5}.right-panel{width:50%;height:100vh;display:inline-block;overflow:hidden}.editor-container{height:100%}.editor-container .fa{color:#f9f9f9;position:absolute}.editor-container button{background:#fff;border:none;border-radius:2px;padding:4px 10px;color:#555;box-shadow:0 0 3px #555;position:absolute;outline:none}.editor-container button.show-editor{top:25%;right:0;z-index:5;border-top-right-radius:0;border-bottom-right-radius:0;padding-left:6px}.editor-container button.show-editor:before,.editor-container button.show-editor:after{position:relative;top:1px}@supports (-ms-ime-align:auto){.editor-container button.show-editor:before,.editor-container button.show-editor:after{color:#ff0!important}}.editor-container button.show-editor:before{content:'\002329';right:4px}@-moz-document url-prefix(){.show-editor{padding-left:9px!important}.show-editor:before,.show-editor:after{top:-1px!important}.show-editor:before{right:1px!important}.show-editor:after{left:1px!important}}@supports (-ms-ime-align:auto){.show-editor{padding-left:9px!important}.show-editor:before,.show-editor:after{top:-1px!important}.show-editor:before{right:1px!important}.show-editor:after{left:1px!important}}@media (max-width:820px){.left-panel{width:100%!important}.right-panel{display:none}}.ic-alert{font-size:17px;background-color:#ffffb8;padding:25px 10px 10px;-webkit-box-shadow:0 0 10px rgba(51,51,51,0.2);-moz-box-shadow:0 0 10px rgba(51,51,51,0.2);box-shadow:0 0 10px rgba(51,51,51,0.2)}.ic-alert.ic-alert-email-newsletter-signup{position:fixed;right:0;top:0;z-index:20}.ic-alert.ic-alert-email-newsletter-signup .ic-alert-content{max-width:500px}.ic-alert.ic-alert-email-newsletter-signup .the-form{margin-top:23px}.ic-alert.ic-alert-email-newsletter-signup .close-p{margin-top:10px}.ic-alert.ic-alert-email-newsletter-signup .reassurance{font-size:12px}.ic-alert .ic-alert-content{max-width:700px;margin:auto}.ic-alert .ic-alert-content p{font-size:17px}.ic-alert .ic-alert-content p:last-child{padding-bottom:0;margin-bottom:0}.login-btns{max-width:235px;margin:auto}.login-btns .btn{width:auto;display:block;height:44px;line-height:29px;margin:14px 5px;text-align:left}.login-btns i{width:23px;font-size:26px;margin:3px 11px 0;vertical-align:top}.login-btns .company{margin-left:12px}.login-btns .bar{color:rgba(183,183,183,0.4)}.login-reassurance{display:block;margin:0;padding:0;text-align:center}.align-to-sections{margin:auto;max-width:700px;padding-left:10px;padding-right:10px}img.mug{float:left;margin-right:20px;margin-bottom:20px;height:100px;width:100px;border-radius:50px;-moz-border-radius:50px;-webkit-border-radius:50px;-o-border-radius:50px}.testimonials .carousel{display:table;margin-bottom:0}.testimonials .carousel .mug{position:absolute;margin:auto;top:0;bottom:0}.testimonials .carousel .carousel-inner{overflow:visible}@media (max-width:400px){.testimonials .carousel .carousel-inner .mug{width:85px;height:85px}.testimonials .carousel .carousel-inner .testimonial .quote{padding-left:106px!important;font-size:14px!important}}.testimonials .carousel .carousel-inner .testimonial{display:table;height:100%}.testimonials .carousel .carousel-inner .testimonial .quote{font-style:italic;font-size:14.5px;line-height:24px;padding-left:119px;display:table-cell;vertical-align:middle;padding-bottom:38px}.testimonials .carousel .carousel-inner .testimonial .got-the-job{font-size:17px;display:table-row;height:38px}.testimonials .carousel .mug-indicators{margin:0;left:0;bottom:-15px;position:absolute;width:100%}.testimonials .carousel .mug-indicators li{border-color:transparent;margin:8px}@media (max-width:320px){.testimonials .carousel .mug-indicators li{margin:7px!important}}.testimonials .carousel .mug-indicators li.active{background:transparent;height:10px;width:10px;margin:8px 15px}.testimonials .carousel .mug-indicators li.active img{opacity:1;left:-12px;top:-12px;height:33px;width:33px;border-radius:33px;-moz-border-radius:33px;-webkit-border-radius:33px;-o-border-radius:33px;z-index:2;border:none;-webkit-box-shadow:0 0 4px #3d3d3d;-moz-box-shadow:0 0 4px #3d3d3d;box-shadow:0 0 4px #3d3d3d}.testimonials .carousel .mug-indicators li img{height:23px;width:23px;border-radius:23px;-moz-border-radius:23px;-webkit-border-radius:23px;-o-border-radius:23px;float:left;position:relative;left:-7px;top:-8px;opacity:0.3}.testimonials .carousel.fade{opacity:1}.testimonials .carousel.fade .item{display:block!important;position:absolute;left:0!important;top:0;width:100%;opacity:0;z-index:1}.testimonials .carousel.fade .item:first-child{top:auto;position:relative}.testimonials .carousel.fade .item.active{opacity:1;z-index:2}.full-width-testimonials .carousel{margin-bottom:-4px}.full-width-testimonials .carousel .item{height:160px}@media (max-width:564px){.full-width-testimonials .carousel .item{height:174px}}@media (max-width:470px){.full-width-testimonials .carousel .item{height:197px}}@media (max-width:416px){.full-width-testimonials .carousel .item{height:222px}}@media (max-width:320px){.full-width-testimonials .carousel .item{height:293px}}.full-width-testimonials .carousel .mug{height:97px;width:97px;border-radius:97px;-moz-border-radius:97px;-webkit-border-radius:97px;-o-border-radius:97px}.full-width-testimonials .carousel .got-the-job{font-size:16px!important;margin-bottom:12px}.home .section-wrapper.proof .section{padding-top:40px;padding-bottom:30px}.home .section-wrapper.proof .section .logos{text-align:center;margin:51px auto 0}.home .section-wrapper.proof .section .logos .disclaimer{margin-bottom:-20px;padding-top:10px}.home .section-wrapper.proof .section .logos .disclaimer p{color:grey;font-size:13px}.share-btns.share-btns-quiz-end{line-height:normal;text-align:center;padding-bottom:25px}.custom-share{display:inline-block;width:92px;height:34px;border-radius:17px;-moz-border-radius:17px;-webkit-border-radius:17px;-o-border-radius:17px;color:#fff;text-decoration:none;text-align:center;font-size:14px;word-spacing:5px;padding-top:7px;margin:0 2px;font-weight:100}.custom-share:link,.custom-share:visited{color:#fff;text-decoration:none}.custom-share.facebook-share{background:#4c67a1}.custom-share.twitter-share{background:#55acee}.custom-share.linkedin-share{background:#0077b5}.fb-like{overflow:hidden}.fb-social-proof-widget-wrapper{text-align:center;margin-top:20px;overflow:hidden}.fb-social-proof-widget-wrapper .fb-social-proof-widget{margin:auto}[ng-cloak]{display:none!important}body{background-color:#fff}h1,h2,h3,h4,h5,.h2{font-weight:700;color:#555;letter-spacing:-1px}#footer{background:-webkit-linear-gradient(#f7f7f7,#fff);background:-o-linear-gradient(#f7f7f7,#fff);background:-moz-linear-gradient(#f7f7f7,#fff);background:linear-gradient(#f7f7f7,#fff);text-align:center;font-size:11px;line-height:20px;margin-top:100px;margin-bottom:10px;clear:both;color:#707070;padding:10px}@media (max-width:320px){#footer{font-size:9px;line-height:14px}}#footer .links{text-align:left;max-width:700px;margin:auto}#footer .links ul li{font-size:13px}#footer .social-media{margin:0 0 10px}#footer .social-media a{display:inline-block;border-radius:13px;-moz-border-radius:13px;-webkit-border-radius:13px;-o-border-radius:13px;color:#fff;font-size:17px;width:26px;height:26px;line-height:26.78px;margin:0 3.5px;letter-spacing:-0.5px}#footer .social-media a.facebook{background:#4c67a1}#footer .social-media a.twitter{background:#55acee}#footer .social-media .fa-facebook{top:1px;position:relative}#footer .newsletter-link{font-size:16px;line-height:30px;display:inline-block;margin-bottom:10px}.article{font-size:15px;color:#555}.article p,.article li{line-height:24px}.article .section-wrapper.heading h1{font-size:52px;margin:0 0 15px -3px}@media (max-width:480px){.article .section-wrapper.heading h1{font-size:30px}}@media (max-width:320px){.article .section-wrapper.heading h1{font-size:32px}}.article .section-wrapper.heading h2{font-weight:400}.article .section-wrapper.heading .section>p:first-of-type{margin-top:40px}@media (max-width:767px){.article .section-wrapper.heading .section>p:first-of-type{margin:15px 0}}.article h2{margin:0 0 10px;font-size:29px;padding:6px 0 15px;line-height:35px}@media (max-width:480px){.article h2{font-size:18.75px;line-height:30px}}.article .section-wrapper{padding:50px 0}@media (max-width:320px){.article .section-wrapper{padding:25px 0}}.article .section-wrapper.heading{padding:100px 0}@media (max-width:767px){.article .section-wrapper.heading{padding:25px 0}}.article .section-wrapper.heading.header-extension{text-align:center;background-color:#5bc0de;color:#fff}.article .section-wrapper.heading.header-extension a{color:#fff;font-weight:700}.article .section-wrapper.heading.header-extension h1,.article .section-wrapper.heading.header-extension h2{color:#fff}.article .section-wrapper.slim{padding:0}.article .section-wrapper .section{margin:auto;max-width:700px;padding:10px}.article .section-wrapper.widest .section{max-width:none}.article .section-wrapper.wider .section{max-width:1050px}@media (max-width:767px){.article .section-wrapper.wider .section{margin:auto}}.article .section-wrapper a.get-started{margin:20px 0}.article.home .section-wrapper.heading{padding-bottom:20px;text-align:center;background-color:#5bc0de}.article.home .section-wrapper.heading p,.article.home .section-wrapper.heading strong,.article.home .section-wrapper.heading h1{text-align:center;color:#fff}.article.home .section-wrapper.heading p{font-size:19px;margin-bottom:15px;line-height:30px}@media (max-width:496px){.article.home .section-wrapper.heading h1{font-size:41px;line-height:48px}.article.home .section-wrapper.heading p{font-size:17px;line-height:24px}}@media (max-width:320px){.article.home .section-wrapper.heading h1{font-size:37px;line-height:44px}}.section-wrapper.heading.header-extension a.get-started{line-height:37px;margin:50px auto 60px;border:2px solid #fff}.inline-testimonial{font-size:16px;line-height:32px;padding:15px;display:inline-block;background-color:#fff;margin:15px auto;position:relative}.inline-testimonial .text{display:inline-block;max-width:640px;text-align:left}.inline-testimonial .author{margin:0 0 0 11px;color:rgba(112,112,112,0.62);font-style:italic;display:inline-block}.inline-testimonial .image-wrapper{text-align:center}.inline-testimonial img{border-radius:50%;height:100px;width:100px;border:4px solid #fff;margin:5px}.inline-testimonial .quotation-mark{color:#ccc;vertical-align:bottom;font-family:times new roman;line-height:0;margin:0 10px 10px 0;font-size:70px}.inline-testimonial.wider .text{max-width:650px}@media (max-width:850px){.inline-testimonial{background-color:transparent}.inline-testimonial img{position:relative!important;height:90px;width:90px;border:0}.inline-testimonial .text-with-image{display:inline}}.quotation-mark{color:#ccc;vertical-align:bottom;font-family:times new roman;line-height:0;margin:0 10px 10px 0;font-size:70px}.article .section-wrapper.heading,.article.home .section-wrapper.heading{padding:30px 0}.article .section-wrapper.heading h1,.article.home .section-wrapper.heading h1{margin:0;padding:0 0 5px}@media (max-width:320px){.article .section-wrapper.heading h1,.article.home .section-wrapper.heading h1{padding-bottom:6px}}.article .section-wrapper.heading h2,.article.home .section-wrapper.heading h2{margin:0;padding:0;font-size:22px;line-height:30px}@media (max-width:320px){.article .section-wrapper.heading h2,.article.home .section-wrapper.heading h2{font-size:19px;line-height:27px}}.article .section-wrapper.heading p:first-of-type,.article.home .section-wrapper.heading p:first-of-type{margin:0;padding:10px 0 0}.article .section-wrapper.heading a.btn.get-started,.article.home .section-wrapper.heading a.btn.get-started{margin:30px 0 0}.shaded{background-color:#f7f7f7}.modal .close{position:absolute;top:5px;right:5px}.modal h3{text-align:center;margin:5px 0}.full-access-badge{color:#ff0}.navbar{margin-bottom:0;background-color:#5bc0de;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;-o-border-radius:0;border:0;color:#fff}.navbar .nav.navbar-nav a,.navbar .nav.navbar-nav p{color:#fff;font-size:14px}.navbar .dropdown.tips .dropdown-menu li a{padding-top:7px;padding-bottom:7px}.navbar:not(.print-header) .navbar-brand{margin-right:20px;padding-left:25px;margin-left:10px}.navbar.print-header .navbar-brand img.logo{display:inline-block;margin:0;margin-top:-5px;padding:0}.navbar .navbar-brand{color:#fff;font-weight:700;letter-spacing:-1px;font-size:20px}.navbar .nav.navbar-nav>li>a{text-decoration:none;font-weight:400}.navbar .nav.navbar-nav>li>a.upgrade{font-size:1.1em;padding-top:-5px;font-weight:700;color:#fff}.navbar .nav.navbar-nav>li>a.upgrade:after{content:"";position:absolute;top:0;right:0;width:100%;border-top:3px solid #ffffad}.navbar .navbar-collapse{border-top:0}.navbar button.navbar-toggle{border-color:#fff}.navbar p.navbar-text{color:#fff}.btn.btn-branded{background-color:#5bc0de;color:#fff}.btn.btn-bold{font-weight:700}.btn.btn-default{background:0 0;color:#555}.btn.btn-lg{height:45px;font-weight:700;border-radius:22.5px;-moz-border-radius:22.5px;-webkit-border-radius:22.5px;-o-border-radius:22.5px}.btn.btn-lg.get-started{font-size:18px;height:40px;line-height:40px;border-radius:20px;-moz-border-radius:20px;-webkit-border-radius:20px;-o-border-radius:20px;vertical-align:middle;padding:0 20px}.btn.btn-rarr:after{content:" \27A1"}#select-language-content-width-hack{border:none;font-weight:300;font-size:11px;padding-right:13px;-webkit-appearance:none;-moz-appearance:none;appearance:none}div[code-block]{padding-bottom:0;margin-bottom:18px;display:block;width:auto;position:relative;background:#fbfbfb}.right-drawer{max-width:300px;top:0;right:0;padding:25px;-webkit-box-shadow:0 0 30px rgba(51,51,51,0.8);-moz-box-shadow:0 0 30px rgba(51,51,51,0.8);box-shadow:0 0 30px rgba(51,51,51,0.8);border-radius:0 0 0 20px;-moz-border-radius:0 0 0 20px;-webkit-border-radius:0 0 0 20px;-o-border-radius:0 0 0 20px}@media (max-width:300px){.right-drawer{border-radius:0 0 0 0;-moz-border-radius:0 0 0 0;-webkit-border-radius:0 0 0 0;-o-border-radius:0 0 0 0}}.quiz .card .btn-sets{margin-top:25px;text-align:center}.quiz .card .btn-sets .prompt{font-size:17px}.quiz .card .btn-sets .btn{height:45px;line-height:45px;margin:0 0 8px;padding:0 20px;border-radius:22.5px;-moz-border-radius:22.5px;-webkit-border-radius:22.5px;-o-border-radius:22.5px;background:0 0}.quiz .card .btn-sets .btn .text{font-size:15px}.quiz .card .question-end-outside-course-bottom-cta{text-align:center;margin:75px auto 150px}.quiz .card .sections{font-family:lora,Georgia,serif;font-size:15px;line-height:26px;color:#555;background-color:#f7f7f7;margin-top:30px}.quiz .card strong{font-weight:700}.quiz p{font-size:30px;color:#555}@-webkit-keyframes background-blue-breathe{0%,100%{background-color:#5bc0de}50%{background-color:rgba(91,192,222,0.8)}}@-moz-keyframes background-blue-breathe{0%,100%{background-color:#5bc0de}50%{background-color:rgba(91,192,222,0.8)}}@-ms-keyframes background-blue-breathe{0%,100%{background-color:#5bc0de}50%{background-color:rgba(91,192,222,0.8)}}@-o-keyframes background-blue-breathe{0%,100%{background-color:#5bc0de}50%{background-color:rgba(91,192,222,0.8)}}@keyframes background-blue-breathe{0%,100%{background-color:#5bc0de}50%{background-color:rgba(91,192,222,0.8)}}.btn.get-started{-moz-animation:background-blue-breathe 2s infinite alternate ease-in-out 4s both;-webkit-animation:background-blue-breathe 2s infinite alternate ease-in-out 4s both;-o-animation:background-blue-breathe 2s infinite alternate ease-in-out 4s both;-ms-animation:background-blue-breathe 2s infinite alternate ease-in-out 4s both;animation:background-blue-breathe 2s infinite alternate ease-in-out 4s both}.box-shadowed-light{background-color:rgba(200,200,200,0.2);-webkit-box-shadow:0 0 10px 4px rgba(200,200,200,0.2);-moz-box-shadow:0 0 10px 4px rgba(200,200,200,0.2);box-shadow:0 0 10px 4px rgba(200,200,200,0.2);padding:1px}#loading{display:none;position:fixed;top:50%;width:100%;margin:0;padding:0;text-align:center;font-size:30px;font-weight:700;color:#707070}@-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@-moz-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@-ms-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@-o-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}.below-nav{-moz-animation:fade-in 0.25s ease-in-out;-webkit-animation:fade-in 0.25s ease-in-out;-o-animation:fade-in 0.25s ease-in-out;-ms-animation:fade-in 0.25s ease-in-out;animation:fade-in 0.25s ease-in-out}address{margin-bottom:0}@media (max-width:1030px){.navbar-header{float:none}.navbar-left,.navbar-right{float:none!important}.navbar-toggle{display:block}.navbar-collapse{border-top:1px solid transparent;box-shadow:inset 0 1px 0 rgba(255,255,255,0.1)}.navbar-collapse.collapse{display:none!important}.navbar-nav{float:none!important;margin:7.5px 0}.navbar-nav>li{float:none}.navbar-nav>li>a{padding-top:10px;padding-bottom:10px}.navbar-nav>li>p.navbar-text{margin:0;padding:10px 15px}}.header-cta-box{max-width:500px;padding:20px;background-color:#fff;margin:auto;border:solid #ffffb8;border-width:10px 0;margin-top:35px}.header-cta-box h2,.header-cta-box p{text-align:left!important;color:#555!important}.header-cta-box h2{font-sie:20px!important;font-weight:bolder!important}.header-cta-box p{font-size:15px!important;line-height:24px!important;margin-bottom:10px!important}.print-header{display:none}@media (max-width:450px){.input-group,.email-magnet-one-liner .submit{display:block}}@media (max-width:320px){.input-group,.email-magnet-one-liner .submit{font-size:17px!important;padding-left:0!important;padding-right:0!important}}@media (max-width:450px){.submit{width:100%;border-radius:6px!important;margin-top:5px}}@media (max-width:450px){.input-group input{border-radius:6px!important}}#print-footer{display:none}.article .survey h3,.article .survey p{color:#fff!important}.homepage-company-logo{display:inline-block;overflow:hidden;text-indent:-9999px;text-align:left;width:120px;height:90px}.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;transform:translate(0,0)}</style>
+
+		
+
+    <link rel="apple-touch-icon" href="../../images/cake_white_on_blue_128_128_unrounded.png">
+
+    
+
+    <meta name="50fc73d52056532c18787976ceb78fddb87b78b2" content="ceb4cec06fc4a780c7b31b85c07cf75d1ca58d9d" />
+	<meta name="theme-color" content="#5bc0de"/>
+</head>
+
+<body ng-app="prepApp" ng-init="contentItemIsEmbedded = false"
+    class="
+           
+           
+           ">
+
+
+
+<div class="ic-alerts">
+    
+        <div ng-cloak class="ic-alert ic-alert-interruption ic-alert-email-newsletter-signup right-drawer" ng-show='showing' ng-controller='AlertDrawerCtrl' ng-init="type='email_newsletter'">
+    <div class="ic-alert-content">
+
+        <h2>
+            Get a <em>free</em> weekly practice problem!
+        </h2>
+
+        <p>
+            Keep that axe sharp.
+        </p>
+
+        <div ng-controller='EmailNewsletterSignupCtrl' id="email_magnet_alert-drawer-newsletter-signup" class="email-magnet" campaign="weekly_problem">
+    <form class="the-form center-block" ng-hide="success" ng-submit="signupPress()">
+        
+        <div ng-cloak ng-show="failureMessage" ng-bind="failureMessage" class="error"></div>
+        <div class="input-group input-group-lg email-magnet-one-liner">
+                <input type="email" ng-model='email' placeholder="me@gmail.com" class="form-control" ng-disabled="disabled" required>
+                <span class="input-group-btn">
+                    <input ng-cloak type="submit" class="submit btn btn-branded btn-bold" style="" ng-value="disabled ? 'Working...' : 'Sign up!'" ng-disabled="disabled"/>
+                </span>
+        </div>
+        
+        
+        <p class="reassurance text-center">
+            No spam, ever. Easy unsubscribe.
+        </p>
+        
+    </form>
+
+    <div ng-cloak ng-show="success" class="success">
+        
+            <p class="text-center">
+                <em>
+                Cool, watch your inbox!
+                </em>
+            </p>
+
+        
+    </div>
+</div>
+
+
+        <p class="text-center close-p" ng-hide="success">
+            <small>
+                <a href="#" ng-click="noThanksClick()">&times; No thanks</a>
+            </small>
+        </p>
+    </div>
+</div>
+
+
+    
+</div>
+
+<select id="select-language-content-width-hack" style="display: none">
+    <option></option>
+</select>
+
+
+
+<div class="panel-wrapper" ng-controller="PanelWrapperCtrl">
+<div class="left-panel scrolling-body"
+     ng-class="{
+        'editor-open-or-opening': editorOpenOrOpening,
+        'editor-opening-or-closing': editorOpeningOrClosing,
+        'editor-open-or-partly-open': editorOpenOrPartlyOpen,
+     }">
+
+
+
+    
+    
+<div class="print-header navbar-print-header navbar navbar-inverse">
+    <div class="navbar-header">
+        <span class="navbar-brand">
+            <img src="../../static/images/cake_white_20_21.png" class="logo" />
+            Interview Cake
+        </span>
+    </div>
+</div>
+
+
+
+
+    <div class="navbar navbar-normal navbar-inverse" role="navigation" ng-controller="HeaderCtrl" language="javascript">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../index.html">
+                Interview Cake
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                
+                <li class="dropdown tips">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow">
+                        Interview Tips <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="../../coding-interview-beginner-faq.html">
+                                First coding interview? Start here.
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../../coding-interview-tips.html">
+                                General coding interview tips
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../../tricks-for-getting-unstuck-programming-interview.html">
+                                How to get un-stuck
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../../impostor-syndrome-in-programming-interviews.html">
+                                Beating impostor syndrome
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../../24-hours-before-onsite-whiteboard-coding-interview.html">
+                                24 hours before your onsite
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../../why-youre-hitting-dead-ends-in-whiteboard-interviews.html">
+                                Why you're hitting dead ends
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../../getting-the-most-from-coding-interview-practice-sessions.html">
+                                Best ways to practice
+                            </a>
+                        </li>
+
+                        
+
+                        <li>
+                            <a href="../../coding-interview-timeline-exploding-offers-burnout-negotiation-leverage.html">
+                                Organizing your interview timeline
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../../behavioral-questions-programming-interview-story-telling.html">
+                                Mastering behavioral questions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../../coding-interview-faq.html">
+                                Common issues
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" rel="nofollow">
+                        Glossary <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+    <a href="../../article/javascript/big-o-notation-time-and-space-complexityd41d.html">Big O Notation: <span complexity="n"></span>, <span complexity="n^2"></span>, etc</a>
+</li>
+<li>
+    <a href="../../article/javascript/logarithmsd41d.html">Logarithms</a>
+</li>
+<li>
+    <a href="../../concept/javascript/triangular-seriesd41d.html">Triangular Series</a>
+</li>
+
+<li role="separator" class="divider"></li>
+
+<li>
+    <a href="../../concept/javascript/binary-searchd41d.html">Binary Search</a>
+</li>
+<li>
+    <a href="../../concept/javascript/bfsd41d.html">Breadth-First Search</a>
+</li>
+<li>
+    <a href="../../concept/javascript/dfsd41d.html">Depth-First Search</a>
+</li>
+
+
+
+<li role="separator" class="divider"></li>
+<li>
+    <a href="../../concept/javascript/brute-forced41d.html">Brute Force Algorithms</a>
+</li>
+<li>
+    <a href="../../concept/javascript/greedyd41d.html">Greedy Algorithms</a>
+</li>
+<li>
+    <a href="../../concept/javascript/bottom-upd41d.html">Bottom-Up Algorithms</a>
+</li>
+<li>
+    <a href="../../concept/javascript/overlapping-subproblemsd41d.html">Overlapping Subproblems</a>
+</li>
+<li>
+    <a href="../../concept/javascript/memoizationd41d.html">Memoization</a>
+</li>
+
+<li role="separator" class="divider"></li>
+
+<li>
+    <a href="../../concept/javascript/short-circuit-evaluationd41d.html">Short Circuit Evaluation</a>
+</li>
+<li>
+    <a href="../../concept/javascript/garbage-collectiond41d.html">Garbage Collection</a>
+</li>
+<li>
+    <a href="../../concept/javascript/js-closured41d.html">Closure</a>
+</li>
+<li>
+    <a href="../../concept/javascript/sliced41d.html">Array Slicing</a>
+</li>
+<li>
+    <a href="../../concept/javascript/hashingd41d.html">Hashing</a>
+</li>
+<li>
+    <a href="../../concept/javascript/mutabled41d.html">Mutable vs Immutable</a>
+</li>
+<li>
+    <a href="../../concept/javascript/in-placed41d.html">In-Place Operation</a>
+</li>
+
+<li role="separator" class="divider"></li>
+
+<li>
+    <a href="../../article/javascript/data-structures-coding-interviewd41d.html">Data Structures Overview</a>
+</li>
+
+<li>
+    <a href="../../concept/javascript/arrayd41d.html">Array</a>
+</li>
+<li>
+    <a href="../../concept/javascript/dynamic-arrayd41d.html">Dynamic Array</a>
+</li>
+<li>
+    <a href="../../concept/javascript/hash-mapd41d.html">Hash Table</a>
+</li>
+<li>
+    <a href="../../concept/javascript/linked-listd41d.html">Linked List</a>
+</li>
+<li>
+    <a href="../../concept/javascript/queued41d.html">Queue</a>
+</li>
+<li>
+    <a href="../../concept/javascript/stackd41d.html">Stack</a>
+</li>
+<li>
+    <a href="../../concept/javascript/binary-treed41d.html">Binary Tree</a>
+</li>
+<li>
+    <a href="../../concept/javascript/graphd41d.html">Graph</a>
+</li>
+
+<li role="separator" class="divider"></li>
+
+<li>
+    <a href="../../concept/javascript/binary-numbersd41d.html">Binary Numbers</a>
+</li>
+<li>
+    <a href="../../concept/javascript/andd41d.html">Bitwise AND</a>
+</li>
+<li>
+    <a href="../../concept/javascript/ord41d.html">Bitwise OR</a>
+</li>
+<li>
+    <a href="../../concept/javascript/xord41d.html">Bitwise XOR</a>
+</li>
+<li>
+    <a href="../../concept/javascript/notd41d.html">Bitwise NOT</a>
+</li>
+<li>
+    <a href="../../concept/javascript/bit-shiftd41d.html">Bit Shifting</a>
+</li>
+<li>
+    <a href="../../concept/javascript/integer-overflowd41d.html">Integer Overflow</a>
+</li>
+
+                    </ul>
+                </li>
+
+				
+                <li>
+					
+                        <a href="../../table-of-contents.html">Full Course</a>
+                    
+                </li>
+				
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right" ng-cloak ng-show="currentUserSet">
+
+                <li ng-cloak>
+
+					
+
+                    <a class="upgrade" ng-hide="currentUser.is_full_access" href="../../upgrade.html">
+                        Get the full course
+                        <span class="glyphicon glyphicon-chevron-right full-access-badge"></span>
+                    </a>
+                </li>
+
+                
+                    <li class="dropdown language-dropdown" ng-controller="NavbarTranslationCtrl" ng-show="contentLanguage && currentUser.is_full_access">
+                        <a rel="nofollow" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span ng-bind="contentLanguage.display_name"></span> <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li ng-repeat="language in contentLanguages | orderBy: 'display_name'">
+                                <a href="#" ng-click="updateLanguage(language, true)" ng-bind="::language.display_name"></a>
+                            </li>
+                        </ul>
+                    </li>
+                
+
+                
+                    <li>
+                        <p class="navbar-text">
+                            
+                            <span ng-show="currentUser.is_full_access" class="glyphicon glyphicon-star full-access-badge"></span>
+                        </p>
+                    </li>
+                    <li ng-hide="currentUser.is_anonymous">
+                        <a rel="nofollow" ng-click="logoutClick($event)" tracklink the-event="Logout Link Click" the-properties='{"which" : "header top right"}' href="#">Log out</a>
+                    </li>
+                    <li ng-show="currentUser.is_anonymous">
+                        <a href="#" rel="nofollow" ng-click="loginClick('header top right')">Log in to save progress</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+
+    
+
+    <div class="below-nav">
+
+        
+
+        
+        
+
+<div class="quiz" ng-controller="PrepSeshApp">
+    
+        
+    
+
+    
+        <div class="free-questions-left" ng-show='currentUserSet && !currentUser.is_full_access' ng-cloak >
+
+<h3 class="text-center">
+
+	You only have <strong class="num" ng-bind="currentUser.getNumFreeQuestionsLeft()"></strong> free question<span ng-show="currentUser.getNumFreeQuestionsLeft()!=1">s</span> left<span ng-show="currentUser.getNumFreeQuestionsLeft()!=1"> (including this one)</span>.
+
+</h3>
+
+
+<div id="crash-course-email" class="interstitial-cta-box" blocks-news-drawer-when-visible>
+<p class="subheader text-center">
+  But it doesn't have to end here! Sign up for the 7-day coding interview crash course and you'll get a <strong>free</strong> Interview Cake problem every week.
+</p>
+<div class="email-input">
+
+<div ng-controller='EmailNewsletterSignupCtrl' id="email_magnet_free-questions-left" class="email-magnet" campaign="intro_course">
+    <form class="the-form center-block" ng-hide="success" ng-submit="signupPress()">
+        
+        <div ng-cloak ng-show="failureMessage" ng-bind="failureMessage" class="error"></div>
+        <div class="input-group input-group-lg email-magnet-one-liner">
+                <input type="email" ng-model='email' placeholder="me@gmail.com" class="form-control" ng-disabled="disabled" required>
+                <span class="input-group-btn">
+                    <input ng-cloak type="submit" class="submit btn btn-branded btn-bold" style="" ng-value="disabled ? 'Working...' : 'Sign me up!'" ng-disabled="disabled"/>
+                </span>
+        </div>
+        
+        
+        <p class="reassurance text-center">
+            No spam, ever.
+        </p>
+        
+    </form>
+
+    <div ng-cloak ng-show="success" class="success">
+        
+            <p class="custom-success text-center">
+                <strong>
+                    You're in!
+                </strong>
+            </p>
+        
+    </div>
+</div>
+
+</div>
+</div>
+
+
+</div>
+
+    
+
+
+    
+    <div class="wrapper-hack" ng-init="slug='largest-stack'">
+<div class="card" ng-class="{'started': btnPresses.length > 0}" ng-controller="CardCtrl">
+
+    <div class="sections" ng-cloak>
+        
+    <div>
+<span class="question-data" data-difficulty="7" data-meta_desc="You've implemented a Stack class, but you want to access the largest element in your stack from time to time. Write an augmented LargestStack class." data-name="Largest Stack" data-title="" data-weight="10" data-num-hints="1" data-num-gotchas="2" ng-init="setNumHints(1); setNumGotchas(2); ">
+</span>
+<div section="question">
+<p>
+<strong>
+You want to be able to access the <em>largest element</em> in a <span concept="stack">stack.</span>
+</strong>
+</p>
+<span words="question__largest-stack__implemented-stack-class"><p>
+                You've already implemented this <span var="question__largest-stack__stack-class">Stack</span> <span words="question__largest-stack__class-or-structure">class</span>:
+                </p>
+<div class="clearfix"></div>
+<div code-block="question__largest-stack__stack-class" language="javascript" translation-highlighting="static" actual-language="javascript">class Stack {
+  constructor() {
+
+    // Initialize an empty stack
+    this.items = [];
+  }
+
+  // Push a new item onto the stack
+  push(item) {
+    this.items.push(item);
+  }
+
+  // Remove and return the last item
+  pop() {
+
+    // If the stack is empty, return null
+    // (It would also be reasonable to throw an exception)
+    if (!this.items.length) {
+      return null;
+    }
+    return this.items.pop();
+  }
+
+  // Returns the last item without removing it
+  peek() {
+    if (!this.items.length) {
+      return null;
+    }
+    return this.items[this.items.length - 1];
+  }
+}</div></span>
+<p>
+Use <span words="question__largest-stack__your-or-built-in">your</span> <span var="question__largest-stack__stack-class">Stack</span> <span words="question__largest-stack__class-or-structure">class</span> to <strong>implement a <em>new</em> <span words="question__largest-stack__class-or-structure">class</span> <span var="question__largest-stack__max-stack-class">MaxStack</span> with a <span words="question__largest-stack__function-in-a-class">method</span> <span func="question__largest-stack__get-max">getMax</span> that returns the largest element in the stack.</strong> <span func="question__largest-stack__get-max">getMax</span> should not remove the item.
+</p>
+<p>
+<small>
+Your stacks will contain only integers.
+</small>
+</p>
+</div>
+<div section="gotchas">
+<div note="" number="1" type="gotcha">
+<p>
+What if we push several items in increasing numeric order (like 1, 2, 3, 4...), so that there is a <em>new max</em> after each <span func="question__largest-stack__push">push</span>? What if we then <span func="question__largest-stack__pop">pop</span> each of these items off, so that there is a <em>new max</em> after each <span func="question__largest-stack__pop">pop</span>? Your algorithm shouldn't pay a steep cost in these edge cases.
+</p>
+</div>
+<div note="" number="2" type="gotcha">
+<p>
+You should be able to get a runtime of <span complexity="1"></span> for <span func="question__largest-stack__push">push</span>, <span func="question__largest-stack__pop">pop</span>, and <span func="question__largest-stack__get-max">getMax</span>.
+</p>
+</div>
+</div>
+<div section="breakdown"><div note="" number="1" type="hint">
+
+
+	<div class="question-section-walled-notice">
+
+	
+
+		<h3>
+			Start your free trial!
+		</h3>
+		<p>
+			Log in or sign up with one click to get immediate access to <span class="num" ng-bind="currentUser.getNumFreeQuestionsLeft()"></span> free mock interview question<span ng-show="currentUser.getNumFreeQuestionsLeft()!=1">s</span>
+		</p>
+
+	
+
+	<div class="login-btns">
+    <a ng-href="/auth/login/github/?next=/question/javascript/largest-stack" class="btn btn-soc-github" rel="nofollow"><i class="fa fa-github"></i> <span class="bar">|</span> <span class="company">GitHub Auth</span></a>
+    <a ng-href="/auth/login/google-oauth2/?next=/question/javascript/largest-stack" class="btn btn-soc-google-plus" rel="nofollow"><i class="fa my-fa-google-plus"></i> <span class="bar">|</span> <span class="company">Google Auth</span></a>
+    <a ng-href="/auth/login/facebook/?next=/question/javascript/largest-stack" class="btn btn-soc-facebook" rel="nofollow"><i class="fa my-fa-facebook"></i> <span class="bar">|</span> <span class="company">Facebook Auth</span></a>
+</div>
+<p class="login-reassurance">
+    <small>
+        We'll never post on your wall or message your friends.
+    </small>
+</p>
+
+<div class="what-about-password">
+    <p>
+        <small><a data-toggle="collapse" href="#passwordInfo">Where do I enter my password?</a></small>
+    </p>
+
+    <div class="collapse" id="passwordInfo">
+        <div class="explanation">
+            <p>
+                Actually, <strong>we don't support password-based login.</strong> Never have. Just the OAuth methods above. Why?
+            </p>
+            <ol>
+            <li>
+                It's easy and quick. No "reset password" flow. No password to forget.
+            </li>
+            <li>
+                It lets us avoid storing passwords that hackers could access and use to try to log into our users' email or bank accounts.
+            </li>
+            <li>
+                It makes it harder for one person to share a paid Interview Cake account with multiple people.
+            </li>
+        </div>
+    </div>
+</div>
+
+
+	</div>
+	<div class="clearfix"></div>
+
+
+</div></div>
+<div section="solution">
+
+
+	<div class="question-section-walled-notice">
+
+	
+
+		<h3>
+			Start your free trial!
+		</h3>
+		<p>
+			Log in or sign up with one click to get immediate access to <span class="num" ng-bind="currentUser.getNumFreeQuestionsLeft()"></span> free mock interview question<span ng-show="currentUser.getNumFreeQuestionsLeft()!=1">s</span>
+		</p>
+
+	
+
+	<div class="login-btns">
+    <a ng-href="/auth/login/github/?next=/question/javascript/largest-stack" class="btn btn-soc-github" rel="nofollow"><i class="fa fa-github"></i> <span class="bar">|</span> <span class="company">GitHub Auth</span></a>
+    <a ng-href="/auth/login/google-oauth2/?next=/question/javascript/largest-stack" class="btn btn-soc-google-plus" rel="nofollow"><i class="fa my-fa-google-plus"></i> <span class="bar">|</span> <span class="company">Google Auth</span></a>
+    <a ng-href="/auth/login/facebook/?next=/question/javascript/largest-stack" class="btn btn-soc-facebook" rel="nofollow"><i class="fa my-fa-facebook"></i> <span class="bar">|</span> <span class="company">Facebook Auth</span></a>
+</div>
+<p class="login-reassurance">
+    <small>
+        We'll never post on your wall or message your friends.
+    </small>
+</p>
+
+<div class="what-about-password">
+    <p>
+        <small><a data-toggle="collapse" href="#passwordInfo">Where do I enter my password?</a></small>
+    </p>
+
+    <div class="collapse" id="passwordInfo">
+        <div class="explanation">
+            <p>
+                Actually, <strong>we don't support password-based login.</strong> Never have. Just the OAuth methods above. Why?
+            </p>
+            <ol>
+            <li>
+                It's easy and quick. No "reset password" flow. No password to forget.
+            </li>
+            <li>
+                It lets us avoid storing passwords that hackers could access and use to try to log into our users' email or bank accounts.
+            </li>
+            <li>
+                It makes it harder for one person to share a paid Interview Cake account with multiple people.
+            </li>
+        </div>
+    </div>
+</div>
+
+
+	</div>
+	<div class="clearfix"></div>
+
+
+</div>
+<div section="complexity">
+<p class="at-a-glance">
+<span complexity="1"></span> time for <span func="question__largest-stack__push">push</span>, <span func="question__largest-stack__pop">pop</span>, and <span func="question__largest-stack__get-max">getMax</span>. <span complexity="m"></span> additional space, where <span math="">m</span> is the number of operations performed on the stack.
+</p>
+<!--
+(click for proof)
+[proof: we've added O(1) for each of push and pop, and getMax is O(1) as well. We haven't shown the underlying time cost for push and pop, because we haven't shown how they are implemented. Here's a sample implementation of a simple stack that is O(1):]
+-->
+</div>
+<div section="bonus">
+<p>
+        Our solution requires <span complexity="m"></span> additional
+        space for the second stack. But do we really need it?
+    </p>
+<p>
+        Can you come up with a solution that
+        requires <span complexity="1"></span> additional space? (It's
+        tricky!)
+    </p>
+
+</div>
+<div section="learnings">
+
+
+	<div class="question-section-walled-notice">
+
+	
+
+		<h3>
+			Start your free trial!
+		</h3>
+		<p>
+			Log in or sign up with one click to get immediate access to <span class="num" ng-bind="currentUser.getNumFreeQuestionsLeft()"></span> free mock interview question<span ng-show="currentUser.getNumFreeQuestionsLeft()!=1">s</span>
+		</p>
+
+	
+
+	<div class="login-btns">
+    <a ng-href="/auth/login/github/?next=/question/javascript/largest-stack" class="btn btn-soc-github" rel="nofollow"><i class="fa fa-github"></i> <span class="bar">|</span> <span class="company">GitHub Auth</span></a>
+    <a ng-href="/auth/login/google-oauth2/?next=/question/javascript/largest-stack" class="btn btn-soc-google-plus" rel="nofollow"><i class="fa my-fa-google-plus"></i> <span class="bar">|</span> <span class="company">Google Auth</span></a>
+    <a ng-href="/auth/login/facebook/?next=/question/javascript/largest-stack" class="btn btn-soc-facebook" rel="nofollow"><i class="fa my-fa-facebook"></i> <span class="bar">|</span> <span class="company">Facebook Auth</span></a>
+</div>
+<p class="login-reassurance">
+    <small>
+        We'll never post on your wall or message your friends.
+    </small>
+</p>
+
+<div class="what-about-password">
+    <p>
+        <small><a data-toggle="collapse" href="#passwordInfo">Where do I enter my password?</a></small>
+    </p>
+
+    <div class="collapse" id="passwordInfo">
+        <div class="explanation">
+            <p>
+                Actually, <strong>we don't support password-based login.</strong> Never have. Just the OAuth methods above. Why?
+            </p>
+            <ol>
+            <li>
+                It's easy and quick. No "reset password" flow. No password to forget.
+            </li>
+            <li>
+                It lets us avoid storing passwords that hackers could access and use to try to log into our users' email or bank accounts.
+            </li>
+            <li>
+                It makes it harder for one person to share a paid Interview Cake account with multiple people.
+            </li>
+        </div>
+    </div>
+</div>
+
+
+	</div>
+	<div class="clearfix"></div>
+
+
+</div>
+<script type="text/javascript">
+
+            //
+            var elTranslations = {"code-blocks": {"setup": {"objectivec": {"content": "@interface ICKStack : NSObject {\n    NSMutableArray<NSNumber *> *_items;\n}\n@property (readonly, nonatomic) NSUInteger count;\n@property (readonly, nonatomic) BOOL isEmpty;\n@property (readonly, nonatomic) NSNumber *top;\n- (void)push:(NSNumber *)item;\n- (NSNumber *)pop;\n@end\n\n@implementation ICKStack\n\n// initialize an empty stack\n- (instancetype)init {\n    if (self = [super init]) {\n        _items = [NSMutableArray new];\n    }\n    return self;\n}\n\n// push a new item onto the stack\n- (void)push:(NSNumber *)item {\n    [_items addObject:item];\n}\n\n// remove and return the last item\n- (NSNumber *)pop {\n    // if the stack is empty, return nil\n    if (_items.count == 0) {\n        return nil;\n    }\n\n    NSNumber *lastItem = _items.lastObject;\n    [_items removeLastObject];\n    \n    return lastItem;\n}\n\n// count the number of items in the stack\n- (NSUInteger)count {\n    return _items.count;\n}\n\n// check if the stack is empty\n- (BOOL)isEmpty {\n    return _items.count == 0;\n}\n\n// return the last item without removing it\n- (NSNumber *)top {\n    return _items.lastObject;\n}\n\n@end"}}, "editor-template": {"python": {"content": "import unittest\n\n\nclass Stack(object):\n\n    def __init__(self):\n        \"\"\"Initialize an empty stack\"\"\"\n        self.items = []\n\n    def push(self, item):\n        \"\"\"Push a new item onto the stack\"\"\"\n        self.items.append(item)\n\n    def pop(self):\n        \"\"\"Remove and return the last item\"\"\"\n        # If the stack is empty, return None\n        # (it would also be reasonable to throw an exception)\n        if not self.items:\n            return None\n\n        return self.items.pop()\n\n    def peek(self):\n        \"\"\"Return the last item without removing it\"\"\"\n        if not self.items:\n            return None\n        return self.items[-1]\n\n\nclass MaxStack(object):\n\n    # Implement the push, pop, and get_max methods\n\n\n    def __init__(self):\n        pass\n\n    def push(self, item):\n        pass\n\n    def pop(self):\n        pass\n\n    def get_max(self):\n        pass\n\n\n# Tests\n\nclass Test(unittest.TestCase):\n\n    def test_stack_usage(self):\n        max_stack = MaxStack()\n\n        max_stack.push(5)\n\n        actual = max_stack.get_max()\n        expected = 5\n        self.assertEqual(actual, expected)\n\n        max_stack.push(4)\n        max_stack.push(7)\n        max_stack.push(7)\n        max_stack.push(8)\n\n        actual = max_stack.get_max()\n        expected = 8\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.pop()\n        expected = 8\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.get_max()\n        expected = 7\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.pop()\n        expected = 7\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.get_max()\n        expected = 7\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.pop()\n        expected = 7\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.get_max()\n        expected = 5\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.pop()\n        expected = 4\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.get_max()\n        expected = 5\n        self.assertEqual(actual, expected)\n\n\nunittest.main(verbosity=2)"}, "python3": {"content": "import unittest\n\n\nclass Stack(object):\n\n    def __init__(self):\n        \"\"\"Initialize an empty stack\"\"\"\n        self.items = []\n\n    def push(self, item):\n        \"\"\"Push a new item onto the stack\"\"\"\n        self.items.append(item)\n\n    def pop(self):\n        \"\"\"Remove and return the last item\"\"\"\n        # If the stack is empty, return None\n        # (it would also be reasonable to throw an exception)\n        if not self.items:\n            return None\n\n        return self.items.pop()\n\n    def peek(self):\n        \"\"\"Return the last item without removing it\"\"\"\n        if not self.items:\n            return None\n        return self.items[-1]\n\n\nclass MaxStack(object):\n\n    # Implement the push, pop, and get_max methods\n\n\n    def __init__(self):\n        pass\n\n    def push(self, item):\n        pass\n\n    def pop(self):\n        pass\n\n    def get_max(self):\n        pass\n\n\n# Tests\n\nclass Test(unittest.TestCase):\n\n    def test_stack_usage(self):\n        max_stack = MaxStack()\n\n        max_stack.push(5)\n\n        actual = max_stack.get_max()\n        expected = 5\n        self.assertEqual(actual, expected)\n\n        max_stack.push(4)\n        max_stack.push(7)\n        max_stack.push(7)\n        max_stack.push(8)\n\n        actual = max_stack.get_max()\n        expected = 8\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.pop()\n        expected = 8\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.get_max()\n        expected = 7\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.pop()\n        expected = 7\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.get_max()\n        expected = 7\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.pop()\n        expected = 7\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.get_max()\n        expected = 5\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.pop()\n        expected = 4\n        self.assertEqual(actual, expected)\n\n        actual = max_stack.get_max()\n        expected = 5\n        self.assertEqual(actual, expected)\n\n\nunittest.main(verbosity=2)"}, "ruby": {"content": "class Stack\n\n  # Initializes an empty stack.\n  def initialize\n    @items = []\n  end\n\n  # Pushes a new item onto the stack.\n  def push(item)\n    @items << item\n  end\n\n  # Removes and returns the last item.\n  #\n  # If the stack is empty, returns nil.\n  def pop\n    if @items.empty?\n      nil\n    else\n      @items.pop\n    end\n  end\n\n  # Returns the last item without removing it.\n  def peek\n    if @items.empty?\n      nil\n    else\n      @items[-1]\n    end\n  end\nend\n\nclass MaxStack\n\n  # Implement the push, pop, and get_max methods.\n\n\n  def push(item)\n    item\n  end\n\n  def pop\n    nil\n  end\n\n  def get_max\n    nil\n  end\nend\n\n\n# Tests\n\ndef run_tests\n  desc = 'stack usage'\n  max_stack = MaxStack.new\n\n  max_stack.push(5)\n\n  actual = max_stack.get_max\n  expected = 5\n  assert_equal(actual, expected, desc)\n\n  max_stack.push(4)\n  max_stack.push(7)\n  max_stack.push(7)\n  max_stack.push(8)\n\n  actual = max_stack.get_max\n  expected = 8\n  assert_equal(actual, expected, desc)\n\n  actual = max_stack.pop\n  expected = 8\n  assert_equal(actual, expected, desc)\n\n  actual = max_stack.get_max\n  expected = 7\n  assert_equal(actual, expected, desc)\n\n  actual = max_stack.pop\n  expected = 7\n  assert_equal(actual, expected, desc)\n\n  actual = max_stack.get_max\n  expected = 7\n  assert_equal(actual, expected, desc)\n\n  actual = max_stack.pop\n  expected = 7\n  assert_equal(actual, expected, desc)\n\n  actual = max_stack.get_max\n  expected = 5\n  assert_equal(actual, expected, desc)\n\n  actual = max_stack.pop\n  expected = 4\n  assert_equal(actual, expected, desc)\n\n  actual = max_stack.get_max\n  expected = 5\n  assert_equal(actual, expected, desc)\nend\n\ndef assert_equal(a, b, desc)\n  puts \"#{desc} ... #{a == b ? 'PASS' : \"FAIL: #{a.inspect} != #{b.inspect}\"}\"\nend\n\nrun_tests"}, "java": {"content": "import org.junit.Test;\nimport org.junit.runner.JUnitCore;\nimport org.junit.runner.Result;\nimport org.junit.runner.notification.Failure;\n\nimport static org.junit.Assert.*;\n\npublic class Solution {\n\n    // fill in the definitions for push(), pop(), and getMax()\n\n\n    public static class MaxStack {\n\n        public void push(int item) {\n        }\n\n        public int pop() {\n            return 0;\n        }\n\n        public int getMax() {\n            return 0;\n        }\n    }\n\n\n    // tests\n\n    @Test\n    public void maxStackTest() {\n        final MaxStack s = new MaxStack();\n        s.push(5);\n        assertEquals(\"check max after 1st push\", 5, s.getMax());\n        s.push(4);\n        s.push(7);\n        s.push(7);\n        s.push(8);\n        assertEquals(\"check before 1st pop\", 8, s.getMax());\n        assertEquals(\"check pop #1\", 8, s.pop());\n        assertEquals(\"check max after 1st pop\", 7, s.getMax());\n        assertEquals(\"check pop #2\", 7, s.pop());\n        assertEquals(\"check max after 2nd pop\", 7, s.getMax());\n        assertEquals(\"check pop #3\", 7, s.pop());\n        assertEquals(\"check max after 3rd pop\", 5, s.getMax());\n        assertEquals(\"check pop #4\", 4, s.pop());\n        assertEquals(\"check max after 4th pop\", 5, s.getMax());\n    }\n\n    public static void main(String[] args) {\n        Result result = JUnitCore.runClasses(Solution.class);\n        for (Failure failure : result.getFailures()) {\n            System.out.println(failure.toString());\n        }\n        if (result.wasSuccessful()) {\n            System.out.println(\"All tests passed.\");\n        }\n    }\n}"}, "cpp": {"content": "#include <iostream>\n#include <stack>\n\n// C++11 lest unit testing framework\n#include \"lest.hpp\"\n\nusing namespace std;\n\n// fill in the definitions for push(), pop(), and getMax()\n\n\nclass MaxStack\n{\npublic:\n    void push(int item)\n    {\n\n    }\n\n    int pop()\n    {\n        return 0;\n    }\n\n    int getMax() const\n    {\n        return 0;\n    }\n};\n\n\n// tests\n\nconst lest::test tests[] = {\n    {CASE(\"MaxStack test\") {\n        MaxStack s;\n        s.push(5);\n        EXPECT(s.getMax() == 5);\n        s.push(4);\n        s.push(7);\n        s.push(7);\n        s.push(8);\n        EXPECT(s.getMax() == 8);\n        EXPECT(s.pop() == 8);\n        EXPECT(s.getMax() == 7);\n        EXPECT(s.pop() == 7);\n        EXPECT(s.getMax() == 7);\n        EXPECT(s.pop() == 7);\n        EXPECT(s.getMax() == 5);\n        EXPECT(s.pop() == 4);\n        EXPECT(s.getMax() == 5);\n    }}\n};\n\nint main(int argc, char** argv)\n{\n    return lest::run(tests, argc, argv);\n}"}, "c": {"content": "#include <assert.h>\n#include <stdio.h>\n\n// Interview Cake C Unit Test Framework, based on CuTest\n#include \"Cake/UnitTest.h\"\n\n// Implements a stack\n//\n// typedef struct Stack Stack;\n//\n// Stack * stackNew(void);\n// void stackFree(Stack *stack);\n//\n// int stackIsEmpty(const Stack *stack);\n//\n// void stackPush(Stack *stack, const void *value, size_t valueSize);\n// void stackPop(Stack *stack);\n// void * stackPeek(const Stack *stack);\n#include \"Cake/Stack.h\"\n\n// fill in the definitions for MaxStack, maxStackInit(), maxStackDestroy(),\n// push(), pop(), and getMax()\n\n\ntypedef struct MaxStack {\n\n} MaxStack;\n\nvoid maxStackInit(MaxStack *maxStack)\n{\n\n}\n\nvoid maxStackDestroy(MaxStack *maxStack)\n{\n\n}\n\n\nvoid push(MaxStack *maxStack, int item)\n{\n\n}\n\nint pop(MaxStack *maxStack)\n{\n    return 0;\n}\n\nint getMax(const MaxStack *maxStack)\n{\n    return 0;\n}\n\n\n// tests\n\nvoid maxStackTest(Test *tc)\n{\n    int expected, actual;\n\n    MaxStack s;\n    maxStackInit(&s);\n\n    push(&s, 5);\n\n    actual = getMax(&s);\n    expected = 5;\n    AssertIntEquals(tc, expected, actual);\n\n    push(&s, 4);\n    push(&s, 7);\n    push(&s, 7);\n    push(&s, 8);\n\n    actual = getMax(&s);\n    expected = 8;\n    AssertIntEquals(tc, expected, actual);\n\n    actual = pop(&s);\n    expected = 8;\n    AssertIntEquals(tc, expected, actual);\n\n    actual = getMax(&s);\n    expected = 7;\n    AssertIntEquals(tc, expected, actual);\n\n    actual = pop(&s);\n    expected = 7;\n    AssertIntEquals(tc, expected, actual);\n\n    actual = getMax(&s);\n    expected = 7;\n    AssertIntEquals(tc, expected, actual);\n\n    actual = pop(&s);\n    expected = 7;\n    AssertIntEquals(tc, expected, actual);\n\n    actual = getMax(&s);\n    expected = 5;\n    AssertIntEquals(tc, expected, actual);\n\n    actual = pop(&s);\n    expected = 4;\n    AssertIntEquals(tc, expected, actual);\n\n    actual = getMax(&s);\n    expected = 5;\n    AssertIntEquals(tc, expected, actual);\n\n    maxStackDestroy(&s);\n}\n\nint main()\n{\n    TestSuite *tests = TestSuiteNew();\n\n    SUITE_ADD_TEST(tests, maxStackTest);\n\n    TestSuiteRun(tests);\n    TestSuiteDelete(tests);\n\n    return 0;\n}"}, "csharp": {"content": "using System;\n\npublic class Solution\n{\n    // Fill in the definitions for Push(), Pop(), and GetMax()\n\n\n    public class MaxStack\n    {\n        public void Push(int item)\n        {\n\n        }\n\n        public int Pop()\n        {\n            return 0;\n        }\n\n        public int GetMax()\n        {\n            return 0;\n        }\n    }\n\n\n    // Tests\n\n    [Fact]\n    public void MaxStackTest()\n    {\n        var s = new MaxStack();\n        s.Push(5);\n        Assert.Equal(5, s.GetMax());\n        s.Push(4);\n        s.Push(7);\n        s.Push(7);\n        s.Push(8);\n        Assert.Equal(8, s.GetMax());\n        Assert.Equal(8, s.Pop());\n        Assert.Equal(7, s.GetMax());\n        Assert.Equal(7, s.Pop());\n        Assert.Equal(7, s.GetMax());\n        Assert.Equal(7, s.Pop());\n        Assert.Equal(5, s.GetMax());\n        Assert.Equal(4, s.Pop());\n        Assert.Equal(5, s.GetMax());\n    }\n\n    public static void Main(string[] args)\n    {\n        TestRunner.RunTests(typeof(Solution));\n    }\n}"}, "swift": {"content": "class Stack<Item> {\n\n    // initialize an empty array to hold our stack items\n    var items: [Item] = []\n\n    // push a new item onto the stack\n    func push(_ item: Item) {\n        items.append(item)\n    }\n\n    // remove and return the last item\n    func pop() -> Item? {\n\n        // if the stack is empty, return nil\n        // (it would also be reasonable to throw an exception)\n        if items.count == 0 {\n            return nil\n        }\n        return items.removeLast()\n    }\n\n    // return the last item without removing it\n    func peek() -> Item? {\n        return items.last\n    }\n}\n\nclass MaxStack {\n\n    // implement the push, pop, and getMax methods\n\n\n    func push(_ item: Int) {\n\n    }\n\n    func pop() -> Int? {\n        return nil\n    }\n\n    func getMax() -> Int? {\n        return nil\n    }\n}\n\n\n// tests\n\nimport XCTest\n\nclass Tests: XCTestCase {\n\n    func testMaxStack() {\n        let stack = MaxStack()\n        stack.push(5)\n        XCTAssertEqual(5, stack.getMax())\n        stack.push(4)\n        stack.push(7)\n        stack.push(7)\n        stack.push(8)\n        XCTAssertEqual(8, stack.getMax())\n        XCTAssertEqual(8, stack.pop())\n        XCTAssertEqual(7, stack.getMax())\n        XCTAssertEqual(7, stack.pop())\n        XCTAssertEqual(7, stack.getMax())\n        XCTAssertEqual(7, stack.pop())\n        XCTAssertEqual(5, stack.getMax())\n        XCTAssertEqual(4, stack.pop())\n        XCTAssertEqual(5, stack.getMax())\n    }\n\n    static let allTests = [\n        (\"testMaxStack\", testMaxStack)\n    ]\n}\n\nXCTMain([testCase(Tests.allTests)])"}, "javascript": {"content": "// Implement the push, pop, and getMax methods\n\nclass MaxStack {\n  constructor() {\n\n  }\n\n  push(item) {\n\n  }\n\n  pop() {\n    return 0;\n  }\n\n  getMax() {\n    return 0;\n  }\n}\n\nclass Stack {\n  constructor() {\n\n    // Initialize an empty stack\n    this.items = [];\n  }\n\n  // Push a new item onto the stack\n  push(item) {\n    this.items.push(item);\n  }\n\n  // Remove and return the last item\n  pop() {\n\n    // If the stack is empty, return null\n    // (It would also be reasonable to throw an exception)\n    if (!this.items.length) {\n      return null;\n    }\n    return this.items.pop();\n  }\n\n  // Return the last item without removing it\n  peek() {\n    if (!this.items.length) {\n      return null;\n    }\n    return this.items[this.items.length - 1];\n  }\n}\n\n\n// Tests\n\nconst s = new MaxStack();\ns.push(5);\n\nassertEquals(5, s.getMax(), 'check max after 1st push');\n\ns.push(4);\ns.push(7);\ns.push(7);\ns.push(8);\n\nassertEquals(8, s.getMax(), 'check before 1st pop');\nassertEquals(8, s.pop(), 'check pop #1');\nassertEquals(7, s.getMax(), 'check max after 1st pop');\nassertEquals(7, s.pop(), 'check pop #2');\nassertEquals(7, s.getMax(), 'check max after 2nd pop');\nassertEquals(7, s.pop(), 'check pop #3');\nassertEquals(5, s.getMax(), 'check max after 3rd pop');\nassertEquals(4, s.pop(), 'check pop #4');\nassertEquals(5, s.getMax(), 'check max after 4th pop');\n\nfunction assertEquals(a, b, desc) {\n  if (a === b) {\n    console.log(`${desc} ... PASS`);\n  } else {\n    console.log(`${desc} ... FAIL: ${a} != ${b}`);\n  }\n}"}, "php": {"content": "class Stack\n{\n    // initialize an empty array to hold our stack items\n    private $items = [];\n\n    // push a new item onto the stack\n    public function push($item)\n    {\n        $this->items[] = $item;\n    }\n\n    // remove and return the last item\n    public function pop()\n    {\n        // if the stack is empty, return null\n        if (!count($this->items)) {\n            return null;\n        }\n        return array_pop($this->items);\n    }\n\n    // return the last item without removing it\n    public function peek()\n    {\n        if (!count($this->items)) {\n            return null;\n        }\n        return $this->items[count($this->items) - 1];\n    }\n}\n\n// implement the push, pop, and getMax methods\n\n\nclass MaxStack\n{\n    public function __construct()\n    {\n\n    }\n\n    public function push($item)\n    {\n\n    }\n\n    public function pop()\n    {\n        return null;\n    }\n\n    public function getMax()\n    {\n        return null;\n    }\n}\n\n\n// tests\n\n$s = new MaxStack();\n$s->push(5);\n\n$desc = 'check max after 1st push';\n$actual = $s->getMax();\n$expected = 5;\nassertEqual($actual, $expected, $desc);\n\n$s->push(4);\n$s->push(7);\n$s->push(7);\n$s->push(8);\n\n$desc = 'check before 1st pop';\n$actual = $s->getMax();\n$expected = 8;\nassertEqual($actual, $expected, $desc);\n\n$desc = 'check pop #1';\n$actual = $s->pop();\n$expected = 8;\nassertEqual($actual, $expected, $desc);\n\n$desc = 'check max after 1st pop';\n$actual = $s->getMax();\n$expected = 7;\nassertEqual($actual, $expected, $desc);\n\n$desc = 'check pop #2';\n$actual = $s->pop();\n$expected = 7;\nassertEqual($actual, $expected, $desc);\n\n$desc = 'check max after 2nd pop';\n$actual = $s->getMax();\n$expected = 7;\nassertEqual($actual, $expected, $desc);\n\n$desc = 'check pop #3';\n$actual = $s->pop();\n$expected = 7;\nassertEqual($actual, $expected, $desc);\n\n$desc = 'check max after 3rd pop';\n$actual = $s->getMax();\n$expected = 5;\nassertEqual($actual, $expected, $desc);\n\n$desc = 'check pop #4';\n$actual = $s->pop();\n$expected = 4;\nassertEqual($actual, $expected, $desc);\n\n$desc = 'check max after 4th pop';\n$actual = $s->getMax();\n$expected = 5;\nassertEqual($actual, $expected, $desc);\n\nfunction assertEqual($a, $b, $desc)\n{\n    if ($a === $b) {\n        echo \"$desc ... PASS\\n\";\n    } else {\n        echo \"$desc ... FAIL: $a != $b\\n\";\n    }\n}"}, "objectivec": {"content": "// Code run in our editor is compiled with GNUStep\n\n#import <Foundation/Foundation.h>\n\n@interface NSMutableArray<ObjectType> (GNUStepBugFix)\n- (ObjectType)objectAtIndexedSubscript:(NSUInteger)idx;\n@end\n\n@interface ICKStack : NSObject {\n    NSMutableArray<NSNumber *> *_items;\n}\n@property (readonly, nonatomic) NSUInteger count;\n@property (readonly, nonatomic) BOOL isEmpty;\n@property (readonly, nonatomic) NSNumber *top;\n- (void)push:(NSNumber *)item;\n- (NSNumber *)pop;\n@end\n\n@interface ICKMaxStack : NSObject\n- (void)push:(NSNumber *)item;\n- (NSNumber *)pop;\n- (NSNumber *)getMax;\n@end\n\n@implementation ICKMaxStack\n\n// implement the push, pop, and getMax methods\n\n\n- (void)push:(NSNumber *)item {\n\n}\n\n- (NSNumber *)pop {\n    return @0;\n}\n\n- (NSNumber *)getMax {\n    return @0;\n}\n\n@end\n\n\n// tests\n\nvoid assertEquals(NSNumber *actual, NSNumber *expected, NSString *message, SEL test);\n\n@interface Tests : NSObject\n@end\n\n@implementation Tests\n\n-(void)testMaxStack {\n    ICKMaxStack *stack = [ICKMaxStack new];\n    [stack push:@5];\n    assertEquals([stack getMax], @5, @\"check max after 1st push\", _cmd);\n    [stack push:@4];\n    [stack push:@7];\n    [stack push:@7];\n    [stack push:@8];\n    assertEquals([stack getMax], @8, @\"check before 1st pop\", _cmd);\n    assertEquals([stack pop],    @8, @\"check pop #1\", _cmd);\n    assertEquals([stack getMax], @7, @\"check max after 1st pop\", _cmd);\n    assertEquals([stack pop],    @7, @\"check pop #2\", _cmd);\n    assertEquals([stack getMax], @7, @\"check max after 2nd pop\", _cmd);\n    assertEquals([stack pop],    @7, @\"check pop #3\", _cmd);\n    assertEquals([stack getMax], @5, @\"check max after 3rd pop\", _cmd);\n    assertEquals([stack pop],    @4, @\"check pop #4\", _cmd);\n    assertEquals([stack getMax], @5, @\"check max after 4th pop\", _cmd);\n}\n\n@end\n\nint main(int argc, const char * argv[]) {\n    Tests *tests = [Tests new];\n    [tests testMaxStack];\n\n    return 0;\n}\n\nvoid assertEquals(NSNumber *actual, NSNumber *expected, NSString *message, SEL test) {\n    NSString *testName = NSStringFromSelector(test);\n    if ([expected isEqualToNumber:actual]) {\n        NSLog(@\"%-12@ ... PASS\", testName);\n    }\n    else {\n        NSLog(@\"%-12@ ... FAIL: %@: expected <%@> but was <%@>\",\n              testName, message, expected, actual);\n    }\n}\n\n@implementation ICKStack\n\n// initialize an empty stack\n- (instancetype)init {\n    if (self = [super init]) {\n        _items = [NSMutableArray new];\n    }\n    return self;\n}\n\n// push a new item onto the stack\n- (void)push:(NSNumber *)item {\n    [_items addObject:item];\n}\n\n// remove and return the last item\n- (NSNumber *)pop {\n    // if the stack is empty, return nil\n    if (_items.count == 0) {\n        return nil;\n    }\n\n    NSNumber *lastItem = _items.lastObject;\n    [_items removeLastObject];\n\n    return lastItem;\n}\n\n// count the number of items in the stack\n- (NSUInteger)count {\n    return _items.count;\n}\n\n// check if the stack is empty\n- (BOOL)isEmpty {\n    return _items.count == 0;\n}\n\n// return the last item without removing it\n- (NSNumber *)top {\n    return _items.lastObject;\n}\n\n@end"}}, "question__largest-stack__stack-class": {"python": {"content": "class Stack(object):\n\n    def __init__(self):\n        \"\"\"Initialize an empty stack\"\"\"\n        self.items = []\n\n    def push(self, item):\n        \"\"\"Push a new item onto the stack\"\"\"\n        self.items.append(item)\n\n    def pop(self):\n        \"\"\"Remove and return the last item\"\"\"\n        # If the stack is empty, return None\n        # (it would also be reasonable to throw an exception)\n        if not self.items:\n            return None\n\n        return self.items.pop()\n\n    def peek(self):\n        \"\"\"Return the last item without removing it\"\"\"\n        if not self.items:\n            return None\n        return self.items[-1]", "tests": "test_stack = Stack()\n\nassert test_stack.pop() == None\n\ntest_stack.push(3)\ntest_stack.push(7)\n\nassert test_stack.peek() == 7\nassert test_stack.pop() == 7\nassert test_stack.peek() == 3\n\ntest_stack.push(5)\ntest_stack.pop()\ntest_stack.pop()\n\nassert test_stack.pop() == None", "actual_language": "python"}, "python3": {"content": "class Stack(object):\n\n    def __init__(self):\n        \"\"\"Initialize an empty stack\"\"\"\n        self.items = []\n\n    def push(self, item):\n        \"\"\"Push a new item onto the stack\"\"\"\n        self.items.append(item)\n\n    def pop(self):\n        \"\"\"Remove and return the last item\"\"\"\n        # If the stack is empty, return None\n        # (it would also be reasonable to throw an exception)\n        if not self.items:\n            return None\n\n        return self.items.pop()\n\n    def peek(self):\n        \"\"\"Return the last item without removing it\"\"\"\n        if not self.items:\n            return None\n        return self.items[-1]", "tests": "test_stack = Stack()\n\nassert test_stack.pop() == None\n\ntest_stack.push(3)\ntest_stack.push(7)\n\nassert test_stack.peek() == 7\nassert test_stack.pop() == 7\nassert test_stack.peek() == 3\n\ntest_stack.push(5)\ntest_stack.pop()\ntest_stack.pop()\n\nassert test_stack.pop() == None", "actual_language": "python"}, "ruby": {"content": "class Stack\n\n  # Initializes an empty stack.\n  def initialize\n    @items = []\n  end\n\n  # Pushes a new item onto the stack.\n  def push(item)\n    @items &lt;&lt; item\n  end\n\n  # Removes and returns the last item.\n  #\n  # If the stack is empty, returns nil. (It would also be\n  # reasonable to throw an exception.)\n  def pop\n    if @items.empty?\n      nil\n    else\n      @items.pop\n    end\n  end\n\n  # Returns the last item without removing it.\n  def peek\n    if @items.empty?\n      nil\n    else\n      @items[-1]\n    end\n  end\nend", "tests": "test_stack = Stack.new\n\nassert test_stack.pop == nil\n\ntest_stack.push(3)\ntest_stack.push(7)\n\nassert test_stack.peek == 7\nassert test_stack.pop == 7\nassert test_stack.peek == 3\n\ntest_stack.push(5)\ntest_stack.pop\ntest_stack.pop\n\nassert test_stack.pop == nil", "actual_language": "ruby"}, "javascript": {"content": "class Stack {\n  constructor() {\n\n    // Initialize an empty stack\n    this.items = [];\n  }\n\n  // Push a new item onto the stack\n  push(item) {\n    this.items.push(item);\n  }\n\n  // Remove and return the last item\n  pop() {\n\n    // If the stack is empty, return null\n    // (It would also be reasonable to throw an exception)\n    if (!this.items.length) {\n      return null;\n    }\n    return this.items.pop();\n  }\n\n  // Returns the last item without removing it\n  peek() {\n    if (!this.items.length) {\n      return null;\n    }\n    return this.items[this.items.length - 1];\n  }\n}", "tests": "var testStack = new Stack();\n\nassertEqual(testStack.pop(), null);\n\ntestStack.push(3);\ntestStack.push(7);\n\nassertEqual(testStack.peek(), 7);\nassertEqual(testStack.pop(), 7);\nassertEqual(testStack.peek(), 3);\n\ntestStack.push(5);\ntestStack.pop();\ntestStack.pop();\n\nassertEqual(testStack.pop(), null);", "actual_language": "javascript"}, "php": {"content": "class Stack\n{\n    // initialize an empty array to hold our stack items\n    private $items = [];\n\n    // push a new item onto the stack\n    public function push($item)\n    {\n        $this->items[] = $item;\n    }\n\n    // remove and return the last item\n    public function pop()\n    {\n        // if the stack is empty, return null\n        // (it would also be reasonable to throw an exception)\n        if (!count($this->items)) {\n            return null;\n        }\n        return array_pop($this->items);\n    }\n\n    // return the last item without removing it\n    public function peek()\n    {\n        if (!count($this->items)) {\n            return null;\n        }\n        return $this->items[count($this->items) - 1];\n    }\n}", "tests": "$testStack = new Stack();\n\nassertEquals($testStack->pop(), null);\n\n$testStack->push(3);\n$testStack->push(7);\n\nassertEquals($testStack->peek(), 7);\nassertEquals($testStack->pop(), 7);\nassertEquals($testStack->peek(), 3);\n\n$testStack->push(5);\n$testStack->pop();\n$testStack->pop();\n\nassertEquals($testStack->pop(), null);", "actual_language": "php"}, "java": {"content": "\n", "actual_language": "java"}, "cpp": {"content": "\n", "actual_language": "cpp"}, "c": {"content": "typedef struct StackNode {\n    void *value;\n    struct StackNode *next;\n} StackNode;\n\ntypedef struct Stack {\n    StackNode *top;\n} Stack;\n\n/* Allocate and initialize an empty stack */\nStack * stackNew()\n{\n    Stack *stack = calloc(1, sizeof(Stack));\n    assert(stack != NULL);\n    return stack;\n}\n\n/* Free a previously allocated stack */\nvoid stackFree(Stack *stack)\n{\n    if (stack != NULL) {\n        StackNode *node = stack->top;\n        while (node != NULL) {\n            StackNode *next = node->next;\n            free(node->value);\n            free(node);\n            node = next;\n        }\n        free(stack);\n    }\n}\n\n/* Check if the stack is empty */\nint stackIsEmpty(const Stack *stack)\n{\n    assert(stack != NULL);\n    return stack->top == NULL;\n}\n\n/* Push a new item onto the stack */\nvoid stackPush(Stack *stack, const void *value, size_t valueSize)\n{\n    assert(stack != NULL);\n    StackNode *node = malloc(sizeof(StackNode));\n    assert(node != NULL);\n    if (valueSize > 0) {\n        node->value = malloc(valueSize);\n        assert(node->value != NULL);\n        memcpy(node->value, value, valueSize);\n    }\n    else {\n        node->value = NULL;\n    }\n    node->next = stack->top;\n    stack->top = node;\n}\n\n/* Remove and return the last item */\nvoid stackPop(Stack *stack)\n{\n    assert(stack != NULL);\n    assert(stack->top != NULL);\n    StackNode *next = stack->top->next;\n    free(stack->top->value);\n    free(stack->top);\n    stack->top = next;\n}\n\n/* Return the last item without removing it */\nvoid * stackPeek(const Stack *stack)\n{\n    assert(stack != NULL);\n    assert(stack->top != NULL);\n    return stack->top->value;\n}", "actual_language": "c"}, "csharp": {"content": "\n", "actual_language": "csharp"}, "swift": {"content": "class Stack&lt;Item> {\n\n    // initialize an empty array to hold our stack items\n    private var items: [Item] = []\n\n    // push a new item onto the stack\n    func push(_ item: Item) {\n        items.append(item)\n    }\n\n    // remove and return the last item\n    func pop() -> Item? {\n\n        // if the stack is empty, return nil\n        // (it would also be reasonable to throw an exception)\n        if items.count == 0 {\n            return nil\n        }\n        return items.removeLast()\n    }\n\n    // return the last item without removing it\n    func peek() -> Item? {\n        return items.last\n    }\n}", "tests": "let testStack = Stack<Int>()\n\ntry assertEqual(testStack.pop(), nil)\n\ntestStack.push(3)\ntestStack.push(7)\n\ntry assertEqual(testStack.peek(), 7)\ntry assertEqual(testStack.pop(), 7)\ntry assertEqual(testStack.peek(), 3)\n\ntestStack.push(5)\nlet _ = testStack.pop()\nlet _ = testStack.pop()\n\ntry assertEqual(testStack.pop(), nil)", "actual_language": "swift"}, "objectivec": {"content": "@interface ICKStack : NSObject {\n    NSMutableArray&lt;NSNumber *> *_items;\n}\n@property (readonly, nonatomic) NSUInteger count;\n@property (readonly, nonatomic) BOOL isEmpty;\n@property (readonly, nonatomic) NSNumber *top;\n- (void)push:(NSNumber *)item;\n- (NSNumber *)pop;\n@end\n\n@implementation ICKStack\n\n// initialize an empty stack\n- (instancetype)init {\n    if (self = [super init]) {\n        _items = [NSMutableArray new];\n    }\n    return self;\n}\n\n// push a new item onto the stack\n- (void)push:(NSNumber *)item {\n    [_items addObject:item];\n}\n\n// remove and return the last item\n- (NSNumber *)pop {\n    // if the stack is empty, return nil\n    if (_items.count == 0) {\n        return nil;\n    }\n\n    NSNumber *lastItem = _items.lastObject;\n    [_items removeLastObject];\n\n    return lastItem;\n}\n\n// count the number of items in the stack\n- (NSUInteger)count {\n    return _items.count;\n}\n\n// check if the stack is empty\n- (BOOL)isEmpty {\n    return _items.count == 0;\n}\n\n// return the last item without removing it\n- (NSNumber *)top {\n    return _items.lastObject;\n}\n\n@end", "actual_language": "objectivec"}}, "question__largest-stack__solution": {"python": {"content": "class MaxStack(object):\n\n    def __init__(self):\n        self.stack = Stack()\n        self.maxes_stack = Stack()\n\n    def push(self, item):\n        \"\"\"Add a new item onto the top of our stack.\"\"\"\n        self.stack.push(item)\n\n        # If the item is greater than or equal to the last item in maxes_stack,\n        # it's the new max! So we'll add it to maxes_stack.\n        if self.maxes_stack.peek() is None or item >= self.maxes_stack.peek():\n            self.maxes_stack.push(item)\n\n    def pop(self):\n        \"\"\"Remove and return the top item from our stack.\"\"\"\n        item = self.stack.pop()\n\n        # If it equals the top item in maxes_stack, they must have been pushed\n        # in together. So we'll pop it out of maxes_stack too.\n        if item == self.maxes_stack.peek():\n            self.maxes_stack.pop()\n\n        return item\n\n    def get_max(self):\n        \"\"\"The last item in maxes_stack is the max item in our stack.\"\"\"\n        return self.maxes_stack.peek()", "tests": "test_stack = MaxStack()\n\ntest_stack.push(2)\nlastA = test_stack.pop()\nassert lastA == 2\n\ntest_stack.push(10)\ntest_stack.push(1)\nlargestA = test_stack.get_max()\nassert largestA == 10\n\ntest_stack.push(100)\ntest_stack.push(5)\nlastB = test_stack.pop()\nassert lastB == 5\nlargestB = test_stack.get_max()\nassert largestB == 100", "setup": "class Stack:\n    def __init__(self):\n        self.items = []\n    def push(self, item):\n        self.items.append(item)\n    def pop(self):\n        if not self.items:\n            return None\n        return self.items.pop()\n    def peek(self):\n        if not self.items:\n            return None\n        return self.items[len(self.items)-1]", "actual_language": "python"}, "python3": {"content": "class MaxStack(object):\n\n    def __init__(self):\n        self.stack = Stack()\n        self.maxes_stack = Stack()\n\n    def push(self, item):\n        \"\"\"Add a new item onto the top of our stack.\"\"\"\n        self.stack.push(item)\n\n        # If the item is greater than or equal to the last item in maxes_stack,\n        # it's the new max! So we'll add it to maxes_stack.\n        if self.maxes_stack.peek() is None or item >= self.maxes_stack.peek():\n            self.maxes_stack.push(item)\n\n    def pop(self):\n        \"\"\"Remove and return the top item from our stack.\"\"\"\n        item = self.stack.pop()\n\n        # If it equals the top item in maxes_stack, they must have been pushed\n        # in together. So we'll pop it out of maxes_stack too.\n        if item == self.maxes_stack.peek():\n            self.maxes_stack.pop()\n\n        return item\n\n    def get_max(self):\n        \"\"\"The last item in maxes_stack is the max item in our stack.\"\"\"\n        return self.maxes_stack.peek()", "tests": "test_stack = MaxStack()\n\ntest_stack.push(2)\nlastA = test_stack.pop()\nassert lastA == 2\n\ntest_stack.push(10)\ntest_stack.push(1)\nlargestA = test_stack.get_max()\nassert largestA == 10\n\ntest_stack.push(100)\ntest_stack.push(5)\nlastB = test_stack.pop()\nassert lastB == 5\nlargestB = test_stack.get_max()\nassert largestB == 100", "setup": "class Stack:\n    def __init__(self):\n        self.items = []\n    def push(self, item):\n        self.items.append(item)\n    def pop(self):\n        if not self.items:\n            return None\n        return self.items.pop()\n    def peek(self):\n        if not self.items:\n            return None\n        return self.items[len(self.items)-1]", "actual_language": "python"}, "ruby": {"content": "class MaxStack\n\n  def initialize\n    @stack = Stack.new\n    @maxes_stack = Stack.new\n  end\n\n  # Adds a new item onto the top of our stack.\n  #\n  # If the item is greater than or equal to the last item\n  # in maxes_stack, it's the new max! So we'll add it to\n  # maxes_stack.\n  def push(item)\n    if !@maxes_stack.peek || item >= @maxes_stack.peek\n      @maxes_stack.push(item)\n    end\n    @stack.push(item)\n  end\n\n  # Removes and returns the top item from our stack.\n  #\n  # If it equals the top item in maxes_stack, they must\n  # have been pushed in together. So we'll pop it out of\n  # maxes_stack too.\n  def pop\n    item = @stack.pop\n    if item == @maxes_stack.peek\n      @maxes_stack.pop\n    end\n    item\n  end\n\n  # Returns the max item of our stack.\n  #\n  # The last item in maxes_stack is the max item in our stack.\n  def get_max\n    @maxes_stack.peek\n  end\nend", "tests": "test_stack = MaxStack.new\n\ntest_stack.push(2)\nassert test_stack.pop == 2\n\ntest_stack.push(10)\ntest_stack.push(1)\nassert test_stack.get_max == 10\n\ntest_stack.push(100)\ntest_stack.push(5)\nassert test_stack.pop == 5\nassert test_stack.get_max == 100", "setup": "class Stack\n  def initialize\n    @items = []\n  end\n  def push(item)\n    @items.push(item)\n  end\n  def pop\n    @items.pop unless @items.empty?\n  end\n  def peek\n    @items[-1] unless @items.empty?\n  end\nend", "actual_language": "ruby"}, "java": {"content": "import java.util.ArrayDeque;\nimport java.util.Deque;\n\npublic class MaxStack {\n\n    private Deque&lt;Integer> stack = new ArrayDeque&lt;>();\n    private Deque&lt;Integer> maxesStack = new ArrayDeque&lt;>();\n\n    // Add a new item to the top of our stack. If the item is greater\n    // than or equal to the last item in maxesStack, it's\n    // the new max! So we'll add it to maxesStack.\n    public void push(int item) {\n        stack.push(item);\n        if (maxesStack.isEmpty() || item >= maxesStack.peek()) {\n            maxesStack.push(item);\n        }\n    }\n\n    // Remove and return the top item from our stack. If it equals\n    // the top item in maxesStack, they must have been pushed in together.\n    // So we'll pop it out of maxesStack too.\n    public int pop() {\n        int item = stack.pop();\n        if (item == maxesStack.peek()) {\n            maxesStack.pop();\n        }\n        return item;\n    }\n\n    // The last item in maxesStack is the max item in our stack.\n    public int getMax() {\n        return maxesStack.peek();\n    }\n}", "tests": "MaxStack testStack = new MaxStack();\n\ntestStack.push(2);\nint lastA = testStack.pop();\nassertEqual(lastA, 2);\n\ntestStack.push(10);\ntestStack.push(1);\nint largestA = testStack.getMax();\nassertEqual(largestA, 10);\n\ntestStack.push(100);\ntestStack.push(5);\nint lastB = testStack.pop();\nassertEqual(lastB, 5);\nint largestB = testStack.getMax();\nassertEqual(largestB, 100);", "actual_language": "java"}, "javascript": {"content": "class MaxStack {\n  constructor() {\n    this.stack = new Stack();\n    this.maxesStack = new Stack();\n  }\n\n  // Add a new item to the top of our stack. If the item is greater\n  // than or equal to the last item in maxesStack, it's\n  // the new max! So we'll add it to maxesStack.\n  push(item) {\n    this.stack.push(item);\n    if (this.maxesStack.peek() === null || item >= this.maxesStack.peek()) {\n      this.maxesStack.push(item);\n    }\n  }\n\n  // Remove and return the top item from our stack. If it equals\n  // the top item in maxesStack, they must have been pushed in together.\n  // So we'll pop it out of maxesStack too.\n  pop() {\n    const item = this.stack.pop();\n    if (item === this.maxesStack.peek()) {\n      this.maxesStack.pop();\n    }\n    return item;\n  }\n\n  // The last item in maxesStack is the max item in our stack.\n  getMax() {\n    return this.maxesStack.peek();\n  }\n}", "tests": "var testStack;\nvar lastA;\nvar largestA;\nvar lastB;\nvar largestB;\n\ntestStack = new MaxStack();\n\ntestStack.push(2);\nlastA = testStack.pop();\nassertEqual(lastA, 2);\n\ntestStack.push(10);\ntestStack.push(1);\nlargestA = testStack.getMax();\nassertEqual(largestA, 10);\n\ntestStack.push(100);\ntestStack.push(5);\nlastB = testStack.pop();\nassertEqual(lastB, 5);\nlargestB = testStack.getMax();\nassertEqual(largestB, 100);", "setup": "function Stack() {\n    this.items = [];\n}\nStack.prototype.push = function(item) {\n    this.items.push(item);\n};\nStack.prototype.pop = function() {\n    if (!this.items.length) return null;\n    return this.items.pop();\n};\nStack.prototype.peek = function() {\n    if (!this.items.length) {\n        return null;\n    }\n    return this.items[this.items.length -1];\n}", "actual_language": "javascript"}, "php": {"content": "class MaxStack\n{\n    private $stack = null;\n    private $maxesStack = null;\n\n    public function __construct()\n    {\n        $this->stack = new Stack();\n        $this->maxesStack = new Stack();\n    }\n\n    // Add a new item to the top of our stack. If the item is greater\n    // than or equal to the last item in maxesStack, it's\n    // the new max! So we'll add it to maxesStack.\n    public function push($item)\n    {\n        $this->stack->push($item);\n        if ($this->maxesStack->peek() === null || $item >= $this->maxesStack->peek()) {\n            $this->maxesStack->push($item);\n        }\n    }\n\n    // Remove and return the top item from our stack. If it equals\n    // the top item in maxesStack, they must have been pushed in together.\n    // So we'll pop it out of maxesStack too.\n    public function pop()\n    {\n        $item = $this->stack->pop();\n        if ($item === $this->maxesStack->peek()) {\n            $this->maxesStack->pop();\n        }\n        return $item;\n    }\n\n    // The last item in maxesStack is the max item in our stack.\n    public function getMax()\n    {\n        return $this->maxesStack->peek();\n    }\n}", "tests": "$testStack = new MaxStack();\n\n$testStack->push(0);\n$testStack->push(-1);\n$lastA = $testStack->getMax();\nassertEquals($lastA, 0);\n\n$testStack = new MaxStack();\n\n$testStack->push(2);\n$lastA = $testStack->pop();\nassertEquals($lastA, 2);\n\n$testStack->push(10);\n$testStack->push(1);\n$largestA = $testStack->getMax();\nassertEquals($largestA, 10);\n\n$testStack->push(100);\n$testStack->push(5);\n$lastB = $testStack->pop();\nassertEquals($lastB, 5);\n$largestB = $testStack->getMax();\nassertEquals($largestB, 100);\n\n$lastC = $testStack->pop();\nassertEquals($lastC, 100);\n$largestC = $testStack->getMax();\nassertEquals($largestC, 10);", "setup": "class Stack\n{\n    // initialize an empty array to hold our stack items\n    private $items = [];\n\n    // push a new item onto the stack\n    function push($item)\n    {\n        $this->items[] = $item;\n    }\n\n    // remove and return the last item\n    function pop()\n    {\n        // if the stack is empty, return null\n        // (it would also be reasonable to throw an exception)\n        if (!count($this->items)) {\n            return null;\n        }\n        return array_pop($this->items);\n    }\n\n    // return the last item without removing it\n    function peek()\n    {\n        if (!count($this->items)) {\n            return null;\n        }\n        return $this->items[count($this->items) -1];\n    }\n}", "actual_language": "php"}, "cpp": {"content": "class MaxStack\n{\nprivate:\n    stack&lt;int> stack_;\n    stack&lt;int> maxesStack_;\n\npublic:\n    // Add a new item to the top of our stack. If the item is greater\n    // than or equal to the last item in maxesStack, it's\n    // the new max! So we'll add it to maxesStack.\n    void push(int item)\n    {\n        stack_.push(item);\n        if (maxesStack_.empty() || item >= maxesStack_.top()) {\n            maxesStack_.push(item);\n        }\n    }\n\n    // Remove and return the top item from our stack. If it equals\n    // the top item in maxesStack, they must have been pushed in together.\n    // So we'll pop it out of maxesStack too.\n    int pop()\n    {\n        int item = stack_.top();\n        stack_.pop();\n        if (item == maxesStack_.top()) {\n            maxesStack_.pop();\n        }\n        return item;\n    }\n\n    // The last item in maxesStack is the max item in our stack.\n    int getMax() const\n    {\n        return maxesStack_.top();\n    }\n};", "tests": "MaxStack testStack;\n\ntestStack.push(2);\nint lastA = testStack.pop();\nassertEqual(lastA, 2);\n\ntestStack.push(10);\ntestStack.push(1);\nint largestA = testStack.getMax();\nassertEqual(largestA, 10);\n\ntestStack.push(100);\ntestStack.push(5);\nint lastB = testStack.pop();\nassertEqual(lastB, 5);\nint largestB = testStack.getMax();\nassertEqual(largestB, 100);", "actual_language": "cpp"}, "c": {"content": "// Implements a stack\n// Stack * stackNew(void);\n// void stackFree(Stack *stack);\n// int stackIsEmpty(const Stack *stack);\n// void stackPushString(Stack *stack, const char *str);\n// void stackPop(Stack *stack);\n// void * stackPeek(const Stack *stack);\n#include \"Cake/Stack.h\"\n\ntypedef struct MaxStack {\n    Stack *stack;\n    Stack *maxesStack;\n} MaxStack;\n\nvoid maxStackInit(MaxStack *maxStack)\n{\n    maxStack->stack = stackNew();\n    maxStack->maxesStack = stackNew();\n}\n\nvoid maxStackDestroy(MaxStack *maxStack)\n{\n    stackFree(maxStack->stack);\n    stackFree(maxStack->maxesStack);\n}\n\n// Add a new item to the top of our stack. If the item is greater\n// than or equal to the last item in maxesStack, it's\n// the new max! So we'll add it to maxesStack.\nvoid push(MaxStack *maxStack, int item)\n{\n    stackPush(maxStack->stack, &item, sizeof(item));\n    if (stackIsEmpty(maxStack->maxesStack)\n            || item >= *(int *)stackPeek(maxStack->maxesStack)) {\n        stackPush(maxStack->maxesStack, &item, sizeof(item));\n    }\n}\n\n// Remove and return the top item from our stack. If it equals\n// the top item in maxesStack, they must have been pushed in together.\n// So we'll pop it out of maxesStack too.\nint pop(MaxStack *maxStack)\n{\n    int item = *(int *)stackPeek(maxStack->stack);\n    stackPop(maxStack->stack);\n    if (item == *(int *)stackPeek(maxStack->maxesStack)) {\n        stackPop(maxStack->maxesStack);\n    }\n    return item;\n}\n\n// The last item in maxesStack is the max item in our stack.\nint getMax(const MaxStack *maxStack)\n{\n    return *(int *)stackPeek(maxStack->maxesStack);\n}", "tests": "MaxStack testStack;\nmaxStackInit(&testStack);\n\npush(&testStack, 2);\nASSERT(pop(&testStack) == 2);\n\npush(&testStack, 10);\npush(&testStack, 1);\nASSERT(getMax(&testStack) == 10);\n\npush(&testStack, 100);\npush(&testStack, 5);\nASSERT(pop(&testStack) == 5);\nASSERT(getMax(&testStack) == 100);\n\nmaxStackDestroy(&testStack);", "actual_language": "c"}, "swift": {"content": "class MaxStack {\n\n    private var stack = Stack&lt;Int>()\n    private var maxesStack = Stack&lt;Int>()\n\n    // Add a new item to the top of our stack. If the item is greater\n    // than or equal to the last item in maxesStack, it's\n    // the new max! So we'll add it to maxesStack.\n    func push(_ item: Int) {\n        stack.push(item)\n        if let lastItem = maxesStack.peek() {\n            if item >= lastItem {\n                maxesStack.push(item)\n            }\n        } else {\n            maxesStack.push(item)\n        }\n    }\n\n    // Remove and return the top item from our stack. If it equals\n    // the top item in maxesStack, they must have been pushed in together.\n    // So we'll pop it out of maxesStack too.\n    func pop() -> Int? {\n        let item = stack.pop()\n        if let maxsItem = maxesStack.peek(),\n            item == maxsItem {\n            let _ = maxesStack.pop()\n        }\n        return item\n    }\n\n    // The last item in maxesStack is the max item in our stack.\n    func getMax() -> Int? {\n        return maxesStack.peek()\n    }\n}", "tests": "class Stack<Item> {\n\n    // initialize an empty array to hold our stack items\n    var items: [Item] = []\n\n    // push a new item onto the stack\n    func push(_ item: Item) {\n        items.append(item)\n    }\n\n    // remove and return the last item\n    func pop() -> Item? {\n\n        // if the stack is empty, return nil\n        // (it would also be reasonable to throw an exception)\n        if items.count == 0 {\n            return nil\n        }\n        return items.removeLast()\n    }\n\n    // return the last item without removing it\n    func peek() -> Item? {\n        return items.last\n    }\n}\n\nlet testStack = MaxStack()\n\nlet _ = testStack.push(2)\nlet lastA = testStack.pop()\ntry assertEqual(lastA, 2)\n\nlet _ = testStack.push(10)\nlet _ = testStack.push(1)\nlet largestA = testStack.getMax()\ntry assertEqual(largestA, 10)\n\nlet _ = testStack.push(100)\nlet _ = testStack.push(5)\nlet lastB = testStack.pop()\ntry assertEqual(lastB, 5)\nlet largestB = testStack.getMax()\ntry assertEqual(largestB, 100)", "actual_language": "swift"}, "csharp": {"content": "using System.Collections.Generic;\n\npublic class MaxStack\n{\n    Stack&lt;int> _stack = new Stack&lt;int>();\n    Stack&lt;int> _maxesStack = new Stack&lt;int>();\n\n    // Add a new item to the top of our stack. If the item is greater\n    // than or equal to the last item in _maxesStack, it's\n    // the new max! So we'll add it to _maxesStack.\n    public void Push(int item)\n    {\n        _stack.Push(item);\n        if (_maxesStack.Count == 0 || item >= _maxesStack.Peek())\n        {\n            _maxesStack.Push(item);\n        }\n    }\n\n    // Remove and return the top item from our stack. If it equals\n    // the top item in _maxesStack, they must have been pushed in together.\n    // So we'll pop it out of _maxesStack too.\n    public int Pop()\n    {\n        int item = _stack.Pop();\n        if (item == _maxesStack.Peek())\n        {\n            _maxesStack.Pop();\n        }\n        return item;\n    }\n\n    // The last item in _maxesStack is the max item in our stack.\n    public int GetMax()\n    {\n        return _maxesStack.Peek();\n    }\n}", "tests": "var testStack = new MaxStack();\n\ntestStack.Push(2);\nint lastA = testStack.Pop();\nAssertEqual(lastA, 2);\n\ntestStack.Push(10);\ntestStack.Push(1);\nint largestA = testStack.GetMax();\nAssertEqual(largestA, 10);\n\ntestStack.Push(100);\ntestStack.Push(5);\nint lastB = testStack.Pop();\nAssertEqual(lastB, 5);\nint largestB = testStack.GetMax();\nAssertEqual(largestB, 100);", "actual_language": "csharp"}, "objectivec": {"content": "@interface ICKMaxStack : NSObject {\n    ICKStack *_stack;\n    ICKStack *_maxesStack;\n}\n- (void)push:(NSNumber *)item;\n- (NSNumber *)pop;\n- (NSNumber *)getMax;\n@end\n\n@implementation ICKMaxStack\n\n- (instancetype)init {\n    if (self = [super init]) {\n        _stack = [ICKStack new];\n        _maxesStack = [ICKStack new];\n    }\n    return self;\n}\n\n// Add a new item to the top of our stack. If the item is greater\n// than or equal to the last item in maxesStack, it's\n// the new max! So we'll add it to maxesStack.\n- (void)push:(NSNumber *)item {\n    [_stack push:item];\n    if (_maxesStack.isEmpty || [_maxesStack.top compare:item] &lt;= NSOrderedSame) {\n        [_maxesStack push:item];\n    }\n}\n\n// Remove and return the top item from our stack. If it equals\n// the top item in maxesStack, they must have been pushed in together.\n// So we'll pop it out of maxesStack too.\n- (NSNumber *)pop {\n    NSNumber *item = [_stack pop];\n    if ([item isEqualToNumber:_maxesStack.top]) {\n        [_maxesStack pop];\n    }\n    return item;\n}\n\n// The last item in maxesStack is the max item in our stack.\n- (NSNumber *)getMax {\n    return _maxesStack.top;\n}\n\n@end", "tests": "ICKStack *testStack = [ICKStack new];\n\nNSCAssert([testStack pop] == nil, @\"pop must return nil\");\n\n[testStack push:@3];\n[testStack push:@7];\n\nNSCAssert([testStack.top isEqualToNumber:@7], @\"numbers are not same\");\nNSCAssert([[testStack pop] isEqualToNumber:@7], @\"numbers are not same\");\nNSCAssert([testStack.top isEqualToNumber:@3], @\"numbers are not same\");\n\n[testStack push:@5];\n[testStack pop];\n[testStack pop];\n\nNSCAssert([testStack pop] == nil, @\"pop must return nil\");\n\n\nICKMaxStack *testMaxStack = [ICKMaxStack new];\n\n[testMaxStack push:@2];\nNSCAssert([[testMaxStack pop] isEqualToNumber:@2], @\"numbers are not same\");\n\n[testMaxStack push:@10];\n[testMaxStack push:@1];\nNSCAssert([[testMaxStack getMax] isEqualToNumber:@10], @\"numbers are not same\");\n\n[testMaxStack push:@100];\n[testMaxStack push:@5];\nNSCAssert([[testMaxStack pop] isEqualToNumber:@5], @\"numbers are not same\");\nNSCAssert([[testMaxStack getMax] isEqualToNumber:@100], @\"numbers are not same\");", "actual_language": "objectivec"}}}, "code-inlines": {}, "vars": {"question__largest-stack__stack-class": {"default": {"content": "Stack"}, "cpp": {"content": "stack", "actual_language": "cpp"}, "objectivec": {"content": "ICKStack", "actual_language": "objectivec"}}, "question__largest-stack__stack-in-class": {"default": {"content": "stack"}, "ruby": {"content": "@stack", "actual_language": "ruby"}, "cpp": {"content": "stack_", "actual_language": "cpp"}, "csharp": {"content": "_stack", "actual_language": "csharp"}, "php": {"content": "$stack", "actual_language": "php"}, "objectivec": {"content": "_stack", "actual_language": "objectivec"}}, "question__largest-stack__max-stack-class": {"default": {"content": "MaxStack"}, "objectivec": {"content": "ICKMaxStack", "actual_language": "objectivec"}}, "question__largest-stack__max": {"default": {"content": "max"}}, "question__largest-stack__new-max": {"snake": {"content": "new_max"}, "camel": {"content": "newMax"}}, "question__largest-stack__old-max": {"snake": {"content": "old_max"}, "camel": {"content": "oldMax"}}, "question__largest-stack__maxes-stack": {"snake": {"content": "maxes_stack"}, "camel": {"content": "maxesStack"}, "php": {"content": "$maxesStack", "actual_language": "php"}}, "question__largest-stack__maxes-stack-in-class": {"snake": {"content": "maxes_stack"}, "camel": {"content": "maxesStack"}, "ruby": {"content": "@maxes_stack", "actual_language": "ruby"}, "cpp": {"content": "maxesStack_", "actual_language": "cpp"}, "csharp": {"content": "_maxesStack", "actual_language": "csharp"}, "php": {"content": "$maxesStack", "actual_language": "php"}, "objectivec": {"content": "_maxesStack", "actual_language": "objectivec"}}}, "funcs": {"question__largest-stack__get-max": {"snake": {"content": "get_max"}, "camel": {"content": "getMax"}, "objectivec": {"content": "-getMax", "actual_language": "objectivec"}, "csharp": {"content": "GetMax", "actual_language": "csharp"}}, "question__largest-stack__push": {"default": {"content": "push"}, "objectivec": {"content": "-push:", "actual_language": "objectivec"}, "csharp": {"content": "Push", "actual_language": "csharp"}}, "question__largest-stack__pop": {"default": {"content": "pop"}, "objectivec": {"content": "-pop", "actual_language": "objectivec"}, "csharp": {"content": "Pop", "actual_language": "csharp"}}}, "words": {"question__largest-stack__implemented-stack-class": {"default": {"content": "<p>\n                You've already implemented this <span var=\"stack-class\"/> <span words=\"class-or-structure\"/>:\n                </p>\n<div code-block=\"stack-class\">\n</div>"}, "java": {"content": "", "actual_language": "java"}, "cpp": {"content": "", "actual_language": "cpp"}, "csharp": {"content": "", "actual_language": "csharp"}, "python": {"content": "<p>\n                You've already implemented this <span var=\"question__largest-stack__stack-class\">Stack</span> <span words=\"question__largest-stack__class-or-structure\">class</span>:\n                </p>\n<div code-block=\"question__largest-stack__stack-class\" language=\"python\" translation-highlighting=\"static\">class Stack(object):\n\n    def __init__(self):\n        \"\"\"Initialize an empty stack\"\"\"\n        self.items = []\n\n    def push(self, item):\n        \"\"\"Push a new item onto the stack\"\"\"\n        self.items.append(item)\n\n    def pop(self):\n        \"\"\"Remove and return the last item\"\"\"\n        # If the stack is empty, return None\n        # (it would also be reasonable to throw an exception)\n        if not self.items:\n            return None\n\n        return self.items.pop()\n\n    def peek(self):\n        \"\"\"Return the last item without removing it\"\"\"\n        if not self.items:\n            return None\n        return self.items[-1]</div>"}, "python3": {"content": "<p>\n                You've already implemented this <span var=\"question__largest-stack__stack-class\">Stack</span> <span words=\"question__largest-stack__class-or-structure\">class</span>:\n                </p>\n<div code-block=\"question__largest-stack__stack-class\" language=\"python\" translation-highlighting=\"static\">class Stack(object):\n\n    def __init__(self):\n        \"\"\"Initialize an empty stack\"\"\"\n        self.items = []\n\n    def push(self, item):\n        \"\"\"Push a new item onto the stack\"\"\"\n        self.items.append(item)\n\n    def pop(self):\n        \"\"\"Remove and return the last item\"\"\"\n        # If the stack is empty, return None\n        # (it would also be reasonable to throw an exception)\n        if not self.items:\n            return None\n\n        return self.items.pop()\n\n    def peek(self):\n        \"\"\"Return the last item without removing it\"\"\"\n        if not self.items:\n            return None\n        return self.items[-1]</div>"}, "ruby": {"content": "<p>\n                You've already implemented this <span var=\"question__largest-stack__stack-class\">Stack</span> <span words=\"question__largest-stack__class-or-structure\">class</span>:\n                </p>\n<div code-block=\"question__largest-stack__stack-class\" language=\"ruby\" translation-highlighting=\"static\">class Stack\n\n  # Initializes an empty stack.\n  def initialize\n    @items = []\n  end\n\n  # Pushes a new item onto the stack.\n  def push(item)\n    @items &lt;&lt; item\n  end\n\n  # Removes and returns the last item.\n  #\n  # If the stack is empty, returns nil. (It would also be\n  # reasonable to throw an exception.)\n  def pop\n    if @items.empty?\n      nil\n    else\n      @items.pop\n    end\n  end\n\n  # Returns the last item without removing it.\n  def peek\n    if @items.empty?\n      nil\n    else\n      @items[-1]\n    end\n  end\nend</div>"}, "javascript": {"content": "<p>\n                You've already implemented this <span var=\"question__largest-stack__stack-class\">Stack</span> <span words=\"question__largest-stack__class-or-structure\">class</span>:\n                </p>\n<div code-block=\"question__largest-stack__stack-class\" language=\"javascript\" translation-highlighting=\"static\">class Stack {\n  constructor() {\n\n    // Initialize an empty stack\n    this.items = [];\n  }\n\n  // Push a new item onto the stack\n  push(item) {\n    this.items.push(item);\n  }\n\n  // Remove and return the last item\n  pop() {\n\n    // If the stack is empty, return null\n    // (It would also be reasonable to throw an exception)\n    if (!this.items.length) {\n      return null;\n    }\n    return this.items.pop();\n  }\n\n  // Returns the last item without removing it\n  peek() {\n    if (!this.items.length) {\n      return null;\n    }\n    return this.items[this.items.length - 1];\n  }\n}</div>"}, "c": {"content": "<p>\n                You've already implemented this <span var=\"question__largest-stack__stack-class\">Stack</span> <span words=\"question__largest-stack__class-or-structure\">structure</span>:\n                </p>\n<div code-block=\"question__largest-stack__stack-class\" language=\"c\" translation-highlighting=\"static\">typedef struct StackNode {\n    void *value;\n    struct StackNode *next;\n} StackNode;\n\ntypedef struct Stack {\n    StackNode *top;\n} Stack;\n\n/* Allocate and initialize an empty stack */\nStack * stackNew()\n{\n    Stack *stack = calloc(1, sizeof(Stack));\n    assert(stack != NULL);\n    return stack;\n}\n\n/* Free a previously allocated stack */\nvoid stackFree(Stack *stack)\n{\n    if (stack != NULL) {\n        StackNode *node = stack-&gt;top;\n        while (node != NULL) {\n            StackNode *next = node-&gt;next;\n            free(node-&gt;value);\n            free(node);\n            node = next;\n        }\n        free(stack);\n    }\n}\n\n/* Check if the stack is empty */\nint stackIsEmpty(const Stack *stack)\n{\n    assert(stack != NULL);\n    return stack-&gt;top == NULL;\n}\n\n/* Push a new item onto the stack */\nvoid stackPush(Stack *stack, const void *value, size_t valueSize)\n{\n    assert(stack != NULL);\n    StackNode *node = malloc(sizeof(StackNode));\n    assert(node != NULL);\n    if (valueSize &gt; 0) {\n        node-&gt;value = malloc(valueSize);\n        assert(node-&gt;value != NULL);\n        memcpy(node-&gt;value, value, valueSize);\n    }\n    else {\n        node-&gt;value = NULL;\n    }\n    node-&gt;next = stack-&gt;top;\n    stack-&gt;top = node;\n}\n\n/* Remove and return the last item */\nvoid stackPop(Stack *stack)\n{\n    assert(stack != NULL);\n    assert(stack-&gt;top != NULL);\n    StackNode *next = stack-&gt;top-&gt;next;\n    free(stack-&gt;top-&gt;value);\n    free(stack-&gt;top);\n    stack-&gt;top = next;\n}\n\n/* Return the last item without removing it */\nvoid * stackPeek(const Stack *stack)\n{\n    assert(stack != NULL);\n    assert(stack-&gt;top != NULL);\n    return stack-&gt;top-&gt;value;\n}</div>"}, "php": {"content": "<p>\n                You've already implemented this <span var=\"question__largest-stack__stack-class\">Stack</span> <span words=\"question__largest-stack__class-or-structure\">class</span>:\n                </p>\n<div code-block=\"question__largest-stack__stack-class\" language=\"php\" translation-highlighting=\"static\">class Stack\n{\n    // initialize an empty array to hold our stack items\n    private $items = [];\n\n    // push a new item onto the stack\n    public function push($item)\n    {\n        $this-&gt;items[] = $item;\n    }\n\n    // remove and return the last item\n    public function pop()\n    {\n        // if the stack is empty, return null\n        // (it would also be reasonable to throw an exception)\n        if (!count($this-&gt;items)) {\n            return null;\n        }\n        return array_pop($this-&gt;items);\n    }\n\n    // return the last item without removing it\n    public function peek()\n    {\n        if (!count($this-&gt;items)) {\n            return null;\n        }\n        return $this-&gt;items[count($this-&gt;items) - 1];\n    }\n}</div>"}, "swift": {"content": "<p>\n                You've already implemented this <span var=\"question__largest-stack__stack-class\">Stack</span> <span words=\"question__largest-stack__class-or-structure\">class</span>:\n                </p>\n<div code-block=\"question__largest-stack__stack-class\" language=\"swift\" translation-highlighting=\"static\">class Stack&lt;Item&gt; {\n\n    // initialize an empty array to hold our stack items\n    private var items: [Item] = []\n\n    // push a new item onto the stack\n    func push(_ item: Item) {\n        items.append(item)\n    }\n\n    // remove and return the last item\n    func pop() -&gt; Item? {\n\n        // if the stack is empty, return nil\n        // (it would also be reasonable to throw an exception)\n        if items.count == 0 {\n            return nil\n        }\n        return items.removeLast()\n    }\n\n    // return the last item without removing it\n    func peek() -&gt; Item? {\n        return items.last\n    }\n}</div>"}, "objectivec": {"content": "<p>\n                You've already implemented this <span var=\"question__largest-stack__stack-class\">ICKStack</span> <span words=\"question__largest-stack__class-or-structure\">class</span>:\n                </p>\n<div code-block=\"question__largest-stack__stack-class\" language=\"objectivec\" translation-highlighting=\"static\">@interface ICKStack : NSObject {\n    NSMutableArray&lt;NSNumber *&gt; *_items;\n}\n@property (readonly, nonatomic) NSUInteger count;\n@property (readonly, nonatomic) BOOL isEmpty;\n@property (readonly, nonatomic) NSNumber *top;\n- (void)push:(NSNumber *)item;\n- (NSNumber *)pop;\n@end\n\n@implementation ICKStack\n\n// initialize an empty stack\n- (instancetype)init {\n    if (self = [super init]) {\n        _items = [NSMutableArray new];\n    }\n    return self;\n}\n\n// push a new item onto the stack\n- (void)push:(NSNumber *)item {\n    [_items addObject:item];\n}\n\n// remove and return the last item\n- (NSNumber *)pop {\n    // if the stack is empty, return nil\n    if (_items.count == 0) {\n        return nil;\n    }\n\n    NSNumber *lastItem = _items.lastObject;\n    [_items removeLastObject];\n\n    return lastItem;\n}\n\n// count the number of items in the stack\n- (NSUInteger)count {\n    return _items.count;\n}\n\n// check if the stack is empty\n- (BOOL)isEmpty {\n    return _items.count == 0;\n}\n\n// return the last item without removing it\n- (NSNumber *)top {\n    return _items.lastObject;\n}\n\n@end</div>"}}, "question__largest-stack__your-or-built-in": {"default": {"content": "your"}, "java": {"content": "the built-in", "actual_language": "java"}, "cpp": {"content": "the built-in", "actual_language": "cpp"}, "csharp": {"content": "the built-in", "actual_language": "csharp"}, "python": {"content": "your"}, "python3": {"content": "your"}, "ruby": {"content": "your"}, "javascript": {"content": "your"}, "c": {"content": "your"}, "php": {"content": "your"}, "swift": {"content": "your"}, "objectivec": {"content": "your"}}, "question__largest-stack__class-or-structure": {"default": {"content": "class"}, "c": {"content": "structure", "actual_language": "c"}, "python": {"content": "class"}, "python3": {"content": "class"}, "ruby": {"content": "class"}, "java": {"content": "class"}, "javascript": {"content": "class"}, "cpp": {"content": "class"}, "csharp": {"content": "class"}, "php": {"content": "class"}, "swift": {"content": "class"}, "objectivec": {"content": "class"}}, "question__largest-stack__function-in-a-class": {"default": {"content": "method"}, "c": {"content": "function"}, "python": {"content": "method"}, "python3": {"content": "method"}, "ruby": {"content": "method"}, "java": {"content": "method"}, "javascript": {"content": "method"}, "cpp": {"content": "method"}, "csharp": {"content": "method"}, "php": {"content": "method"}, "swift": {"content": "method"}, "objectivec": {"content": "method"}}}};
+            //
+            var codeTypes = ['words', 'code-blocks', 'vars', 'funcs', 'code-inlines'];
+
+            var mergeObjects = function(objectA, objectB) {
+                objectA = objectA || {};
+                objectB = objectB || {};
+                for (var key in objectB) {
+                    objectA[key] = objectB[key];
+                }
+                return objectA;
+            }
+
+            if (!window.contentTranslations) {
+                window.contentTranslations = elTranslations;
+            } else {
+                for (var i=0; i<codeTypes.length; i++) {
+                    window.contentTranslations[codeTypes[i]] = mergeObjects(window.contentTranslations[codeTypes[i]], elTranslations[codeTypes[i]]);
+                }
+            }
+            window.editorTemplates = window.contentTranslations['code-blocks']['editor-template'];</script>
+</div>
+
+
+        <div class="share-btns share-btns-quiz-end" ng-show="getBtnSet()=='after-option'" ng-cloak>
+            
+
+
+
+
+    
+        <a class="custom-share facebook-share" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.interviewcake.com/question/javascript/largest-stack" target="_blank" tracklink the-event="FB share click" the-properties='{"which" : "post-question option"}'><i class="fa fa-facebook"> </i> Share</a>
+    
+    
+        <a class="custom-share twitter-share" href="https://twitter.com/intent/tweet?text=Solved%20this%20coding%20interview%20question%21&amp;via=interviewcake&amp;related=interviewcake&amp;url=https%3A//www.interviewcake.com/question/javascript/largest-stack" target="_blank" tracklink the-event="Twitter share click" the-properties='{"which" : "post-question option"}'><i class="fa fa-twitter"> </i> Tweet</a>
+    
+    
+        <a class="custom-share linkedin-share" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A//www.interviewcake.com/question/javascript/largest-stack&amp;title=&amp;summary=Solved%20this%20coding%20interview%20question%21&amp;source=Interview%20Cake" target="_blank" tracklink the-event="LinkedIn share click" the-properties='{"which" : "post-question option"}'><i class="fa fa-linkedin"> </i> Share</a>
+    
+
+
+        </div>
+        <div class="share-btns share-btns-quiz-end" ng-show="getBtnSet()=='after-must-review'" ng-cloak>
+            
+
+
+
+
+    
+        <a class="custom-share facebook-share" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.interviewcake.com/question/javascript/largest-stack" target="_blank" tracklink the-event="FB share click" the-properties='{"which" : "post-question must review"}'><i class="fa fa-facebook"> </i> Share</a>
+    
+    
+        <a class="custom-share twitter-share" href="https://twitter.com/intent/tweet?text=Tough%20coding%20interview%20question%21&amp;via=interviewcake&amp;related=interviewcake&amp;url=https%3A//www.interviewcake.com/question/javascript/largest-stack" target="_blank" tracklink the-event="Twitter share click" the-properties='{"which" : "post-question must review"}'><i class="fa fa-twitter"> </i> Tweet</a>
+    
+    
+        <a class="custom-share linkedin-share" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A//www.interviewcake.com/question/javascript/largest-stack&amp;title=&amp;summary=Tough%20coding%20interview%20question%21&amp;source=Interview%20Cake" target="_blank" tracklink the-event="LinkedIn share click" the-properties='{"which" : "post-question must review"}'><i class="fa fa-linkedin"> </i> Share</a>
+    
+
+
+        </div>
+    </div>
+
+
+    <div class="btn-sets" ng-cloak>
+
+
+        <p class="prompt" ng-bind="getPromptStr()" ng-hide="endedQuestion"></p>
+
+        <div class="btn-set btn-set-during" ng-show="isSingleTrack && getBtnSet()=='during'">
+                <a ng-click="showPress()" id="btn-show" class="btn btn-default btn-large" style=""><span class="glyphicon glyphicon-chevron-down"></span><span class="text" ng-bind="getShowBtnText()"></span></a>
+        </div>
+
+        <div class="btn-set btn-set-during" ng-show="!isSingleTrack && getBtnSet()=='during'">
+			<a ng-click="haveAnswerPress()" id="btn-got-it" class="btn btn-default btn-large" style=""><span class="glyphicon glyphicon-ok"></span><span class="text" ng-bind="getHaveAnswerBtnText()"></span></a>
+			<a ng-click="dontHaveAnswerPress()" id="btn-hint" class="btn btn-default btn-large" style=""><span class="fa fa-question"></span><span class="text" ng-bind="getDontHaveAnswerBtnText()"></span></a>
+        </div>
+
+        
+
+    </div>
+
+    <div class="next" ng-show="endedQuestion" ng-cloak>
+		
+        
+			<div class="question-end-outside-course-bottom-cta">
+				<h3>
+					Ready for more?
+				</h3>
+				<a href="../../table-of-contents.html" class="btn btn-branded btn-rarr btn-lg"><span class="text">Check out our full course</span></a>
+			</div>
+        
+    </div>
+
+</div>
+</div>
+
+
+</div>
+
+
+        
+        
+        
+
+        
+
+            <div id="print-footer">
+                <p>
+                    Want more coding interview help?
+                </p>
+
+                <p>
+                    Check out <span class="url">interviewcake.com</span> for more advice, guides, and practice questions.
+                </p>
+            </div>
+
+            <div ng-cloak id="footer">
+
+                
+                <a class="newsletter-link" href="../../free-weekly-coding-interview-problem-newsletter.html">
+                    
+                    Subscribe to our weekly question email list &raquo;
+                </a>
+                
+
+                
+                <div class="links">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="by-company">
+                                    <h5>
+                                        Programming interview questions by company:
+                                    </h5>
+                                    <ul>
+                                        <li>
+                                            <a href="../../google-interview-questions.html">Google interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../facebook-interview-questions.html">Facebook interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../amazon-interview-questions.html">Amazon interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../uber-interview-questions.html">Uber interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../microsoft-interview-questions.html">Microsoft interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../apple-interview-questions.html">Apple interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../netflix-interview-questions.html">Netflix interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../dropbox-interview-questions.html">Dropbox interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../ebay-interview-questions.html">eBay interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../linkedin-interview-questions.html">LinkedIn interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../oracle-interview-questions.html">Oracle interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../paypal-interview-questions.html">PayPal interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../yahoo-interview-questions.html">Yahoo interview questions</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="by-language">
+                                    <h5>
+                                        Programming interview questions by topic:
+                                    </h5>
+                                    <ul>
+                                        <li>
+                                            <a href="../../article/javascript/sqld41d.html">SQL interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../article/javascript/testing-and-qad41d.html">Testing and QA interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../article/javascript/bit-manipulationd41d.html">Bit manipulation interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../java-interview-questions.html">Java interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../python-interview-questions.html">Python interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../ruby-interview-questions.html">Ruby interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../javascript-interview-questions.html">JavaScript interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../cpp-interview-questions.html">C++ interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../c-interview-questions.html">C interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../swift-interview-questions.html">Swift interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../objective-c-interview-questions.html">Objective-C interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../php-interview-questions.html">PHP interview questions</a>
+                                        </li>
+                                        <li>
+                                            <a href="../../c-sharp-interview-questions.html">C# interview questions</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+                <div class="social-media">
+                    <a class="facebook" href="https://www.facebook.com/interviewcake" target="_blank" tracklink the-event="FB footer click"><i class="fa fa-facebook"></i></a>
+                    <a class="twitter" href="https://www.twitter.com/interviewcake" target="_blank" tracklink the-event="Twitter footer click"><i class="fa fa-twitter"></i></a>
+                </div>
+                
+
+				<div itemscope="" itemtype="http://schema.org/Corporation">
+					<meta itemprop="description" content="Programming interview practice and tips for software engineers looking for jobs.">
+					<meta itemprop="image" content="../../static/images/cake_white_on_blue_600.png">
+					<meta  itemprop="logo" content="../../static/images/cake_white_on_blue_600.png">
+					<meta  itemprop="url" content="../../index.html">
+
+					Copyright &copy; 2020
+					<span itemprop="name">Cake Labs, Inc.</span> All rights reserved.
+
+					<address itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+						<span itemprop="streetAddress">228 Park Ave S #82632</span>,
+						<span itemprop="addressLocality">New York</span>,
+						<span itemprop="addressRegion">NY</span>
+						<span itemprop="addressCountry">US</span>
+						<span itemprop="postalCode">10003</span>
+						<span itemprop="telephone">(862) 294-2956</span>
+					</address>
+
+					<address itemprop="location" itemscope="" itemtype="http://schema.org/PostalAddress">
+						<meta itemprop="addressCountry" content="US">
+						<meta itemprop="addressLocality" content="New York">
+						<meta itemprop="addressRegion" content="NY">
+						<meta itemprop="streetAddress" content="228 Park Ave S #82632">
+						<meta itemprop="postalCode" content="10003">
+						<meta itemprop="telephone" content="(862) 294-2956">
+					</address>
+
+					<div itemprop="location" itemscope="" itemtype="http://schema.org/Place">
+						<div itemprop="geo" itemscope="" itemtype="http://schema.org/GeoCoordinates">
+							<meta itemprop="latitude" content="40.73765">
+							<meta itemprop="longitude" content="-73.98845">
+						</div>
+					</div>
+				</div>
+
+                <div>
+                    <a href="../../about.html">About</a>
+                    |
+                    <a rel="nofollow" href="../../privacy-policy.html">Privacy</a>
+                    |
+                    <a rel="nofollow" href="../../terms-and-conditions.html">Terms</a>
+                </div>
+
+				
+
+            </div>
+
+        
+
+    </div>
+
+
+
+</div> <!-- .left-panel -->
+
+<div class="right-panel">
+    <div ng-controller="EditorCtrl"
+     class="editor-container"
+     ng-class="{ 'editor-open-or-opening': editorOpenOrOpening }"
+     ng-cloak>
+
+    <button class="show-editor"
+            ng-class="{ 'hide-editor': editorOpenOrPartlyOpen }"
+            ng-click="editorOpenOrOpening ? closeEditor() : openEditor()">
+        Editor
+    </button>
+
+    <div class="ace-container" ng-class="{ 'results-open': resultsOpenOrOpening }">
+        <div ui-ace="{
+                onLoad : aceLoaded,
+                advanced: {
+                    enableBasicAutocompletion: true,
+                }}"
+             ng-model="userCode">
+        </div>
+
+        <p class="reset-editor"
+           ng-class="{'code-matches-editor': userCode === currentLanguageTemplate}"
+           ng-click="resetEditor()">
+            Reset editor
+        </p>
+
+        <select id="select-language-editor-width-hack" style="display: none">
+            <option></option>
+        </select>
+
+        <div class="select-language-editor">
+            <select ng-model="selectedLanguage"
+                    ng-options="language.display_name_without_beta for language in aceLanguages |
+                        orderBy: ['-dropdown_bottom', 'display_name']"
+                    ng-change="selectedFromLanguageDropdown()">
+            </select>
+        </div>
+
+        <select id="select-mode-editor-width-hack" style="display: none">
+            <option ng-bind="editorMode"></option>
+        </select>
+        <div class="select-mode-editor">
+            <select ng-model="editorMode"
+                    ng-change="selectedFromEditorModeDropdown()">
+                <option value="" selected disabled hidden>vim/emacs?</option>
+                <option value="default">regular</option>
+                <option value="vim">vim</option>
+                <option value="emacs">emacs</option>
+            </select>
+        </div>
+
+        <i class="fa fa-chevron-up"
+           ng-click="openResults()"
+           ng-hide="hasCodeNeverBeenRun || resultsOpenOrOpening">
+        </i>
+
+        <button class="run-code"
+                ng-click="runCode(); openResults(); hasCodeNeverBeenRun = false"
+                ng-disabled="runningCode"
+                ng-show="selectedLanguage.short_name != 'nolanguage'">
+            Run
+        </button>
+    </div>
+
+    <div class="results-container" ng-class="{ 'running-code': runningCode }">
+        <i class="fa fa-chevron-down" ng-click="closeResults()"></i>
+
+        <div class="results">
+            <p class="output help"  ng-show="outputHelp"  ng-bind="outputHelp"></p>
+            <p class="output"       ng-show="output"      ng-bind="output"></p>
+            <p class="output error" ng-show="outputError" ng-bind="outputError"></p>
+        </div>
+
+        <p class="qualified-io">
+            Powered by
+            <a href="https://qualified.io/?utm_source=referral&amp;utm_campaign=interviewcake" target="_blank">
+                qualified.io
+            </a>
+        </p>
+    </div>
+</div>
+
+</div>
+
+</div> <!-- .panel-wrapper -->
+
+
+
+
+
+
+
+	
+	
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700|Inconsolata:400,700|Lora:400,400italic' rel='stylesheet' type='text/css'>
+		<style type="text/css" media="all">
+			h1{visibility:visible}
+		</style>
+
+
+		
+			<link rel="stylesheet" href="../../static/CACHE/css/output.817da752510b.css" type="text/css" media="all">
+			
+		
+
+
+		<link href="../../static/fonts/cake_font/style.css" rel="stylesheet" type="text/css" />
+		
+			<link href="../../../netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+			<link href="../../../cdn.jsdelivr.net/npm/katex%400.10.1/dist/katex.min.css" rel="stylesheet" integrity="sha384-dbVIfZGuN1Yq7/1Ocstc1lUEm+AT+/rCkibIcC/OmWo5f0EA48Vf8CytHzGrSwbQ" crossorigin="anonymous">
+		
+    
+	
+
+
+	
+	
+	
+
+	
+		<script src="../../../cdn.cookielaw.org/consent/4c3fba06-5677-4e54-86d0-db9601f055e8.js" type="text/javascript" charset="UTF-8"></script>
+	
+	<script type="text/javascript">
+	function OptanonWrapper() { }
+	</script>
+
+    
+		<script type="text/javascript"> !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+		
+			
+		  analytics.load("rowk0wc1g6");
+		
+		  analytics.page(); }}();
+		</script>
+    
+
+
+    
+    
+
+    <script type="text/javascript">
+        (function(){
+  var FLAGS = {
+    'learnings': true,'only_3_free_questions': true,'course_survey': false,'allow_anonymous_purchase': true,'data_structures_deployed': false,'tell_me_more': true,'tips_dropdown': true,'toc': true,'logo_testimonials': true,'student_pricing': true,'home_video': true,'home_slack_cta': false
+    },
+    SWITCHES = {
+    
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+    </script>
+
+    
+        <script>
+            // in base.html we use editor_enabled to conditionally load ui-ace.js
+            // so in base.js we need editor_enabled to conditionally load the ui.ace module
+            window.IC.editor_enabled = true;
+        </script>
+    
+
+
+    
+
+    
+
+
+    
+
+    <script type="text/javascript">
+        window.CACHEBUST_QUERY_STR = '?bust=209';
+        // TODO: move above into the below
+        window.JS_CONSTANTS = {"next_step_type_enum": {"course_section_item": "_NEXT_STEP_TYPE_COURSE_SECTION_ITEM_", "login": "_NEXT_STEP_TYPE_LOGIN_", "purchase": "_NEXT_STEP_TYPE_PURCHASE_", "done": "_NEXT_STEP_TYPE_DONE_"}, "DEFAULT_C18N_LANGUAGE": {"short_name": "python", "display_name": "Python 2.7", "case_convention": "snake", "closest_languages": ["python3", "ruby", "java", "cpp", "javascript", "php", "csharp", "objectivec", "c", "swift"], "prism": "python", "ace": "python", "editor_template": "def my_function(arg):\n\n    # Write the body of your function here\n    \n\n    return 'running with %s' % arg\n\n# Run your function through some test cases here\n# Remember: debugging is half the battle!\nprint my_function('test input')\n", "display_name_without_beta": "Python 2.7"}, "C18N_LANGUAGES": [{"short_name": "python", "display_name": "Python 2.7", "case_convention": "snake", "closest_languages": ["python3", "ruby", "java", "cpp", "javascript", "php", "csharp", "objectivec", "c", "swift"], "prism": "python", "ace": "python", "editor_template": "def my_function(arg):\n\n    # Write the body of your function here\n    \n\n    return 'running with %s' % arg\n\n# Run your function through some test cases here\n# Remember: debugging is half the battle!\nprint my_function('test input')\n", "display_name_without_beta": "Python 2.7"}, {"short_name": "python3", "display_name": "Python 3.6", "case_convention": "snake", "closest_languages": ["python", "ruby", "java", "cpp", "javascript", "php", "csharp", "objectivec", "c", "swift"], "prism": "python", "ace": "python", "editor_template": "def my_function(arg):\n\n    # Write the body of your function here\n    \n\n    return 'running with %s' % (arg)\n\n# Run your function through some test cases here\n# Remember: debugging is half the battle!\nprint(my_function('test input'))\n", "display_name_without_beta": "Python 3.6"}, {"short_name": "ruby", "display_name": "Ruby", "case_convention": "snake", "closest_languages": ["python", "python3", "java", "cpp", "javascript", "php", "csharp", "objectivec", "c", "swift"], "prism": "ruby", "ace": "ruby", "editor_template": "def my_function(arg)\n  # write the body of your function here\n  \n\n  return \"running with #{arg}\"\nend\n\n# run your function through some test cases here\n# remember: debugging is half the battle!\nputs my_function('test input')\n", "display_name_without_beta": "Ruby"}, {"short_name": "java", "display_name": "Java", "case_convention": "camel", "closest_languages": ["csharp", "javascript", "cpp", "c", "swift", "objectivec", "php", "ruby", "python", "python3"], "prism": "java", "ace": "java", "editor_template": "public class Solution {\n\n    public static String myFunction(String arg) {\n\n        // write the body of your function here\n        \n\n        return \"running with \" + arg;\n    }\n\n    public static void main(String[] args) {\n\n        // run your function through some test cases here\n        // remember: debugging is half the battle!\n        String testInput = \"test input\";\n        System.out.println(myFunction(testInput));\n    }\n}", "display_name_without_beta": "Java"}, {"short_name": "javascript", "display_name": "JavaScript", "case_convention": "camel", "closest_languages": ["java", "csharp", "swift", "php", "cpp", "c", "objectivec", "ruby", "python", "python3"], "prism": "javascript", "ace": "javascript", "editor_template": "function myFunction(arg) {\n\n  // write the body of your function here\n  \n\n  return 'running with ' + arg;\n}\n\n// run your function through some test cases here\n// remember: debugging is half the battle!\nconsole.log(myFunction('test input'));\n", "display_name_without_beta": "JavaScript"}, {"short_name": "c", "display_name": "C", "case_convention": "camel", "closest_languages": ["cpp", "csharp", "java", "objectivec", "python", "python3", "php", "javascript", "ruby", "swift"], "prism": "c", "ace": "c_cpp", "editor_template": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint myFunction(char *arg)\n{\n    // write the body of your function here\n    \n\n    printf(\"running with %s\\n\", arg);\n    return 0;\n}\n\nint main()\n{\n    // run your function through some test cases here\n    // remember: debugging is half the battle!\n    myFunction(\"test input\");\n    return 0;\n}", "display_name_without_beta": "C"}, {"short_name": "cpp", "display_name": "C++", "case_convention": "camel", "closest_languages": ["c", "csharp", "java", "objectivec", "python", "python3", "php", "javascript", "ruby", "swift"], "prism": "cpp", "ace": "c_cpp", "editor_template": "#include <iostream>\nusing namespace std;\n\nstring myFunction (const string& arg)\n{\n    // write the body of your function here\n    \n\n    return \"running with \" + arg;\n}\n\nint main ()\n{\n    // run your function through some test cases here\n    // remember: debugging is half the battle!\n    cout << myFunction (\"test input\");\n    return 0;\n}", "display_name_without_beta": "C++"}, {"short_name": "csharp", "display_name": "C#", "case_convention": "camel", "closest_languages": ["java", "javascript", "cpp", "c", "php", "swift", "objectivec", "ruby", "python", "python3"], "prism": "csharp", "ace": "csharp", "editor_template": "using System;\n\nnamespace Solution\n{\n    class Solution\n    {\n        public static string MyFunction(string arg)\n        {\n            // Write the body of your function here\n            \n\n            return $\"Running with {arg}\";\n        }\n\n        public static void Main(string[] args)\n        {\n            // Run your function through some test cases here.\n            // Remember: debugging is half the battle!\n            string testInput = \"test input\";\n            Console.WriteLine(MyFunction(testInput));\n        }\n    }\n}\n", "display_name_without_beta": "C#"}, {"short_name": "php", "display_name": "PHP", "case_convention": "camel", "closest_languages": ["javascript", "java", "csharp", "c", "cpp", "objectivec", "swift", "ruby", "python", "python3"], "prism": "php", "ace": "php", "editor_template": "function myFunction($arg) {\n\n    // write the body of your function here\n    \n\n    return \"running with \" . $arg;\n}\n\n// run your function through some test cases here\n// remember: debugging is half the battle!\necho myFunction(\"test input\");\n", "display_name_without_beta": "PHP"}, {"short_name": "swift", "display_name": "Swift", "case_convention": "camel", "closest_languages": ["java", "javascript", "csharp", "cpp", "php", "objectivec", "python", "python3", "c", "ruby"], "prism": "swift", "ace": "swift", "editor_template": "func myFunction(_ arg: String) -> String {\n\n    // write the body of your function here\n    \n\n    return \"running with \\(arg)\"\n}\n\n// run your function through some test cases here\n// remember: debugging is half the battle!\nlet testInput = \"test input\"\nprint(myFunction(testInput))\n", "display_name_without_beta": "Swift"}, {"short_name": "objectivec", "display_name": "Objective-C", "case_convention": "camel", "closest_languages": ["c", "cpp", "java", "javascript", "csharp", "swift", "python", "python3", "ruby", "php"], "prism": "objectivec", "ace": "objectivec", "editor_template": "// Code run in our editor is compiled with GNUStep\n\n#import <Foundation/Foundation.h>\n#import <stdio.h>\n\n@interface Solution : NSObject\n- (NSString *)myMethod:(NSString *)arg;\n@end\n\n@implementation Solution\n\n- (NSString *)myMethod:(NSString *)arg {\n    // write the body of your function here\n    \n\n    return [@\"running with \" stringByAppendingString:arg];\n}\n\n@end\n\nint main(int argc, const char * argv[]) {\n    @autoreleasepool {\n        // run your function through some test cases here\n        // remember: debugging is half the battle!\n        Solution * solution = [Solution new];\n        NSString * result = [solution myMethod:@\"test input\"];\n        printf(\"%s\", [result UTF8String]);\n    }\n}", "display_name_without_beta": "Objective-C"}], "PRISM_LANGUAGES": [{"short_name": "nolanguage", "display_name": "Plain text", "prism": "none", "ace": "plain_text", "dropdown_bottom": true, "display_name_without_beta": "Plain text"}, {"short_name": "html", "display_name": "HTML", "prism": "markup", "display_name_without_beta": "HTML"}, {"short_name": "sql", "display_name": "SQL", "prism": "sql", "display_name_without_beta": "SQL"}, {"short_name": "python", "display_name": "Python 2.7", "case_convention": "snake", "closest_languages": ["python3", "ruby", "java", "cpp", "javascript", "php", "csharp", "objectivec", "c", "swift"], "prism": "python", "ace": "python", "editor_template": "def my_function(arg):\n\n    # Write the body of your function here\n    \n\n    return 'running with %s' % arg\n\n# Run your function through some test cases here\n# Remember: debugging is half the battle!\nprint my_function('test input')\n", "display_name_without_beta": "Python 2.7"}, {"short_name": "python3", "display_name": "Python 3.6", "case_convention": "snake", "closest_languages": ["python", "ruby", "java", "cpp", "javascript", "php", "csharp", "objectivec", "c", "swift"], "prism": "python", "ace": "python", "editor_template": "def my_function(arg):\n\n    # Write the body of your function here\n    \n\n    return 'running with %s' % (arg)\n\n# Run your function through some test cases here\n# Remember: debugging is half the battle!\nprint(my_function('test input'))\n", "display_name_without_beta": "Python 3.6"}, {"short_name": "ruby", "display_name": "Ruby", "case_convention": "snake", "closest_languages": ["python", "python3", "java", "cpp", "javascript", "php", "csharp", "objectivec", "c", "swift"], "prism": "ruby", "ace": "ruby", "editor_template": "def my_function(arg)\n  # write the body of your function here\n  \n\n  return \"running with #{arg}\"\nend\n\n# run your function through some test cases here\n# remember: debugging is half the battle!\nputs my_function('test input')\n", "display_name_without_beta": "Ruby"}, {"short_name": "java", "display_name": "Java", "case_convention": "camel", "closest_languages": ["csharp", "javascript", "cpp", "c", "swift", "objectivec", "php", "ruby", "python", "python3"], "prism": "java", "ace": "java", "editor_template": "public class Solution {\n\n    public static String myFunction(String arg) {\n\n        // write the body of your function here\n        \n\n        return \"running with \" + arg;\n    }\n\n    public static void main(String[] args) {\n\n        // run your function through some test cases here\n        // remember: debugging is half the battle!\n        String testInput = \"test input\";\n        System.out.println(myFunction(testInput));\n    }\n}", "display_name_without_beta": "Java"}, {"short_name": "javascript", "display_name": "JavaScript", "case_convention": "camel", "closest_languages": ["java", "csharp", "swift", "php", "cpp", "c", "objectivec", "ruby", "python", "python3"], "prism": "javascript", "ace": "javascript", "editor_template": "function myFunction(arg) {\n\n  // write the body of your function here\n  \n\n  return 'running with ' + arg;\n}\n\n// run your function through some test cases here\n// remember: debugging is half the battle!\nconsole.log(myFunction('test input'));\n", "display_name_without_beta": "JavaScript"}, {"short_name": "c", "display_name": "C", "case_convention": "camel", "closest_languages": ["cpp", "csharp", "java", "objectivec", "python", "python3", "php", "javascript", "ruby", "swift"], "prism": "c", "ace": "c_cpp", "editor_template": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint myFunction(char *arg)\n{\n    // write the body of your function here\n    \n\n    printf(\"running with %s\\n\", arg);\n    return 0;\n}\n\nint main()\n{\n    // run your function through some test cases here\n    // remember: debugging is half the battle!\n    myFunction(\"test input\");\n    return 0;\n}", "display_name_without_beta": "C"}, {"short_name": "cpp", "display_name": "C++", "case_convention": "camel", "closest_languages": ["c", "csharp", "java", "objectivec", "python", "python3", "php", "javascript", "ruby", "swift"], "prism": "cpp", "ace": "c_cpp", "editor_template": "#include <iostream>\nusing namespace std;\n\nstring myFunction (const string& arg)\n{\n    // write the body of your function here\n    \n\n    return \"running with \" + arg;\n}\n\nint main ()\n{\n    // run your function through some test cases here\n    // remember: debugging is half the battle!\n    cout << myFunction (\"test input\");\n    return 0;\n}", "display_name_without_beta": "C++"}, {"short_name": "csharp", "display_name": "C#", "case_convention": "camel", "closest_languages": ["java", "javascript", "cpp", "c", "php", "swift", "objectivec", "ruby", "python", "python3"], "prism": "csharp", "ace": "csharp", "editor_template": "using System;\n\nnamespace Solution\n{\n    class Solution\n    {\n        public static string MyFunction(string arg)\n        {\n            // Write the body of your function here\n            \n\n            return $\"Running with {arg}\";\n        }\n\n        public static void Main(string[] args)\n        {\n            // Run your function through some test cases here.\n            // Remember: debugging is half the battle!\n            string testInput = \"test input\";\n            Console.WriteLine(MyFunction(testInput));\n        }\n    }\n}\n", "display_name_without_beta": "C#"}, {"short_name": "php", "display_name": "PHP", "case_convention": "camel", "closest_languages": ["javascript", "java", "csharp", "c", "cpp", "objectivec", "swift", "ruby", "python", "python3"], "prism": "php", "ace": "php", "editor_template": "function myFunction($arg) {\n\n    // write the body of your function here\n    \n\n    return \"running with \" . $arg;\n}\n\n// run your function through some test cases here\n// remember: debugging is half the battle!\necho myFunction(\"test input\");\n", "display_name_without_beta": "PHP"}, {"short_name": "swift", "display_name": "Swift", "case_convention": "camel", "closest_languages": ["java", "javascript", "csharp", "cpp", "php", "objectivec", "python", "python3", "c", "ruby"], "prism": "swift", "ace": "swift", "editor_template": "func myFunction(_ arg: String) -> String {\n\n    // write the body of your function here\n    \n\n    return \"running with \\(arg)\"\n}\n\n// run your function through some test cases here\n// remember: debugging is half the battle!\nlet testInput = \"test input\"\nprint(myFunction(testInput))\n", "display_name_without_beta": "Swift"}, {"short_name": "objectivec", "display_name": "Objective-C", "case_convention": "camel", "closest_languages": ["c", "cpp", "java", "javascript", "csharp", "swift", "python", "python3", "ruby", "php"], "prism": "objectivec", "ace": "objectivec", "editor_template": "// Code run in our editor is compiled with GNUStep\n\n#import <Foundation/Foundation.h>\n#import <stdio.h>\n\n@interface Solution : NSObject\n- (NSString *)myMethod:(NSString *)arg;\n@end\n\n@implementation Solution\n\n- (NSString *)myMethod:(NSString *)arg {\n    // write the body of your function here\n    \n\n    return [@\"running with \" stringByAppendingString:arg];\n}\n\n@end\n\nint main(int argc, const char * argv[]) {\n    @autoreleasepool {\n        // run your function through some test cases here\n        // remember: debugging is half the battle!\n        Solution * solution = [Solution new];\n        NSString * result = [solution myMethod:@\"test input\"];\n        printf(\"%s\", [result UTF8String]);\n    }\n}", "display_name_without_beta": "Objective-C"}], "ACE_LANGUAGES": [{"short_name": "haskell", "display_name": "Haskell", "ace": "haskell", "editor_template": "myFunction :: String -> String\n-- write the body of your function here\n\n\nmyFunction arg = \"running with \" ++ arg\n\nmain = do\n\n  -- run your function through some test cases here\n  -- remember: debugging is half the battle!\n  let result = myFunction \"test input\"\n  putStrLn result\n", "display_name_without_beta": "Haskell"}, {"short_name": "go", "display_name": "Go", "ace": "golang", "editor_template": "package main\n\nimport \"fmt\"\n\nfunc myFunction(arg string) string {\n\n    // Write the body of your function here\n    \n\n    return \"running with \" + arg\n}\n\nfunc main() {\n\n    // Run your function through some test cases here.\n    // Remember: debuggin is half the battle!\n    fmt.Println(myFunction(\"test input\"))\n}\n", "display_name_without_beta": "Go"}, {"short_name": "kotlin", "display_name": "Kotlin", "ace": "kotlin", "editor_template": "fun myFunction(text: String): String {\n    // Write the body of your function here\n    return \"Running with \" + text\n}\nfun main(args: Array<String>) {\n    // Run your function through some test cases here.\n    // Remember: debugging is half the battle!\n    println(myFunction(\"test input\"))\n}\n", "display_name_without_beta": "Kotlin"}, {"short_name": "nolanguage", "display_name": "Plain text", "prism": "none", "ace": "plain_text", "dropdown_bottom": true, "display_name_without_beta": "Plain text"}, {"short_name": "python", "display_name": "Python 2.7", "case_convention": "snake", "closest_languages": ["python3", "ruby", "java", "cpp", "javascript", "php", "csharp", "objectivec", "c", "swift"], "prism": "python", "ace": "python", "editor_template": "def my_function(arg):\n\n    # Write the body of your function here\n    \n\n    return 'running with %s' % arg\n\n# Run your function through some test cases here\n# Remember: debugging is half the battle!\nprint my_function('test input')\n", "display_name_without_beta": "Python 2.7"}, {"short_name": "python3", "display_name": "Python 3.6", "case_convention": "snake", "closest_languages": ["python", "ruby", "java", "cpp", "javascript", "php", "csharp", "objectivec", "c", "swift"], "prism": "python", "ace": "python", "editor_template": "def my_function(arg):\n\n    # Write the body of your function here\n    \n\n    return 'running with %s' % (arg)\n\n# Run your function through some test cases here\n# Remember: debugging is half the battle!\nprint(my_function('test input'))\n", "display_name_without_beta": "Python 3.6"}, {"short_name": "ruby", "display_name": "Ruby", "case_convention": "snake", "closest_languages": ["python", "python3", "java", "cpp", "javascript", "php", "csharp", "objectivec", "c", "swift"], "prism": "ruby", "ace": "ruby", "editor_template": "def my_function(arg)\n  # write the body of your function here\n  \n\n  return \"running with #{arg}\"\nend\n\n# run your function through some test cases here\n# remember: debugging is half the battle!\nputs my_function('test input')\n", "display_name_without_beta": "Ruby"}, {"short_name": "java", "display_name": "Java", "case_convention": "camel", "closest_languages": ["csharp", "javascript", "cpp", "c", "swift", "objectivec", "php", "ruby", "python", "python3"], "prism": "java", "ace": "java", "editor_template": "public class Solution {\n\n    public static String myFunction(String arg) {\n\n        // write the body of your function here\n        \n\n        return \"running with \" + arg;\n    }\n\n    public static void main(String[] args) {\n\n        // run your function through some test cases here\n        // remember: debugging is half the battle!\n        String testInput = \"test input\";\n        System.out.println(myFunction(testInput));\n    }\n}", "display_name_without_beta": "Java"}, {"short_name": "javascript", "display_name": "JavaScript", "case_convention": "camel", "closest_languages": ["java", "csharp", "swift", "php", "cpp", "c", "objectivec", "ruby", "python", "python3"], "prism": "javascript", "ace": "javascript", "editor_template": "function myFunction(arg) {\n\n  // write the body of your function here\n  \n\n  return 'running with ' + arg;\n}\n\n// run your function through some test cases here\n// remember: debugging is half the battle!\nconsole.log(myFunction('test input'));\n", "display_name_without_beta": "JavaScript"}, {"short_name": "c", "display_name": "C", "case_convention": "camel", "closest_languages": ["cpp", "csharp", "java", "objectivec", "python", "python3", "php", "javascript", "ruby", "swift"], "prism": "c", "ace": "c_cpp", "editor_template": "#include <stdio.h>\n#include <stdlib.h>\n#include <string.h>\n\nint myFunction(char *arg)\n{\n    // write the body of your function here\n    \n\n    printf(\"running with %s\\n\", arg);\n    return 0;\n}\n\nint main()\n{\n    // run your function through some test cases here\n    // remember: debugging is half the battle!\n    myFunction(\"test input\");\n    return 0;\n}", "display_name_without_beta": "C"}, {"short_name": "cpp", "display_name": "C++", "case_convention": "camel", "closest_languages": ["c", "csharp", "java", "objectivec", "python", "python3", "php", "javascript", "ruby", "swift"], "prism": "cpp", "ace": "c_cpp", "editor_template": "#include <iostream>\nusing namespace std;\n\nstring myFunction (const string& arg)\n{\n    // write the body of your function here\n    \n\n    return \"running with \" + arg;\n}\n\nint main ()\n{\n    // run your function through some test cases here\n    // remember: debugging is half the battle!\n    cout << myFunction (\"test input\");\n    return 0;\n}", "display_name_without_beta": "C++"}, {"short_name": "csharp", "display_name": "C#", "case_convention": "camel", "closest_languages": ["java", "javascript", "cpp", "c", "php", "swift", "objectivec", "ruby", "python", "python3"], "prism": "csharp", "ace": "csharp", "editor_template": "using System;\n\nnamespace Solution\n{\n    class Solution\n    {\n        public static string MyFunction(string arg)\n        {\n            // Write the body of your function here\n            \n\n            return $\"Running with {arg}\";\n        }\n\n        public static void Main(string[] args)\n        {\n            // Run your function through some test cases here.\n            // Remember: debugging is half the battle!\n            string testInput = \"test input\";\n            Console.WriteLine(MyFunction(testInput));\n        }\n    }\n}\n", "display_name_without_beta": "C#"}, {"short_name": "php", "display_name": "PHP", "case_convention": "camel", "closest_languages": ["javascript", "java", "csharp", "c", "cpp", "objectivec", "swift", "ruby", "python", "python3"], "prism": "php", "ace": "php", "editor_template": "function myFunction($arg) {\n\n    // write the body of your function here\n    \n\n    return \"running with \" . $arg;\n}\n\n// run your function through some test cases here\n// remember: debugging is half the battle!\necho myFunction(\"test input\");\n", "display_name_without_beta": "PHP"}, {"short_name": "swift", "display_name": "Swift", "case_convention": "camel", "closest_languages": ["java", "javascript", "csharp", "cpp", "php", "objectivec", "python", "python3", "c", "ruby"], "prism": "swift", "ace": "swift", "editor_template": "func myFunction(_ arg: String) -> String {\n\n    // write the body of your function here\n    \n\n    return \"running with \\(arg)\"\n}\n\n// run your function through some test cases here\n// remember: debugging is half the battle!\nlet testInput = \"test input\"\nprint(myFunction(testInput))\n", "display_name_without_beta": "Swift"}, {"short_name": "objectivec", "display_name": "Objective-C", "case_convention": "camel", "closest_languages": ["c", "cpp", "java", "javascript", "csharp", "swift", "python", "python3", "ruby", "php"], "prism": "objectivec", "ace": "objectivec", "editor_template": "// Code run in our editor is compiled with GNUStep\n\n#import <Foundation/Foundation.h>\n#import <stdio.h>\n\n@interface Solution : NSObject\n- (NSString *)myMethod:(NSString *)arg;\n@end\n\n@implementation Solution\n\n- (NSString *)myMethod:(NSString *)arg {\n    // write the body of your function here\n    \n\n    return [@\"running with \" stringByAppendingString:arg];\n}\n\n@end\n\nint main(int argc, const char * argv[]) {\n    @autoreleasepool {\n        // run your function through some test cases here\n        // remember: debugging is half the battle!\n        Solution * solution = [Solution new];\n        NSString * result = [solution myMethod:@\"test input\"];\n        printf(\"%s\", [result UTF8String]);\n    }\n}", "display_name_without_beta": "Objective-C"}], "CACHEBUST_QUERY_STR": "?bust=209", "INTEGRATIONS_SETTING_ONLY_INTEGRATIONS_THAT_SUPPORT_FRONT_END_ONLY": {"Facebook Pixel": true, "Twitter Ads": true, "All": false}, "COURSE_SURVEY": [{"q_id": "time", "question": "How much time do you have to prepare for your interview?", "answers": ["As long as it takes", "Less than a month", "Less than a week", "It's basically tomorrow!"]}, {"q_id": "background", "question": "How'd you learn to code?", "answers": ["University", "Bootcamp", "Self-taught"]}, {"q_id": "worry", "question": "What's your biggest worry for interviews?", "answers": ["I'm not good enough at some of the advanced topics", "I don't even know the basics", "I don't have enough time to prepare", "I won't get as high an offer as I can earn"]}]};
+
+        
+        window.JS_VARS = {"url_content_type": "question", "question_slug": "largest-stack", "questions_fully_attempted": [], "ace_slug": "largest-stack"};
+        
+
+        
+    </script>
+
+    
+
+    
+        <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+        <script type="text/javascript">
+            Stripe.setPublishableKey('pk_live_4wtgGTkgBtk4YIB9JDjYdOD0');
+        </script>
+    
+
+    
+
+    
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "../../../connect.facebook.net/en_US/all.js#xfbml=1&appId=149278655279066";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <script id="twitter-wjs" src="../../../platform.twitter.com/widgets.js"></script>
+    
+
+    
+    
+        
+            <script type="text/ng-template" id="/partials/animation.html"><div class="animation-wrapper">
+    <div class="animation" id="Stage-[--[getCompId()]--]" ng-class="getCompId()">
+    </div>
+</div>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/animation_iframe.html"><div class="animation-iframe-wrapper">
+    <iframe class="animation-iframe" ng-class="'animation-iframe-'+getCompId()"></iframe>
+</div>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/code-inline.html"><span class="ic-code-inline" ng-transclude></span></script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/code-block.html"><pre class="language-[--[language]--]">
+  <code class="language-[--[language]--]" ng-transclude></code>
+</pre>
+<span class="warning-message" ng-show="warningMessage" ng-bind="warningMessage"></span>
+<div class="select-language-content" ng-hide="staticLanguage" ng-cloak>
+<select ng-model="contentLanguage"
+        ng-options="language.display_name for language in contentLanguages | orderBy: 'display_name'"
+        ng-change="updateLanguage(contentLanguage)">
+</select>
+</div>
+<span class="only-content-language" ng-show="staticLanguage" ng-bind="onlyLanguage"></span>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/complexity.html"><span class="complexity"><span math>O([--[getComplexityMarkup()]--])</span></span>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/concept.html"><span class="concept-wrapper" ng-init="showConcept=false">
+
+    <span ng-click="showConcept=!showConcept" class="concept">
+        <span class="concept-name" ng-transclude></span>
+        <span class="show-concept-icon">&#8628;</span>
+    </span>
+
+    <div ng-show="showConcept" class="slide concept-body embedded" ng-include="conceptPartialUrl">
+        Loading...
+    </div>
+
+</span>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/function.html"><span class="ic-function"><span class="name" ng-transclude></span><span ng-hide="noParens">()</span></span>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/heading.html"><h3 class="heading slide" ng-show="shouldShow()" ng-cloak ng-bind="::getHeadingText()"></h3>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/inline-footnote.html"><span class="footnote-wrapper" ng-init="show = false">
+    <span class="show-footnote-icon" ng-click="show = !show">&#8628;</span>
+    <p class="footnote" ng-transclude ng-show="show">Loading...</p>
+</span>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/loading.html"><div class="Loading">
+    Loading...
+</div>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/math.html"><span class="ic-math" ng-class="{'block': isBlock()}" ng-transclude></span>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/note.html"><div class="note slide" ng-show="shouldShow()">
+    <div class="note-content" ng-transclude>
+    </div>
+</div>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/section.html"><div class="section-wrapper" ng-class="getSectionClass()" ng-init="ready=false" ng-show="shouldShow()">
+    <span heading="[--[section]--]" hide-heading="[--[hideHeading]--]"></span>
+
+    <div class="section" ng-class="getSectionClass()" ng-transclude>
+    </div>
+</div>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/variable.html"><span class="ic-variable" ng-transclude></span>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/words.html"><span class="ic-words" ng-transclude></span>
+</script>
+        
+    
+        
+            <script type="text/ng-template" id="/partials/sidebar-sticker.html"><div class="sidebar-sticker-container-container">
+    <div class="sidebar-sticker-container" ng-hide="hide">
+        <div class="sidebar-sticker" ng-style="{visibility: visibility}" sticky offset="100" hide-when-partially-offscreen ng-cloak blocks-news-drawer-when-visible id="left-side-sticker">
+            <div class="sidebar-sticker-content">
+	            <div ng-transclude>
+	            </div>
+	        </div>
+	        <span class='close-button' ng-click="hide=true">&#215;</span>
+        </div>
+    </div>
+</div></script>
+        
+    
+
+    <!-- load current-user json with initial http request -->
+    <div class="hidden" data-preload-resource="/api/v1/current-user/" data-thejson="{&quot;id&quot;:18512104,&quot;username&quot;:&quot;2020-10-28_03:18:08_01xsdv&quot;,&quot;email&quot;:null,&quot;date_joined&quot;:&quot;2020-10-28T03:18:08.927123+00:00&quot;,&quot;first_name&quot;:&quot;&quot;,&quot;last_name&quot;:&quot;&quot;,&quot;full_name&quot;:&quot;&quot;,&quot;short_name&quot;:&quot;friend&quot;,&quot;is_anonymous&quot;:true,&quot;is_on_last_question&quot;:false,&quot;percent_done&quot;:0,&quot;num_questions_done&quot;:0,&quot;num_questions_remaining&quot;:46,&quot;is_full_access&quot;:false,&quot;is_student&quot;:false,&quot;first_payment_date&quot;:null,&quot;last_payment_date&quot;:null,&quot;num_free_questions_left&quot;:3,&quot;terms_has_agreed_to_latest&quot;:false,&quot;preferred_content_language&quot;:&quot;javascript&quot;,&quot;preferred_editor_language&quot;:&quot;&quot;,&quot;is_staff&quot;:false,&quot;auth_providers_human_readable_list&quot;:&quot;&quot;,&quot;num_auth_providers&quot;:0,&quot;auth_email&quot;:&quot;&quot;}">
+        {"id":18512104,"username":"2020-10-28_03:18:08_01xsdv","email":null,"date_joined":"2020-10-28T03:18:08.927123+00:00","first_name":"","last_name":"","full_name":"","short_name":"friend","is_anonymous":true,"is_on_last_question":false,"percent_done":0,"num_questions_done":0,"num_questions_remaining":46,"is_full_access":false,"is_student":false,"first_payment_date":null,"last_payment_date":null,"num_free_questions_left":3,"terms_has_agreed_to_latest":false,"preferred_content_language":"javascript","preferred_editor_language":"","is_staff":false,"auth_providers_human_readable_list":"","num_auth_providers":0,"auth_email":""}
+    </div>
+
+    
+
+	<script src="../../../cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+	<script type="text/javascript">
+        window.IC.lozadObserver = lozad();
+        window.IC.lozadObserver.observe();
+	</script>
+
+    
+        
+    
+
+    
+    <div ng-controller="LoginModalCtrl" class="modal fade login-modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Log In" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" ng-show="closeable" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6 login-buttons-wrapper">
+                            <h3 ng-bind='note'>Log in/sign up</h3>
+                            <p class="subheading">With just a couple clicks.</p>
+                            <div class="login-btns">
+    <a ng-href="/auth/login/github/?next=[--[next | urlescape]--]" class="btn btn-soc-github" rel="nofollow"><i class="fa fa-github"></i> <span class="bar">|</span> <span class="company">GitHub Auth</span></a>
+    <a ng-href="/auth/login/google-oauth2/?next=[--[next | urlescape]--]" class="btn btn-soc-google-plus" rel="nofollow"><i class="fa my-fa-google-plus"></i> <span class="bar">|</span> <span class="company">Google Auth</span></a>
+    <a ng-href="/auth/login/facebook/?next=[--[next | urlescape]--]" class="btn btn-soc-facebook" rel="nofollow"><i class="fa my-fa-facebook"></i> <span class="bar">|</span> <span class="company">Facebook Auth</span></a>
+</div>
+<p class="login-reassurance">
+    <small>
+        We'll never post on your wall or message your friends.
+    </small>
+</p>
+
+<div class="what-about-password">
+    <p>
+        <small><a data-toggle="collapse" href="#passwordInfo">Where do I enter my password?</a></small>
+    </p>
+
+    <div class="collapse" id="passwordInfo">
+        <div class="explanation">
+            <p>
+                Actually, <strong>we don't support password-based login.</strong> Never have. Just the OAuth methods above. Why?
+            </p>
+            <ol>
+            <li>
+                It's easy and quick. No "reset password" flow. No password to forget.
+            </li>
+            <li>
+                It lets us avoid storing passwords that hackers could access and use to try to log into our users' email or bank accounts.
+            </li>
+            <li>
+                It makes it harder for one person to share a paid Interview Cake account with multiple people.
+            </li>
+        </div>
+    </div>
+</div>
+
+                        </div>
+                        <div class="col-sm-6 testimonial-wrapper">
+                            <div class="inline-testimonial wider">
+    
+    <div class="image-wrapper">
+        <img class="lozad image-top" alt="Eric, happy user" data-src="/static//images/testimonials/eric2.jpg">
+    </div>
+    
+    <span class="text text-with-image">
+        <span class="quotation-mark">&ldquo;</span><strong>Your site was really indispensable for the Google/Amazon interview process.</strong> I've recommended your site to everyone I know that wants to become both a better programmer and a better interviewer. Great work.
+        <span class="author">
+            &mdash; 
+            
+                Eric
+            
+        </span>
+    </span>
+</div>
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <input type="hidden" name="csrfmiddlewaretoken" value="0wdsTrqayZTiavzZEzLdvz6n8VZwRarOyjYkSRWpDJlym4pPhQZiDb8ZOxMFeKE7">
+    <div id="loading">
+    . . .
+    </div>
+</body>
