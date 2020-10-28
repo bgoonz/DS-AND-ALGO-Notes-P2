@@ -60,10 +60,10 @@ f.neighbors = [e];
 
 ---
 
-**The row index will corespond to the source of an edge** and the _column index will correspond to the edges destination._
+The row index will corespond to the source of an edge and the column index will correspond to the edges destination.
 
 - When the edges have a direction, `matrix[i][j]` may not be the same as `matrix[j][i]`
-- It is **common to say that a node is adjacent to itself so matrix[x][x] is true for any node
+- It is common to say that a node is adjacent to itself so matrix[x][x] is true for any node
 - Will be O(n^2) space complexity
 
 ---
