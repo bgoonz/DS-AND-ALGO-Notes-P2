@@ -8,9 +8,7 @@ For anyone who might benifit
 
 # WEEK 8<br>*Getting to Know the Network* 
 ________________________________________________________________________________
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo= orderedList=false} -->
 
-<!-- code_chunk_output -->
 
 - [Week-8-Notes](#week-8-notes)
 - [WEEK 8<br>*Getting to Know the Network*](#week-8brgetting-to-know-the-network)

@@ -6,7 +6,7 @@ This cheat sheet uses the Big O notation to express time complexity.
 
 * For a reminder on Big O, see <a href="https://algodaily.com/lessons/understanding-big-o-and-al
 
-![](https://storage.googleapis.com/algodailyrandomassets/book-mock-preview.png)
+
 
 Data Structures Cheat Sheet
 ---------------------------
