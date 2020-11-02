@@ -1,4 +1,4 @@
-class Graph {
+ddclass Graph {
     constructor() {
         this.adjacency;
     }
