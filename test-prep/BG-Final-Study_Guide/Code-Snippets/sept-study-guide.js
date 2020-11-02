@@ -363,164 +363,437 @@
 // ); //breadthFirstSearch(graph, "a", "c"):  true
 
 //--------------------------white boarding--------------------------------------------------
-// PROBLEM 1
-function joesFriendsBFS(adjacencyList, startName, endName) {
-    // We're doing BFS so we know we need a QUEUE
-    let queue = [startName];
-    // Track our visited friends.
-    let visited = new Set();
-    // While there are friends left to visit
-    while (queue.length) {
-        // We remove a friend from the queue
-        let name = queue.shift();
-        // Check if we've already visited them. if we have, we move on
-        if (visited.has(name)) continue;
-        // If we haven't, we add them to the visited Set
-        visited.add(name);
-        // Have we reached Jesse yet?
-        if (name === endName) {
-            // if so, we know we're done and we can return the number of friends we've
-            // visited, which is the length of the visited set (minus Joe)
-            return Array.from(visited).length - 1;
-        }
-        // Otherwise let's add all the friends at our current friend, and run this again
-        queue.push(...adjacencyList[name]);
-    }
-    // if our whole loop happened and we didn't get to Jesse, it means he's not a
-    // part of the graph or there's no path between Joe and Jesse
-    return "Jesse's not here :(";
+// // PROBLEM 1
+// function joesFriendsBFS(adjacencyList, startName, endName) {
+//     // We're doing BFS so we know we need a QUEUE
+//     let queue = [startName];
+//     // Track our visited friends.
+//     let visited = new Set();
+//     // While there are friends left to visit
+//     while (queue.length) {
+//         // We remove a friend from the queue
+//         let name = queue.shift();
+//         // Check if we've already visited them. if we have, we move on
+//         if (visited.has(name)) continue;
+//         // If we haven't, we add them to the visited Set
+//         visited.add(name);
+//         // Have we reached Jesse yet?
+//         if (name === endName) {
+//             // if so, we know we're done and we can return the number of friends we've
+//             // visited, which is the length of the visited set (minus Joe)
+//             return Array.from(visited).length - 1;
+//         }
+//         // Otherwise let's add all the friends at our current friend, and run this again
+//         queue.push(...adjacencyList[name]);
+//     }
+//     // if our whole loop happened and we didn't get to Jesse, it means he's not a
+//     // part of the graph or there's no path between Joe and Jesse
+//     return "Jesse's not here :(";
+// }
+// console.log(
+//     " TESTS FOR PROBLEMS 1 AND 2---------------------------------------------------------------------"
+// );
+// const adjacencyList = {
+//     derek: ["selam", "dean"],
+//     joe: ["selam"],
+//     selam: ["derek", "joe", "dean", "evan"],
+//     dean: ["derek", "evan", "selam"],
+//     sam: ["jen"],
+//     evan: ["selam", "jesse", "dean"],
+//     jen: ["sam", "javier"],
+//     javier: ["jen"],
+//     chris: [],
+//     jesse: ["evan"],
+// };
+//
+// console.log(
+//     'joesFriendsBFS(adjacencyList, "joe", "jesse"): ',
+//     joesFriendsBFS(adjacencyList, "joe", "jesse")
+// );
+// console.log(joesFriendsDFS(adjacencyList, "joe", "jesse")); // [ 'selam', 'evan', 'dean', 'derek', 'jesse' ]
+//
+// console.log(
+//     " TESTS FOR PROBLEMS 3---------------------------------------------------------------------"
+// );
+// // PROBLEM 2
+// function joesFriendsDFS(adjacencyList, startName, endName) {
+//     // we're doing DFS so we know we need a STACK
+//     let stack = [startName];
+//     // Track visited
+//     let visited = new Set();
+//     // While there are friends to search through, we're going to contine
+//     while (stack.length) {
+//         // We remove the current friend we're comparing to Jesse
+//         let name = stack.pop();
+//         // Check if we've already visited them. if we have, we move on.
+//         if (visited.has(name)) continue;
+//         // if we haven't, add them to the visited list
+//         visited.add(name);
+//         // check if we have reached Jesse
+//         if (name === endName) {
+//             // If we have, we can return the list of friends we visited along the way
+//             const friendsList = Array.from(visited);
+//             // but we must first remove Joe from the list. we know he's first because
+//             // he was the first person popped off the stack.
+//             friendsList.shift();
+//             return friendsList;
+//         }
+//         // if we didn't see Jesse, we add the friends to the top of the stack and keep searching
+//         stack.push(...adjacencyList[name]);
+//     }
+//     // if our whole loop happened and we didn't get to Jesse, it means he's not a
+//     // part of the graph or there's no path between Joe and Jesse
+//     return "Jesse's not here :(";
+// }
+// // PROBLEM 3 SOLUTION
+// const hasPathSum = function (root, sum) {
+//     // If there's no root, we know that it's impossible to reach the sum
+//     if (!root) return false;
+//     // we must keep track of our current value, which is the difference between our final sum and the number we're currently on (e.g 22 - 5)
+//     let currSum = sum - root.val;
+//     // our base case. if we reach the bottom of the tree, and the difference between
+//     // our final value and our current value is zero, we know we've found the sum along this path
+//     // so we can return true.
+//     if (!root.left && !root.right) {
+//         if (currSum == 0) return true;
+//     }
+//     // Now that we've established our base case and recursive step, we call the recursion
+//     let leftSum = hasPathSum(root.left, currSum);
+//     let rightSum = hasPathSum(root.right, currSum);
+//     // we want these functions to return a number, and we want to check both directions
+//     return leftSum || rightSum;
+// };
+// const pathSum = (root, sum, curSum = root.val) => {
+//     if (!root) return false;
+//     if (sum === curSum) return true;
+//     const leftRecur = pathSum(root.left, sum, curSum + root.val);
+//     const rightRecur = pathSum(root.right, sum, curSum + root.val);
+//     console.log(leftRecur || rightRecur);
+//     return leftRecur || rightRecur;
+// };
+// // PROBLEM 4
+// // DFS Recursive
+// function maxDepth(root) {
+//     // Our base case. we've reached the bottom of the tree.
+//     // Also stops us from running this on an empty tree
+//     if (!root) return -1;
+//     // we know this function returns a number, so we just add one to that number
+//     // to count the 'depth' of our tree.
+//     // we do this to the left and right of each tree node because we want to ensure
+//     // we are finding the maximum depth
+//     const leftHeight = 1 + maxDepth(root.left);
+//     const rightHeight = 1 + maxDepth(root.right);
+//     // our function returns the larger number: whichever one has the larger depth.
+//     return Math.max(leftHeight, rightHeight);
+// }
+//
+// class TreeNode {
+//     constructor(val) {
+//         (this.val = val), (this.left = null), (this.right = null);
+//     }
+// }
+// const five = new TreeNode(5);
+// const four = new TreeNode(4);
+// const eight = new TreeNode(8);
+// const eleven = new TreeNode(11);
+// const thirteen = new TreeNode(13);
+// const fourSecond = new TreeNode(4);
+// const seven = new TreeNode(7);
+// const two = new TreeNode(2);
+// const one = new TreeNode(1);
+// five.left = four;
+// five.right = eight;
+// four.left = eleven;
+// eleven.left = seven;
+// eleven.right = two;
+// eight.left = thirteen;
+// eight.right = fourSecond;
+// fourSecond.right = one;
+// console.log(pathSum(five, 22)); // true
+//
+// console.log(
+//     " TESTS FOR PROBLEM 4--------------------------------------------------------------"
+// );
+// const three = new TreeNode(3);
+// const nine = new TreeNode(9);
+// const twenty = new TreeNode(20);
+// const fifteen = new TreeNode(15);
+// const sevenTwo = new TreeNode(7);
+// three.left = nine;
+// three.right = twenty;
+// twenty.left = fifteen;
+// twenty.right = sevenTwo;
+// console.log(maxDepth(three)); // 2
+
+// //---------------------------BST-implementation------------------------------
+// class _Node {
+//     constructor(value) {
+//         this.value = value;
+//         this.left = null;
+//         this.right = null;
+//         this.parent = null;
+//     }
+// }
+// class BST {
+//     constructor() {
+//         this.root = null;
+//     }
+//     insert(value) {
+//         if (this.root) {
+//             this._insert(this.root, value);
+//         } else {
+//             this.root = new _Node(value);
+//         }
+//     }
+//     _insert(root, value) {
+//         if (value < root.value) {
+//             if (root.left) {
+//                 this._insert(root.left, value);
+//             } else {
+//                 root.left = new _Node(value);
+//                 root.left.parent = root;
+//             }
+//         } else {
+//             if (root.right) {
+//                 this._insert(root.right, value);
+//             } else {
+//                 root.right = new _Node(value);
+//                 root.right.parent = root;
+//             }
+//         }
+//     }
+//     bfsPrint() {
+//         if (this.root) {
+//             return this._bfsPrint();
+//         } else {
+//             return `your tree is empty fam`;
+//         }
+//     }
+//     _bfsPrint() {
+//         const nodes = [this.root]; // [root.left, root,right]
+//         const li = new Array();
+//         while (nodes.length) {
+//             const node = nodes.shift();
+//             li.push(node.value);
+//             if (node.left) nodes.push(node.left);
+//             if (node.right) nodes.push(node.right);
+//         }
+//         return li;
+//     }
+//     dfsPreorderPrint() {
+//         if (this.root) {
+//             return this._dfsPreorderPrint(this.root);
+//         } else {
+//             return `your tree is empty fam`;
+//         }
+//     }
+// 
+//     _dfsPreorderPrint(root, li = new Array()) {
+//         li.push(root.value);
+//         if (root.left) this._dfsPreorderPrint(root.left, li);
+//         if (root.right) this._dfsPreorderPrint(root.right, li);
+//         return li;
+//     }
+//     dfsInorderPrint() {
+//         if (this.root) {
+//             return this._dfsInorderPrint(this.root);
+//         } else {
+//             return `your tree is empty fam`;
+//         }
+//     }
+//     _dfsInorderPrint(root, li = new Array()) {
+//         if (root.left) this._dfsInorderPrint(root.left, li);
+//         li.push(root.value);
+//         if (root.right) this._dfsInorderPrint(root.right, li);
+//         return li;
+//     }
+//     dfsPostorderPrint() {
+//         if (this.root) {
+//             return this._dfsPostorderPrint(this.root);
+//         } else {
+//             return `your tree is empty fam`;
+//         }
+//     }
+//     _dfsPostorderPrint(root, li = new Array()) {
+//         if (root.left) this._dfsPostorderPrint(root.left, li);
+//         if (root.right) this._dfsPostorderPrint(root.right, li);
+//         li.push(root.value);
+//         return li;
+//     }
+//     find(value) {
+//         if (this.root) {
+//             return this._find(this.root, value);
+//         }
+//     }
+//     _find(root, value) {
+//         if (root.value === value) {
+//             return root;
+//         } else if (value < root.value && root.left) {
+//             return this._find(root.left, value);
+//         } else if (value >= root.value && root.right) {
+//             return this._find(root.right, value);
+//         }
+//         return `not here fam`;
+//     }
+//     getHeight() {
+//         // gets the depth of tree
+//     }
+//     validBST() {
+//         // is it balanced?
+//     }
+//     buildTree() {
+//         // performs the balancing
+//     }
+//     delete(value) {
+//         // deletes node
+//         // 1. leaf node
+//         // 2. you have one child
+//         // 3. you have two children
+//     }
+// }
+// const tree = new BST();
+// tree.insert(6);
+// tree.insert(2);
+// tree.insert(7);
+// tree.insert(1);
+// tree.insert(4);
+// tree.insert(3);
+// tree.insert(5);
+// tree.insert(9);
+// tree.insert(8);
+// console.log(tree.bfsPrint());
+// console.log(tree.dfsPreorderPrint());
+// console.log(tree.dfsInorderPrint());
+// console.log(tree.dfsPostorderPrint());
+// console.log(tree.find(10));
+// console.log(tree.find(6));
+// console.log(tree.find(8));
+/*
+  node sept-study-guide.js
+[ 6, 2, 7, 1, 4, 9, 3, 5, 8 ]
+[ 6, 2, 1, 4, 3, 5, 7, 9, 8 ]
+[ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+[ 1, 3, 5, 4, 2, 8, 9, 7, 6 ]
+not here fam
+_Node {
+  value: 6,
+  left:
+   _Node {
+     value: 2,
+     left:
+      _Node { value: 1, left: null, right: null, parent: [Circular] },
+     right:
+      _Node { value: 4, left: [_Node], right: [_Node], parent: [Circular] },
+     parent: [Circular] },
+  right:
+   _Node {
+     value: 7,
+     left: null,
+     right:
+      _Node { value: 9, left: [_Node], right: null, parent: [Circular] },
+     parent: [Circular] },
+  parent: null }
+_Node {
+  value: 8,
+  left: null,
+  right: null,
+  parent:
+   _Node {
+     value: 9,
+     left: [Circular],
+     right: null,
+     parent:
+      _Node { value: 7, left: null, right: [Circular], parent: [_Node] } } }
+*/
+
+
+// If you are unfamiliar, a Set is a data structure that does not allow for repeated values
+// It makes sense to use here because it has constant lookup time with its `has` method
+// and our visited nodes should never have repeats.
+// We could have accomplished the same thing with a different data structure
+// (object, array, etc.), but a Set makes sense with what we are tracking.
+function depthFirstRecur(node, visited=new Set()) {
+    // if this node has already been visited, then return early
+    if (visited.has(node.val)) return;
+
+    // otherwise it hasn't yet been visited,
+    // so print it's val and mark it as visited.
+    console.log(node.val);
+    visited.add(node.val);
+
+    // then explore each of its neighbors
+    node.neighbors.forEach(neighbor => {
+        depthFirstRecur(neighbor, visited);
+    });
 }
-console.log(
-    " TESTS FOR PROBLEMS 1 AND 2---------------------------------------------------------------------"
-);
-const adjacencyList = {
-    derek: ["selam", "dean"],
-    joe: ["selam"],
-    selam: ["derek", "joe", "dean", "evan"],
-    dean: ["derek", "evan", "selam"],
-    sam: ["jen"],
-    evan: ["selam", "jesse", "dean"],
-    jen: ["sam", "javier"],
-    javier: ["jen"],
-    chris: [],
-    jesse: ["evan"],
-};
 
-console.log(
-    'joesFriendsBFS(adjacencyList, "joe", "jesse"): ',
-    joesFriendsBFS(adjacencyList, "joe", "jesse")
-);
-console.log(joesFriendsDFS(adjacencyList, "joe", "jesse")); // [ 'selam', 'evan', 'dean', 'derek', 'jesse' ]
-
-console.log(
-    " TESTS FOR PROBLEMS 3---------------------------------------------------------------------"
-);
-// PROBLEM 2
-function joesFriendsDFS(adjacencyList, startName, endName) {
-    // we're doing DFS so we know we need a STACK
-    let stack = [startName];
-    // Track visited
+depthFirstRecur(f);
+Using a NODE implementation with ITERATION:
+// This is easy to swap to a breadth-first approach by using a queue instead of a stack!
+// Instead of popping from the top, we can shift from the front
+function depthFirstIter(node) {
     let visited = new Set();
-    // While there are friends to search through, we're going to contine
+    let stack = [ node ];
+
     while (stack.length) {
-        // We remove the current friend we're comparing to Jesse
-        let name = stack.pop();
-        // Check if we've already visited them. if we have, we move on.
-        if (visited.has(name)) continue;
-        // if we haven't, add them to the visited list
-        visited.add(name);
-        // check if we have reached Jesse
-        if (name === endName) {
-            // If we have, we can return the list of friends we visited along the way
-            const friendsList = Array.from(visited);
-            // but we must first remove Joe from the list. we know he's first because
-            // he was the first person popped off the stack.
-            friendsList.shift();
-            return friendsList;
-        }
-        // if we didn't see Jesse, we add the friends to the top of the stack and keep searching
-        stack.push(...adjacencyList[name]);
+        let node = stack.pop();
+
+        // if this node has already been visited, then skip this node
+        if (visited.has(node.val)) continue;
+
+        // otherwise it hasn't yet been visited,
+        // so print it's val and mark it as visited.
+        console.log(node.val);
+        visited.add(node.val);
+
+        // then add its neighbors to the stack to be explored
+        stack.push(...node.neighbors);
     }
-    // if our whole loop happened and we didn't get to Jesse, it means he's not a
-    // part of the graph or there's no path between Joe and Jesse
-    return "Jesse's not here :(";
-}
-// PROBLEM 3 SOLUTION
-const hasPathSum = function (root, sum) {
-    // If there's no root, we know that it's impossible to reach the sum
-    if (!root) return false;
-    // we must keep track of our current value, which is the difference between our final sum and the number we're currently on (e.g 22 - 5)
-    let currSum = sum - root.val;
-    // our base case. if we reach the bottom of the tree, and the difference between
-    // our final value and our current value is zero, we know we've found the sum along this path
-    // so we can return true.
-    if (!root.left && !root.right) {
-        if (currSum == 0) return true;
-    }
-    // Now that we've established our base case and recursive step, we call the recursion
-    let leftSum = hasPathSum(root.left, currSum);
-    let rightSum = hasPathSum(root.right, currSum);
-    // we want these functions to return a number, and we want to check both directions
-    return leftSum || rightSum;
-};
-const pathSum = (root, sum, curSum = root.val) => {
-    if (!root) return false;
-    if (sum === curSum) return true;
-    const leftRecur = pathSum(root.left, sum, curSum + root.val);
-    const rightRecur = pathSum(root.right, sum, curSum + root.val);
-    console.log(leftRecur || rightRecur);
-    return leftRecur || rightRecur;
-};
-// PROBLEM 4
-// DFS Recursive
-function maxDepth(root) {
-    // Our base case. we've reached the bottom of the tree.
-    // Also stops us from running this on an empty tree
-    if (!root) return -1;
-    // we know this function returns a number, so we just add one to that number
-    // to count the 'depth' of our tree.
-    // we do this to the left and right of each tree node because we want to ensure
-    // we are finding the maximum depth
-    const leftHeight = 1 + maxDepth(root.left);
-    const rightHeight = 1 + maxDepth(root.right);
-    // our function returns the larger number: whichever one has the larger depth.
-    return Math.max(leftHeight, rightHeight);
 }
 
-class TreeNode {
-    constructor(val) {
-        (this.val = val), (this.left = null), (this.right = null);
+depthFirstIter(f);
+//Using an ADJACENCY LIST with RECURSION:
+//One advantage of an adjacency list is that, since we have a reference to the whole graph,
+//we can access nodes that aren't connected to our starting point.
+//This may or may not be desired, so we can implement our functions differently to account for this feature.
+function depthFirst(graph) {
+    let visited = new Set();
+
+    // This loop allows us to access every node/vertex, even if it wasn't connected
+    // to where we started.
+    // If we only wanted to reach points from a starting location, we could take in
+    // that value as an argument and use it as the node directly with our helper
+    // function, no need to loop.
+    for (let node in graph) {
+        _depthFirstRecur(node, graph, visited);
     }
 }
-const five = new TreeNode(5);
-const four = new TreeNode(4);
-const eight = new TreeNode(8);
-const eleven = new TreeNode(11);
-const thirteen = new TreeNode(13);
-const fourSecond = new TreeNode(4);
-const seven = new TreeNode(7);
-const two = new TreeNode(2);
-const one = new TreeNode(1);
-five.left = four;
-five.right = eight;
-four.left = eleven;
-eleven.left = seven;
-eleven.right = two;
-eight.left = thirteen;
-eight.right = fourSecond;
-fourSecond.right = one;
-console.log(pathSum(five, 22)); // true
 
-console.log(
-    " TESTS FOR PROBLEM 4--------------------------------------------------------------"
-);
-const three = new TreeNode(3);
-const nine = new TreeNode(9);
-const twenty = new TreeNode(20);
-const fifteen = new TreeNode(15);
-const sevenTwo = new TreeNode(7);
-three.left = nine;
-three.right = twenty;
-twenty.left = fifteen;
-twenty.right = sevenTwo;
-console.log(maxDepth(three)); // 2
+function _depthFirstRecur(node, graph, visited) {
+    if (visited.has(node)) return;
+
+    console.log(node);
+    visited.add(node);
+
+    graph[node].forEach(neighbor => {
+        _depthFirstRecur(neighbor, graph, visited);
+    });
+}
+
+depthFirst(graph);
+Using an ADJACENCY LIST with ITERATION:
+// With starting node, not exploring all nodes, only the connected ones
+function depthFirstIter(graph, startNode) {
+  // Just like our node implementation, if we want to operate breadth-first, we
+  // can utilize a queue instead of a stack, shifting instead of popping
+  let stack = [startNode];
+  let visited = new Set();
+
+  while (stack.length > 0) {
+    let node = stack.pop();
+    if (visited.has(node)) continue;
+    console.log(node)
+    visited.add(node);
+    stack.push(...graph[node]);
+  }
+}
