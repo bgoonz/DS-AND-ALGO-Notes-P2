@@ -3,7 +3,9 @@
 # Week-8-Notes
 For anyone who might benifit
 
+╗ ~ test-prep : (master) tree
 ```
+.
 ├── BG-Final-Study_Guide
 │   ├── Code-Snippets
 │   │   ├── graph-class.js
@@ -355,49 +357,7 @@ For anyone who might benifit
 └── weeks-LOs
     ├── W8-filled-in-LOs.md
     └── w8_learning_objectives.md
-
-48 directories, 303 files```
-
-
-# WEEK 8<br>*Getting to Know the Network* 
-________________________________________________________________________________
-
-
 - [Week-8-Notes](#week-8-notes)
-- [WEEK 8<br>*Getting to Know the Network*](#week-8brgetting-to-know-the-network)
-- [WEEK-08 <br>*Learning Objectives*](#week-08-brlearning-objectives)
-- [Binary Trees and Binary Search Trees](#binary-trees-and-binary-search-trees)
-- [Graphs and Heaps](#graphs-and-heaps)
-- [Network Models Objectives](#network-models-objectives)
-- [Internet Protocol Suite Objectives](#internet-protocol-suite-objectives)
-- [Network Tools](#network-tools)
-- [WEEK-08 DAY-1<br>*White-Boarding Tips and Tricks*](#week-08-day-1brwhite-boarding-tips-and-tricks)
-- [White-Boarding Tips](#white-boarding-tips)
-  - [Why do companies whiteboard?](#why-do-companies-whiteboard)
-  - [Correct steps](#correct-steps)
-  - [Clarification](#clarification)
-  - [Test I/O](#test-io)
-  - [Pseudocode](#pseudocode)
-  - [During the Problem](#during-the-problem)
-  - [Walk through an example input](#walk-through-an-example-input)
-  - [Time and space complexity](#time-and-space-complexity)
-  - [Strategies](#strategies)
-  - [Don't be Sly](#dont-be-sly)
-  - [How to handle questions you've seen before.](#how-to-handle-questions-youve-seen-before)
-- [White Boarding Exercises](#white-boarding-exercises)
-  - [Mirror image trees](#mirror-image-trees)
-  - [Reverse a linked list](#reverse-a-linked-list)
-  - [The missing value](#the-missing-value)
-  - [Stack min](#stack-min)
-  - [Test a retractable ballpoint pen](#test-a-retractable-ballpoint-pen)
-  - [OOParking Lot](#ooparking-lot)
-- [WEEK-08 DAY-2<br>*Binary Trees*](#week-08-day-2brbinary-trees)
-- [Binary Trees and Binary Search Trees](#binary-trees-and-binary-search-trees-1)
-- [Binary Trees](#binary-trees)
-    - [What is a Graph?](#what-is-a-graph)
-    - [What is a Tree?](#what-is-a-tree)
-    - [What is a Binary Tree?](#what-is-a-binary-tree)
-    - [Representing a Binary Tree with Node Instances](#representing-a-binary-tree-with-node-instances)
     - [Basic Tree Terminology](#basic-tree-terminology)
   - [Traversing trees](#traversing-trees)
     - [Breadth-first search](#breadth-first-search)
@@ -414,9 +374,9 @@ ________________________________________________________________________________
 - [Binary Search Tree Project](#binary-search-tree-project)
   - [Instructions](#instructions-1)
 - [WEEK-08 DAY-3<br>*Graphs*](#week-08-day-3brgraphs)
-- [Graphs and Heaps](#graphs-and-heaps-1)
+- [Graphs and Heaps](#graphs-and-heaps)
 - [Graphs](#graphs)
-  - [What is a Graph?](#what-is-a-graph-1)
+  - [What is a Graph?](#what-is-a-graph)
   - [Graph Implementations](#graph-implementations)
     - [GraphNode Class](#graphnode-class)
     - [Adjacency Matrix](#adjacency-matrix)
@@ -428,9 +388,9 @@ ________________________________________________________________________________
   - [Instructions](#instructions-2)
   - [Friends of](#friends-of)
 - [WEEK-08 DAY-4<br>*Network Knowledge*](#week-08-day-4brnetwork-knowledge)
-- [Network Models Objectives](#network-models-objectives-1)
-- [Internet Protocol Suite Objectives](#internet-protocol-suite-objectives-1)
-- [Network Tools](#network-tools-1)
+- [Network Models Objectives](#network-models-objectives)
+- [Internet Protocol Suite Objectives](#internet-protocol-suite-objectives)
+- [Network Tools](#network-tools)
 - [The OSI Network Model](#the-osi-network-model)
   - [More layers, ~~more~~ fewer problems?](#more-layers-smores-fewer-problems)
   - [The layers of the OSI model](#the-layers-of-the-osi-model)
@@ -906,7 +866,7 @@ are in the lot, what time the cars come and go, and how much it costs someone
 when they leave the parking lot based on the following schedule:
 
 | Time       | Rate per hour |
-|------------|---------------|
+| ---------- | ------------- |
 | 8pm - 6am  | $3            |
 | 6am - noon | $10           |
 | noon - 6pm | $8            |
@@ -1781,7 +1741,7 @@ from a person. It will take as parameters
 The following table interprets the distance parameter:
 
 | Distance | Meaning                                                                      |
-|:--------:|------------------------------------------------------------------------------|
+| :------: | ---------------------------------------------------------------------------- |
 |    1     | Immediate friends                                                            |
 |    2     | Immediate friends and friends of friends                                     |
 |    3     | Immediate friends, friends of friends, and the friends of friends of friends |
@@ -1806,7 +1766,7 @@ Then, the following table shows the expected results for the person **jun** at
 different distances.
 
 | Distance | List of people returned by `friendsOf` |
-|:--------:|----------------------------------------|
+| :------: | -------------------------------------- |
 |    1     | carrie and silla                       |
 |    2     | carrie, silla, humza, yervand          |
 |    3     | carrie, silla, humza, yervand, farrah  |
@@ -2228,9 +2188,9 @@ If you remember from your early math education, decimal (another word for base
 For example, given the number 42, the number breaks down into the following
 *places*.
 
-| Place     | 1000 | 100 | 10 | 1 |
-|:----------|-----:|----:|---:|--:|
-| __Digit__ |    0 |   0 |  4 | 2 |
+| Place     | 1000 |  100 |   10 |    1 |
+| :-------- | ---: | ---: | ---: | ---: |
+| __Digit__ |    0 |    0 |    4 |    2 |
 
 ```
 (4 * 10) + (2 * 1) = 42
@@ -2239,9 +2199,9 @@ For example, given the number 42, the number breaks down into the following
 For binary, we instead have the following places, and the number 42 breaks down
 this way:
 
-| __Place__ | 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
-|:----------|----:|---:|---:|---:|--:|--:|--:|--:|
-| __Digit__ |   0 |  0 |  1 |  0 | 1 | 0 | 1 | 0 |
+| __Place__ |  128 |   64 |   32 |   16 |    8 |    4 |    2 |    1 |
+| :-------- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| __Digit__ |    0 |    0 |    1 |    0 |    1 |    0 |    1 |    0 |
 
 ```
 (128 * 0) + (64 * 0) + (32 * 1) + (16 * 0) + (8 * 1) + (4 * 0) + (2 * 1) = 42
@@ -2273,7 +2233,7 @@ system, although with confusing results since the metric system is Base 10,
 while computing is Base 2.
 
 | Unit      | Value                  |
-|-----------|------------------------|
+| --------- | ---------------------- |
 | Kilobyte  | 1000 bytes             |
 | Megabyte  | 1000<sup>2</sup> bytes |
 | Gigabyte  | 1000<sup>3</sup> bytes |
@@ -2302,7 +2262,7 @@ Something had to be done.  So now we have two different sets of terminology one
 for Base 10 and one for Base 2.
 
 | Base 10   | Abbr | Value                  | Base 2   | Abbr | Value                  |
-|-----------|------|------------------------|----------|------|------------------------|
+| --------- | ---- | ---------------------- | -------- | ---- | ---------------------- |
 | Kilobyte  | kB   | 1000 bytes             | Kibibyte | KiB  | 1024 bytes             |
 | Megabyte  | MB   | 1000<sup>2</sup> bytes | Mebibyte | MiB  | 1024<sup>2</sup> bytes |
 | Gigabyte  | GB   | 1000<sup>3</sup> bytes | Gibibyte | GiB  | 1024<sup>3</sup> bytes |
@@ -2347,9 +2307,9 @@ hexadecimal digits.
 Let's look at the *places* for hexadecimal for the decimal number 42. There's a
 sixteenth's place and a one's place in this example.
 
-| __Place__ | 16 | 1 |
-|:----------|---:|--:|
-| __Digit__ |  2 | A |
+| __Place__ |   16 |    1 |
+| :-------- | ---: | ---: |
+| __Digit__ |    2 |    A |
 
 This might seem confusing at first but just like our other base examples, this
 is:
