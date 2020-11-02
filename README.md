@@ -3,7 +3,360 @@
 # Week-8-Notes
 For anyone who might benifit
 
+```
+├── BG-Final-Study_Guide
+│   ├── Code-Snippets
+│   │   ├── graph-class.js
+│   │   ├── graph.js
+│   │   ├── graphs.md
+│   │   ├── implement-graph.js
+│   │   ├── sept-study-guide-testing.js
+│   │   └── sept-study-guide.js
+│   └── images
+│       ├── 01_1280px-Sorted_binary_tree_breadth-first_traversal.svg.png
+│       ├── 01a_graphs.png
+│       ├── 01b_adj_matrix_graph.png
+│       ├── 01b_graph_a.png
+│       ├── 01c_Sorted_binary_tree_ALL.png
+│       ├── 02a_bsts.png
+│       ├── 02a_graph.png
+│       ├── 02b_forest.png
+│       ├── 02b_not_bst.png
+│       ├── 02c_good_bad_bst.png
+│       ├── 02d_Sorted_binary_tree_ALL.png
+│       ├── 1604180981115.png
+│       ├── BFS.png
+│       ├── Binary-search-tree-insertion-When-a-sequence-of-data-f1-3-4-6-5-7-9-8-2-g.png
+│       ├── DOM-is-nary-tree.png
+│       ├── Headers-Associated-Layers.png
+│       ├── IPv4-header.png
+│       ├── IPv6-header.png
+│       ├── Routers-Switches-Hubs-OSI-Layers.png
+│       ├── adj_matrix_graph.png
+│       ├── arr1.png
+│       ├── array.png
+│       ├── basic-graph.png
+│       ├── binary tree.png
+│       ├── binary-search-tree.png
+│       ├── binary-tree.png
+│       ├── breadth-first.png
+│       ├── bst-constructor.png
+│       ├── bsts.png
+│       ├── children-nodes.png
+│       ├── code.png
+│       ├── complete-graph.png
+│       ├── complete-or-connected-graph.png
+│       ├── console.trace.png
+│       ├── console.trace1.png
+│       ├── convert-binary.png
+│       ├── convert-hexidecimal.png
+│       ├── cycle-example-2.png
+│       ├── cycle-example.png
+│       ├── cycle.png
+│       ├── delete-edge.png
+│       ├── dense-graph.png
+│       ├── dfs.png
+│       ├── directed-graph.png
+│       ├── directed-or-undirected-cycles.png
+│       ├── directory structure is nary tree.png
+│       ├── doubly-linked-list-removeFromTail.png
+│       ├── dropped-segment.png
+│       ├── encapsulation.png
+│       ├── find-edge.png
+│       ├── forest.png
+│       ├── full-cycle.png
+│       ├── good_bad_bst.png
+│       ├── graph-edge.png
+│       ├── graph-md.png
+│       ├── graph.png
+│       ├── graph1.png
+│       ├── graph2.png
+│       ├── graph_a.png
+│       ├── graphs.png
+│       ├── i.png
+│       ├── image-ip-dns-domain.png
+│       ├── image-ip-dns-resolution-chat.png
+│       ├── image-ip-ipv4-headers.png
+│       ├── image-ip-ipv6-headers.png
+│       ├── image-ip-networking-hub.png
+│       ├── image-ip-networking-router.png
+│       ├── image-ip-networking-switch.png
+│       ├── image-ip-tcp-dropped-segment.png
+│       ├── image-ip-tcp-four-way-closing.png
+│       ├── image-ip-tcp-header-control-flags.png
+│       ├── image-ip-tcp-header-fields.png
+│       ├── image-ip-tcp-seq-ack.png
+│       ├── image-ip-tcp-slow-connection.png
+│       ├── image-ip-tcp-socket-states.png
+│       ├── image-network-models-osi.png
+│       ├── image-network-models-tcp-ip.png
+│       ├── image.png
+│       ├── implementation.png
+│       ├── in-order-traversal.png
+│       ├── insert.png
+│       ├── iterative search.png
+│       ├── leaf-nodes.png
+│       ├── leaves-depth-height.png
+│       ├── linked-list-graph.png
+│       ├── linked-list.png
+│       ├── min-max-nodes-balanced.png
+│       ├── min-max-nodes-ll.png
+│       ├── n-ary-tree.png
+│       ├── non-isolated-cycle.png
+│       ├── not_bst.png
+│       ├── number-tree.png
+│       ├── old-proj.png
+│       ├── osi-network-layers.png
+│       ├── pasted image 0.png
+│       ├── path-sum.png
+│       ├── path.png
+│       ├── post-order-depth-first.png
+│       ├── post-order-traversal.png
+│       ├── post-order.png
+│       ├── pre-and-in-order-traversal.png
+│       ├── pre-order-traversal.png
+│       ├── proj2a_wireshark-01.png
+│       ├── proj2b_wireshark-02.png
+│       ├── proj2c_wireshark-03.png
+│       ├── proj2d_wireshark-04.png
+│       ├── proj2e_wireshark-05.png
+│       ├── proj2f_wireshark-06.png
+│       ├── queue.png
+│       ├── reverse.png
+│       ├── search-iterative.png
+│       ├── search-recursively.png
+│       ├── siblings.png
+│       ├── sparse-graph.png
+│       ├── stack.png
+│       ├── subtree.png
+│       ├── tcp-ip-model.png
+│       ├── tcpip.png
+│       ├── to-string.png
+│       ├── traversals.png
+│       ├── tree-Node.png
+│       ├── tree-vs-graph-w-cycle.png
+│       ├── tree.png
+│       ├── trees.png
+│       ├── undirected-graph.png
+│       ├── weighted-graph.png
+│       ├── weighted-or-unweighted.png
+│       ├── white-board-approach-reacto.png
+│       ├── wireshark-01.png
+│       ├── wireshark-02.png
+│       ├── wireshark-03.png
+│       ├── wireshark-04.png
+│       ├── wireshark-05.png
+│       └── wireshark-06.png
+├── Student-Made-possibly-Imperfect
+│   ├── BG
+│   │   ├── Data-Structures-Cheat-Sheet.md
+│   │   ├── Images
+│   │   │   ├── basic-graph.png
+│   │   │   ├── complete-graph.png
+│   │   │   ├── cycle-example-2.png
+│   │   │   ├── cycle-example.png
+│   │   │   ├── dense-graph.png
+│   │   │   ├── directed-graph.png
+│   │   │   ├── non-isolated-cycle.png
+│   │   │   ├── sparse-graph.png
+│   │   │   ├── undirected-graph.png
+│   │   │   ├── w8_learning_objectives.md
+│   │   │   └── weighted-graph.png
+│   │   ├── README.md
+│   │   ├── W8-filled-in-LOs.md
+│   │   ├── WEEK-8-NOTES.md
+│   │   ├── misc
+│   │   │   ├── Data-Structures-Cheat-Sheet.md
+│   │   │   ├── README.md
+│   │   │   ├── W8-filled-in-LOs.md
+│   │   │   ├── WEEK-8-NOTES.md
+│   │   │   └── w8-summary.pdf
+│   │   ├── w8-summary.pdf
+│   │   └── week-8-quiz
+│   │       ├── quiz-style.css
+│   │       ├── quiz.js
+│   │       ├── wk8-images
+│   │       │   ├── Headers-Associated-Layers.png
+│   │       │   ├── IPv4-header.png
+│   │       │   ├── IPv6-header.png
+│   │       │   ├── Routers-Switches-Hubs-OSI-Layers.png
+│   │       │   ├── binary-search-tree.png
+│   │       │   ├── in-order-traversal.png
+│   │       │   ├── linked-list-graph.png
+│   │       │   ├── osi-network-layers.png
+│   │       │   ├── post-order-traversal.png
+│   │       │   ├── pre-order-traversal.png
+│   │       │   ├── tcp-ip-model.png
+│   │       │   └── trees.png
+│   │       ├── wk8-quiz.html
+│   │       └── wk8-quiz.md
+│   ├── Quizlet.pdf
+│   ├── binary-tree-reading.md
+│   ├── graphs
+│   │   └── Images
+│   │       ├── basic-graph.png
+│   │       ├── complete-graph.png
+│   │       ├── cycle-example-2.png
+│   │       ├── cycle-example.png
+│   │       ├── dense-graph.png
+│   │       ├── directed-graph.png
+│   │       ├── graphs.md
+│   │       ├── non-isolated-cycle.png
+│   │       ├── sparse-graph.png
+│   │       ├── undirected-graph.png
+│   │       └── weighted-graph.png
+│   ├── graphs-bst-data-structure-methods-main
+│   │   ├── binary-tree-reading (1).md
+│   │   ├── binary-trees.js
+│   │   └── graph-methods.js
+│   ├── networks.md
+│   └── readme-and-images
+│       ├── README.md
+│       ├── delete-edge.png
+│       ├── find-edge.png
+│       ├── graph-edge.png
+│       ├── graph1.png
+│       ├── graph2.png
+│       ├── reverse.png
+│       └── to-string.png
+├── Study-Guides
+│   ├── W08-study-guide
+│   │   ├── W08-study-guide
+│   │   │   ├── Binary Trees.apkg
+│   │   │   ├── Networking Day Cards
+│   │   │   │   ├── Network DNS.apkg
+│   │   │   │   ├── Network OSI.apkg
+│   │   │   │   └── Network TCP_IP.apkg
+│   │   │   ├── W08-LOs-empty.md
+│   │   │   ├── W08-LOs-explained.md
+│   │   │   └── public
+│   │   │       ├── dropped-segment.svg
+│   │   │       ├── full-cycle.svg
+│   │   │       ├── ipv6-headers.svg
+│   │   │       ├── min-max-nodes-balanced.png
+│   │   │       ├── min-max-nodes-ll.png
+│   │   │       ├── number-tree.png
+│   │   │       ├── osi-model.svg
+│   │   │       ├── tcp-headers.svg
+│   │   │       ├── tcp-ip-model.svg
+│   │   │       └── three-way-handshake.svg
+│   │   └── tree_order_project
+│   │       ├── lib
+│   │       │   ├── leet_code_105.js
+│   │       │   ├── tree_node.js
+│   │       │   └── tree_order.js
+│   │       ├── package-lock.json
+│   │       ├── package.json
+│   │       └── test
+│   │           └── test.js
+│   ├── Week 8 Review.xlsx
+│   ├── study-guide-excel.pdf
+│   └── w8-study-guide.pdf
+├── materials
+│   ├── flash-cards
+│   │   ├── Binary-Trees.md
+│   │   ├── Network OSI.md
+│   │   ├── network-Dns.md
+│   │   ├── networkTCP_Ip.md
+│   │   └── tcpip.png
+│   └── image
+│       └── COMBIN-Data-Structures (2)
+│           ├── 1604180981115.png
+│           ├── Data-Structures-Concepts.md
+│           ├── Network DNS.apkg
+│           ├── Network OSI.apkg
+│           ├── Network TCP_IP.apkg
+│           ├── arr1.png
+│           ├── array.png
+│           ├── binary-tree.png
+│           ├── dfs.png
+│           ├── directed-or-undirected-cycles.png
+│           ├── graph-md.png
+│           ├── graph.png
+│           ├── leaves-depth-height.png
+│           ├── linked-list.png
+│           ├── post-order.png
+│           ├── pre-and-in-order-traversal.png
+│           ├── queue.gif
+│           ├── queue.png
+│           ├── stack.gif
+│           ├── stack.png
+│           ├── traversals.png
+│           ├── tree.png
+│           └── weighted-or-unweighted.png
+├── projects
+│   ├── d1
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   ├── problems
+│   │   │   ├── 01_tree_node.js
+│   │   │   ├── 02_tree_order.js
+│   │   │   ├── 03_dfs.js
+│   │   │   ├── 04_bfs.js
+│   │   │   └── 05_leet_code_105.js
+│   │   └── test
+│   │       └── test.js
+│   ├── d2
+│   │   ├── package-lock.json
+│   │   ├── package.json
+│   │   ├── problems
+│   │   │   ├── bst.js
+│   │   │   ├── findMin.js
+│   │   │   ├── getHeight.js
+│   │   │   ├── leet_code_108.js
+│   │   │   ├── leet_code_110.js
+│   │   │   └── leet_code_450.js
+│   │   └── test
+│   │       └── test.js
+│   ├── d3
+│   │   ├── eod-graphs-intro
+│   │   │   ├── README.md
+│   │   │   ├── package-lock.json
+│   │   │   ├── package.json
+│   │   │   ├── problems
+│   │   │   │   └── graph.js
+│   │   │   └── test
+│   │   │       └── graph-spec.js
+│   │   ├── graphs-intro-solution
+│   │   │   ├── package-lock.json
+│   │   │   ├── package.json
+│   │   │   ├── problems
+│   │   │   │   └── graph.js
+│   │   │   └── test
+│   │   │       └── graph-spec.js
+│   │   └── graphs-solution
+│   │       ├── lib
+│   │       │   ├── breadth_first_search.js
+│   │       │   ├── friends-of.js
+│   │       │   ├── graph_node.js
+│   │       │   ├── leet_code_207.js
+│   │       │   ├── max_value.js
+│   │       │   └── num_regions.js
+│   │       ├── package-lock.json
+│   │       ├── package.json
+│   │       └── test
+│   │           ├── 01-test.js
+│   │           ├── 02-friends-of-spec.js
+│   │           ├── 03-graph-node-algorithms.js
+│   │           └── names.js
+│   ├── d5
+│   │   ├── whiteboarding-problems.md
+│   │   ├── whiteboarding-solutions-2.js
+│   │   └── whiteboarding-solutions.js
+│   └── other
+│       └── eod-graphs-intro
+│           ├── README.md
+│           ├── package-lock.json
+│           ├── package.json
+│           ├── problems
+│           │   └── graph.js
+│           └── test
+│               └── graph-spec.js
+└── weeks-LOs
+    ├── W8-filled-in-LOs.md
+    └── w8_learning_objectives.md
 
+48 directories, 303 files```
 
 
 # WEEK 8<br>*Getting to Know the Network* 
